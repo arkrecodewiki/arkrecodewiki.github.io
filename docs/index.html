@@ -43,6 +43,9 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3 initial-hide fade-in">
             <ul class="navbar-nav">
                 <li class="nav-item">
+                    <a class="nav-link"><strong>Damage Calculator</strong></a>
+                </li> 
+                <li class="nav-item">
                     <a class="nav-link" href="speed-tuner/speed-tuner.html">Speed Tuner</a>
                 </li>
                 <li class="nav-item">
@@ -86,7 +89,7 @@
                         </div>
                         <div class="form-group col-md-4 col-sm-12">
                             <select id="artifact" name="artifact" class="form-control custom-select selectpicker"
-                                data-live-search="true" data-size="12" data-none-selected-text="Artifact">
+                                data-live-search="true" data-size="12" data-none-selected-text="Bond">
                             </select>
                         </div>
                         <div class="form-group col-md-4 col-sm-12">
@@ -129,7 +132,7 @@
                                 <div class="form-group row col-sm-12">
                                     <label for="atk-pc-imprint" class="col-md-7 col-form-label form-control-sm">
                                         <h5>
-                                            ATK % Increase <i class="far fa-question-circle fa-xs text-muted" data-toggle="tooltip" title="Example: ATK% Team Potentials; calculation based on Level 60 hero stats"></i>
+                                            ATK% Team Potential <i class="far fa-question-circle fa-xs text-muted" data-toggle="tooltip" title="Enter sum of all allies' ATK % Team Potentials (Self Potential already included in your hero stats); calculation based on Level 60 hero stats"></i>
                                         </h5>
                                     </label>
                                     <div class="input-group input-group-sm col-md-5">
@@ -225,28 +228,28 @@
                         <div class="custom-control custom-checkbox custom-control-inline buff-block">
                             <input class="custom-control-input" type="checkbox" id="atk-down" value="0.5" onchange="resolve()">
                             <label class="custom-control-label" for="atk-down">
-                                <img src="./assets/debuffs/attack-debuff.png" width="20" height="20" alt="Caster decreased Attack"> Decreased Attack
+                                <img src="./assets/debuffs/attack-debuff.png" width="20" height="20" alt="Caster decreased Attack"> ATK Down
                             </label>
                         </div>
 
                         <div class="custom-control custom-checkbox custom-control-inline buff-block">
                             <input class="custom-control-input" type="checkbox" id="atk-up" value="1.5" onchange="resolve()">
                             <label class="custom-control-label" for="atk-up">
-                                <img src="./assets/buffs/attack-buff.png" width="20" height="20" alt="Caster increased Attack"> Increased Attack
+                                <img src="./assets/buffs/attack-buff.png" width="20" height="20" alt="Caster increased Attack"> ATK Up
                             </label>
                         </div>
 
                         <div class="custom-control custom-checkbox custom-control-inline buff-block">
                             <input class="custom-control-input" type="checkbox" id="atk-up-great" value="1.75" onchange="resolve()">
                             <label class="custom-control-label" for="atk-up-great">
-                                <img src="./assets/buffs/greater-attack-buff.png" width="20" height="20" alt="Caster increased Attack (Great)"> Increased Attack (Great)
+                                <img src="./assets/buffs/greater-attack-buff.png" width="20" height="20" alt="Caster increased Attack (Great)"> ATK Up+
                             </label>
                         </div>
 
                         <div class="custom-control custom-checkbox custom-control-inline buff-block">
                             <input class="custom-control-input" type="checkbox" id="crit-dmg-up" value="0.5" onchange="resolve()">
                             <label class="custom-control-label" for="crit-dmg-up">
-                                <img src="./assets/buffs/critical-hit-damage-buff.png" width="20" height="20" alt="Caster increased Critical Hit Damage"> Increased Critical Hit Damage
+                                <img src="./assets/buffs/critical-hit-damage-buff.png" width="20" height="20" alt="Caster increased Critical Hit Damage"> Crit DMG Up
                             </label>
                         </div>
 
@@ -267,7 +270,7 @@
                         <div class="custom-control custom-checkbox custom-control-inline buff-block">
                             <input class="custom-control-input" type="checkbox" id="rage-set" value="0.3" onchange="resolve()">
                             <label class="custom-control-label" for="rage-set">
-                                <img src="./assets/sets/rage-set.png" width="20" height="20" alt="Rage Set Proc"> Rage Set Proc
+                                <img src="./assets/sets/rage-set.png" width="20" height="20" alt="Rage Set Proc"> Rage Set
                             </label>
                         </div>
 
@@ -292,7 +295,7 @@
                 </div>
 
                 <div id="artifact-block">
-                    <h4>Artifact</h4>
+                    <h4>Bond</h4>
                     <div id="artifact-info"></div>
                     <div id="artifact-lvl-block" class="stat-block">
                         <div class="form-group row col-sm-12">
@@ -323,70 +326,31 @@
                         <select id="def-preset" name="def-preset" class="form-control custom-select selectpicker" data-size="10" data-show-subtext="true" data-live-search="true">
                             <option value="">Manual</option>
                             <option data-divider="true"></option>
-                            <optgroup label="Wyvern 11">
-                                <option value="blaze-dragona-11" data-def="984" data-hp="14158" data-subtext="14158 hp/163 spd">Blaze Dragona</option>
-                                <option value="blood-ridge-naga-11" data-def="1183" data-hp="11851" data-subtext="11851 hp/144 spd">Blood Ridge Naga</option>
-                                <option value="wyvern-11" data-def="1254" data-hp="150452" data-subtext="150452 hp/208 spd" data-elem-extra-dmg="ice" data-extra-dmg-pc="1.3">Wyvern</option>
+                            <optgroup label="Blaze Wolf 11">
+                                <option value="blood-ridge-naga-11" data-def="1182" data-hp="11851" data-subtext="11851 hp/145 spd">Blaze Wolf</option>
+                                <option value="blaze-dragona-11" data-def="983" data-hp="14158" data-subtext="14158 hp/160 spd">Blaze Spider (x2)</option>
+                                <option value="wyvern-11" data-def="1883" data-hp="150452" data-subtext="150452 hp/220 spd" data-elem-extra-dmg="ice" data-extra-dmg-pc="1.3">Skul the Blaze Wolf King</option>
                             </optgroup>
-                            <optgroup label="Wyvern 13">
-                                <option value="blaze-dragona-13" data-def="1392" data-hp="20241" data-subtext="20241 hp/175 spd">Blaze Dragona</option>
-                                <option value="blood-ridge-naga-13" data-def="1340" data-hp="13554" data-subtext="13554 hp/154 spd">Blood Ridge Naga</option>
-                                <option value="wyvern-13" data-def="1940" data-hp="233578" data-subtext="233578 hp/242 spd" data-elem-extra-dmg="ice" data-extra-dmg-pc="1.3">Wyvern</option>
-                            </optgroup>
-                            <optgroup label="Golem 11">
-                                <option value="raqix-flying-troop-11" data-def="891" data-hp="12528" data-subtext="12528 hp">Raqix Flying Troop</option>
-                                <option value="mossy-testudo-11" data-def="1077" data-hp="15015" data-subtext="15015 hp">Mossy Testudo</option>
-                                <option value="golem-11" data-def="1306" data-hp="101983" data-subtext="101983 hp" data-elem-extra-dmg="fire" data-extra-dmg-pc="1.3">Golem</option>
-                            </optgroup>
-                            <optgroup label="Golem 13">
-                                <option value="raqix-flying-troop-13" data-def="1007" data-hp="14743" data-subtext="14743 hp/188 spd">Raqix Flying Troop</option>
-                                <option value="mossy-testudo-13" data-def="1221" data-hp="17172" data-subtext="17172 hp">Mossy Testudo</option>
-                                <option value="golem-13" data-def="1550" data-hp="158553" data-subtext="158553 hp" data-elem-extra-dmg="fire" data-extra-dmg-pc="1.3">Golem</option>
-                            </optgroup>
-                            <optgroup label="Banshee 11">
-                                <option value="mystychain-11" data-def="1101" data-hp="9631" data-subtext="9631 hp/154 spd">Mystychain</option>
-                                <option value="icy-dark-broom-11" data-def="1101" data-hp="9631" data-subtext="9631 hp/152 spd">Icy Dark Broom</option>
-                                <option value="banshee-11" data-def="1289" data-hp="60624" data-subtext="60624 hp/160 spd" data-elem-extra-dmg="earth" data-extra-dmg-pc="1.3">Banshee</option>
-                            </optgroup>
-                            <optgroup label="Banshee 13">
-                                <option value="mystychain-13" data-def="1248" data-hp="11015" data-subtext="11015 hp/174 spd">Mystychain</option>
-                                <option value="icy-dark-broom-13" data-def="1248" data-hp="11015" data-subtext="11015 hp/174 spd">Icy Dark Broom</option>
-                                <option value="banshee-13" data-def="1977" data-hp="115703" data-subtext="115703 hp/203 spd" data-elem-extra-dmg="earth" data-extra-dmg-pc="1.3">Banshee</option>
-                            </optgroup>
-                            <optgroup label="Azimanak 11">
-                                <option value="striker-raqix-warlord-11" data-def="1030" data-hp="12812" data-subtext="12812 hp/211 spd">Striker Warlord</option>
-                                <option value="karax-charger-11" data-def="1150" data-hp="20814" data-subtext="20814 hp/149 spd">Karax Charger</option>
-                                <option value="egg-11" data-def="540" data-hp="8098" data-subtext="8098 hp">Egg</option>
-                                <option value="azimanak-11" data-def="1825" data-hp="87729" data-subtext="87729 hp">Azimanak</option>
-                            </optgroup>
-                            <optgroup label="Azimanak 13">
-                                <option value="striker-raqix-warlord-13" data-def="1134" data-hp="14653" data-subtext="14653 hp/218 spd">Striker Warlord</option>
-                                <option value="karax-charger-13" data-def="1297" data-hp="23805" data-subtext="23805 hp/176 spd">Karax Charger</option>
-                                <option value="egg-13" data-def="600" data-hp="9156" data-subtext="9156 hp">Egg</option>
-                                <option value="azimanak-13" data-def="2822" data-hp="134511" data-subtext="134511 hp">Azimanak</option>
-                            </optgroup>
-                            <optgroup label="Caides 13">
-                                <option value="converted-symaqus-13" data-def="2698" data-hp="41387" data-subtext="41387 hp/264 spd">Converted Symaqus</option>
-                                <option value="caides-13" data-def="1456" data-hp="226348" data-subtext="226348 hp/180 spd/50% HP-Dmg Reduction">Caides</option>
-                            </optgroup>
-                            <optgroup label="Earth Expedition">
-                                <!--                                <option value="earth-exp-1" data-def="807" data-elem-extra-dmg="fire" data-extra-dmg-pc="1.5" data-single-atk-mult="0.3" data-non-single-atk-mult="1.7">Earth Expedition - Level 1</option>-->
-                                <!--                                <option value="earth-exp-2" data-def="1078" data-elem-extra-dmg="fire" data-extra-dmg-pc="1.5" data-single-atk-mult="0.3" data-non-single-atk-mult="1.7">Earth Expedition - Level 2</option>-->
-                                <option value="earth-exp-3" data-def="1087" data-elem-extra-dmg="fire" data-extra-dmg-pc="1.5" data-single-atk-mult="0.3" data-non-single-atk-mult="1.7">Earth Expedition - Level 3</option>
-                            </optgroup>
-                            <optgroup label="Ice Expedition">
-                                <!--                                <option value="ice-exp-1" data-def="677" data-elem-extra-dmg="earth" data-extra-dmg-pc="1.5">Ice Expedition - Level 1</option>-->
-                                <!--                                <option value="ice-exp-2" data-def="904" data-elem-extra-dmg="earth" data-extra-dmg-pc="1.5">Ice Expedition - Level 2</option>-->
-                                <option value="ice-exp-3" data-def="905" data-elem-extra-dmg="earth" data-extra-dmg-pc="1.5">Ice Expedition - Level 3</option>
-                            </optgroup>
-                            <optgroup label="Fire Expedition">
-                                <!--                                <option value="fire-exp-1" data-def="783" data-elem-extra-dmg="ice" data-extra-dmg-pc="1.5">Fire Expedition - Level 1</option>-->
-                                <!--                                <option value="fire-exp-2" data-def="1045" data-elem-extra-dmg="ice" data-extra-dmg-pc="1.5">Fire Expedition - Level 2</option>-->
-                                <option value="fire-exp-3" data-def="1340" data-elem-extra-dmg="ice" data-extra-dmg-pc="1.5">Fire Expedition - Level 3</option>
-                            </optgroup>
-                            <optgroup label="Light Expedition">
-                                <option value="light-exp-3" data-def="815">Light Expedition - Level 3</option>
-                            </optgroup>
+                            <optgroup label="Ruin Dragon 11">
+                                <option value="raqix-flying-troop-11" data-def="1010" data-hp="12568" data-subtext="12568 hp/175 spd">Mobile Servant</option>
+                                <option value="mossy-testudo-11" data-def="1077" data-hp="15015" data-subtext="15015 hp/150 spd">Heavy Servant (x2)</option>
+                                <option value="golem-11" data-def="1303" data-hp="101983" data-subtext="101983 hp/95 spd" data-elem-extra-dmg="fire" data-extra-dmg-pc="1.3">Vidar the Malevolent Dragon</option>
+                            </optgroup>                         
+                            <optgroup label="Anubarak 11">
+                                <option value="mystychain-11" data-def="1103" data-hp="9631" data-subtext="9631 hp/160 spd">Spider Guard</option>
+                                <option value="icy-dark-broom-11" data-def="1103" data-hp="9631" data-subtext="9631 hp/160 spd">Digger Escort (x2)</option>
+                                <option value="banshee-11" data-def="1290" data-hp="60624" data-subtext="60624 hp/160 spd" data-elem-extra-dmg="earth" data-extra-dmg-pc="1.3">Anubarak</option>
+                            </optgroup>                            
+                            <optgroup label="Mutant Troll 11">
+                                <option value="karax-charger-11" data-def="1146" data-hp="20814" data-subtext="20814 hp/150 spd">Mutant Warrior</option>
+                                <option value="striker-raqix-warlord-11" data-def="1002" data-hp="12812" data-subtext="12812 hp/195 spd">Mutant Assassin (x2)</option>
+                                <option value="egg-11" data-def="542" data-hp="8098" data-subtext="8098 hp">Mutant Defender (Spawn)</option>
+                                <option value="azimanak-11" data-def="1823" data-hp="87729" data-subtext="87729 hp/270 spd">Gru the Mutant Troll</option>
+                            </optgroup>                            
+                            <optgroup label="Colossus 11">
+                                <option value="converted-symaqus-11" data-def="2198" data-hp="36187" data-subtext="36187 hp/200 spd">Ruthless Mech Soldier</option>
+                                <option value="caides-11" data-def="1289" data-hp="180788" data-subtext="180788 hp/140 spd">Colossus Hephaestus</option>
+                            </optgroup>    
                         </select>
                     </div>
                     <div class="form-group col-md-4 col-sm-12">
@@ -394,22 +358,12 @@
                             <option value="none" data-reduc="0" data-trans="0" data-defup="0">No Damage Reduction/Transfer</option>
                             <option value="">Manual</option>
                             <option data-divider="true"></option>
-                            <optgroup label="Damage Reduction">
-                                <option value="proof-of-valor-init" data-reduc="30" data-trans="0" data-defup="0" data-subtext="30%">Proof of Valor (Battle start)</option>
-                                <option value="proof-of-valor-down" data-reduc="15" data-trans="0" data-defup="0" data-subtext="15%">Proof of Valor (After 5 hits)</option>
-                                <option value="adamant-shield" data-reduc="16" data-trans="0" data-defup="0" data-subtext="16%">Adamant Shield (Max)</option>
-                                <option value="elena" data-reduc="15" data-trans="0" data-defup="0" data-subtext="15%">Elena (S2 Passive)</option>
-                                <option value="c-armin" data-reduc="15" data-trans="0" data-defup="0" data-subtext="15%">Crimson Armin (S2 Passive)</option>
-                                <option value="sepulcrum-1" data-reduc="8" data-trans="0" data-defup="0" data-subtext="8%">Sepulcrum (Max - 1 stack)</option>
-                                <option value="sepulcrum-2" data-reduc="16" data-trans="0" data-defup="0" data-subtext="16%">Sepulcrum (Max - 2 stacks)</option>
-                                <option value="sepulcrum-3" data-reduc="24" data-trans="0" data-defup="0" data-subtext="24%">Sepulcrum (Max - 3 stacks)</option>
+                            <optgroup label="Damage Reduction">                             
+                                <option value="adamant-shield" data-reduc="16" data-trans="0" data-defup="0" data-subtext="16%">Unmanned Storefront (Max)</option>
+                                <option value="c-armin" data-reduc="15" data-trans="0" data-defup="0" data-subtext="15%">Ermes (S2 Passive)</option>
                             </optgroup>
                             <optgroup label="Damage Transfer">
-                                <option value="ss-bellona" data-trans="30" data-reduc="0" data-defup="0" data-subtext="30%">Seaside Bellona (S2 Passive)</option>
-                                <option value="escort" data-trans="30" data-reduc="0" data-defup="0" data-subtext="30%">Escort Buff</option>
-                                <option value="aurius" data-trans="20" data-defup="10" data-reduc="0" data-subtext="20% (+10% Defense)">Aurius (Max)</option>
-                                <option value="t-crozet" data-trans="40" data-reduc="0" data-defup="0" data-subtext="40%">Troublemaker Crozet (S2 Passive)</option>
-                                <option value="eaton" data-trans="30" data-reduc="0" data-defup="0" data-subtext="30%">Eaton (S2 Passive)</option>
+                                <option value="aurius" data-trans="20" data-defup="10" data-reduc="0" data-subtext="20% (+10% Defense)">Backwards Glance (Max)</option>
                             </optgroup>
                         </select>
                     </div>
@@ -511,7 +465,7 @@
                         <div class="custom-control custom-checkbox custom-control-inline buff-block">
                             <input class="custom-control-input" type="checkbox" id="def-up" value="0.6" onchange="resolve()">
                             <label class="custom-control-label" for="def-up">
-                                <img src="./assets/buffs/defense-buff.png" width="20" height="20" alt="Target increased Defense"> Increased Defense
+                                <img src="./assets/buffs/defense-buff.png" width="20" height="20" alt="Target increased Defense"> DEF Up
                             </label>
                         </div>
 
@@ -525,7 +479,7 @@
                         <div class="custom-control custom-checkbox custom-control-inline buff-block">
                             <input class="custom-control-input" type="checkbox" id="def-down" value="-0.7" onchange="resolve()">
                             <label class="custom-control-label" for="def-down">
-                                <img src="./assets/debuffs/defense-debuff.png" width="20" height="20" alt="Target decreased defense"> Decreased Defense
+                                <img src="./assets/debuffs/defense-debuff.png" width="20" height="20" alt="Target decreased defense"> DEF Down
                             </label>
                         </div>
 
@@ -650,11 +604,11 @@
                 <table class="table table-bordered table-sm col-sm-12">
                     <thead class="table-secondary">
                         <tr>
-                            <th>Skill</th>
-                            <th>Critical Hit</th>
-                            <th>Crushing Hit</th>
-                            <th>Normal Hit</th>
-                            <th>Miss</th>
+                            <th class="col-sm-2">Skill</th>
+                            <th class="col-sm-2">Critical Hit</th>
+                            <th class="col-sm-2">Strike</th>
+                            <th class="col-sm-2">Normal Hit</th>
+                            <th class="col-sm-2">Miss</th>
                         </tr>
                     </thead>
                     <tbody id="damage"></tbody>
