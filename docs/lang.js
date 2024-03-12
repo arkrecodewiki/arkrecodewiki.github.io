@@ -3276,7 +3276,7 @@ const heroNicknames = (id) => {
 const artifactName = (id) => {
   const lang = document.getElementById('root').getAttribute('lang');
   if (lang === 'en') {
-    return artifacts[id] ? artifacts[id].name : 'No Artifact Proc';
+    return artifacts[id] ? artifacts[id].name : 'No Bond Proc';
   } else {
     return i18n[lang].artifacts[id || 'no_proc'] || artifacts[id].name;
   }
