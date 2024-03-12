@@ -48,7 +48,7 @@ fasterPushesSlowUpdate = () => {
       `<div class="stat-block">
             <div class="form-group row col-sm-12">
                 <label for="fast-unit-push" class="col-md-7 col-form-label form-control-sm">
-                    <h5>Faster Unit CR Push (%) <i class="far fa-question-circle fa-xs text-muted" data-toggle="tooltip" title="The amount of combat readiness increase granted to the faster unit"></i></h5>
+                    <h5>Faster Unit AG Push (%) <i class="far fa-question-circle fa-xs text-muted" data-toggle="tooltip" title="The amount of Action Gauge increase granted to the faster unit"></i></h5>
                 </label>
                 <div class="input-group input-group-sm col-md-5">
                     <div class="input-group-prepend">
@@ -68,7 +68,7 @@ fasterPushesSlowUpdate = () => {
       `<div class="stat-block">
             <div class="form-group row col-sm-12">
                 <label for="fast-unit-turns" class="col-md-7 col-form-label form-control-sm">
-                    <h5>Faster Unit Turns Needed <i class="far fa-question-circle fa-xs text-muted" data-toggle="tooltip" title="The number of turns the faster unit must take before the slower unit takes its first turn. Example: Vivian needs 2 turns to S3 -> S2 before next unit in Banshee wave 1"></i></h5>
+                    <h5>Faster Unit Turns Needed <i class="far fa-question-circle fa-xs text-muted" data-toggle="tooltip" title="The number of turns the faster unit laps the slower unit before the slower unit's first turn."></i></h5>
                 </label>
                 <div class="input-group input-group-sm col-md-5">
                     <div class="input-group-prepend">

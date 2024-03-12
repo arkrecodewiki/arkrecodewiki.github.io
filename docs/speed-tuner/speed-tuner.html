@@ -62,17 +62,13 @@
                         </label>
                     </div>
                 </li>
-                <button id="link-share" type="button" class="btn btn-success btn-sm" onclick="copyLinkToClipboard()">
-                    <img class="icon" src="../assets/icons/share-nodes-solid.svg" alt="Share results">
-                    <span id="share-button-text" class="d-none d-md-inline">Share</span>
-                </button>
             </ul>
         </nav>
         <div class="alert alert-info alert-dismissible fade show initial-hide fade-in" role="alert">
-            To use the speed tuner, input the current speed of your slower and/or faster unit, as well as any Combat Readiness increase that will be applied.
+            To use the speed tuner, input the current speed of your slower and/or faster unit, as well as any Action Gauge increase that will be applied.
             <br>The tuner will calculate how the units' speeds need to be adjusted to guarantee turn order.
             <br>
-            <br>In Faster Unit Pushes mode, set the speed of the slower and/or faster unit and the CR push to calculate the speed needed for the slower unit to move next.
+            <br>In Faster Unit Pushes mode, set the speed of the slower and/or faster unit and the Action Gauge push to calculate the speed needed for the slower unit to move next.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -145,7 +141,7 @@
                             <div class="form-group row col-sm-12">
                                 <label for="slow-unit-push" class="col-md-7 col-form-label form-control-sm">
                                     <h5>
-                                        Slower Unit CR Push (%) <i class="far fa-question-circle fa-xs text-muted" data-toggle="tooltip" title="The amount of combat readiness increase granted to the slower unit"></i>
+                                        Slower Unit AG Push (%) <i class="far fa-question-circle fa-xs text-muted" data-toggle="tooltip" title="The amount of Action Gauge increase granted to the slower unit"></i>
                                     </h5>
                                 </label>
                                 <div class="input-group input-group-sm col-md-5">
@@ -168,7 +164,7 @@
                             <div class="form-group row col-sm-12">
                                 <label for="fast-unit-push" class="col-md-7 col-form-label form-control-sm">
                                     <h5>
-                                        Faster Unit CR Push (%) <i class="far fa-question-circle fa-xs text-muted" data-toggle="tooltip" title="The amount of combat readiness increase granted to the faster unit before the Slower Unit takes a turn"></i>
+                                        Faster Unit AG Push (%) <i class="far fa-question-circle fa-xs text-muted" data-toggle="tooltip" title="The amount of Action Gauge increase granted to the faster unit before the Slower Unit takes a turn"></i>
                                     </h5>
                                 </label>
                                 <div class="input-group input-group-sm col-md-5">
@@ -195,7 +191,7 @@
                             <div class="form-group row col-sm-12">
                                 <label for="fast-unit-turns" class="col-md-7 col-form-label form-control-sm">
                                     <h5>
-                                        Faster Unit Turns Needed <i class="far fa-question-circle fa-xs text-muted" data-toggle="tooltip" title="The number of turns the faster unit must take before the slower unit takes its first turn. Example: Vivian needs 2 turns to S3 -> S2 before next unit in Banshee wave 1"></i>
+                                        Faster Unit Turns Needed <i class="far fa-question-circle fa-xs text-muted" data-toggle="tooltip" title="The number of turns the faster unit laps the slower unit before the slower unit's first turn."></i>
                                     </h5>
                                 </label>
                                 <div class="input-group input-group-sm col-md-5">
@@ -220,8 +216,8 @@
                 <div class="custom-control custom-checkbox custom-control-inline buff-block">
                     <input class="custom-control-input" type="checkbox" id="stigma-or-politis" onchange="resolve(); stigmaPolitisToggled()">
                     <label class="custom-control-label" for="stigma-or-politis">
-                        <img src="../assets/debuffs/stigma-debuff.png" width="20" height="20" alt="Stigma debuff">
-                        Stigma / <img src="../assets/heroes/politis-icon.png" width="20" height="20" alt="Politis Hero"> Enemy Politis
+                        <img src="../assets/debuffs/stigma-debuff.png" width="20" height="20" alt="Brand debuff">
+                        Brand
                     </label>
                 </div>
             </div>
