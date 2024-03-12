@@ -914,14 +914,7 @@ const elements = {
     value: () => document.getElementById('ally-atk-up-great').checked,
     icon: './assets/buffs/greater-attack-buff.png'
   },
-  skill_tree_completed: {
-    ref: 'skill_tree_completed',
-    id: 'skill-tree-completed',
-    label: 'Skill Tree Completed',
-    type: 'checkbox',
-    default: true,
-    value: () => document.getElementById('skill-tree-completed').checked,
-  },
+
   s3_on_cooldown: {
     ref: 's3_on_cooldown',
     id: 's3-on-cooldown',
