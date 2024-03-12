@@ -437,7 +437,7 @@ const heroes = {
     baseAtk: 1027,
     baseHP: 5299,
     baseDef: 469,
-    form: [elements.caster_speed, elements.caster_stealth, elements.exclusive_equipment_1],
+    form: [elements.caster_speed, elements.caster_stealth],
     skills: {
       s1: {
         spdScaling: true,
@@ -445,7 +445,6 @@ const heroes = {
         pow: 1,
         mult: () => 1 + elements.caster_speed.value() * 0.00075,
         multTip: () => ({ caster_speed: 0.075 }),
-        exEq: () => elements.exclusive_equipment_1.value() ? 0.1 : 0,
         enhance: [0.05, 0.05, 0.1, 0.1],
         single: true,
       },
@@ -990,12 +989,11 @@ const heroes = {
     baseAtk: 957,
     baseHP: 6148,
     baseDef: 634,
-    form: [elements.caster_nb_buff, elements.nb_targets, elements.exclusive_equipment_2],
+    form: [elements.caster_nb_buff, elements.nb_targets],
     skills: {
       s1: {
         rate: 1,
         pow: 1,
-        exEq: () => elements.exclusive_equipment_2.value() ? 0.1 : 0,
         enhance: [0.05, 0.05, 0, 0.1, 0.1],
         single: true,
       },
@@ -1092,7 +1090,7 @@ const heroes = {
     baseAtk: 1029,
     baseHP: 5097,
     baseDef: 473,
-    form: [elements.caster_speed, elements.exclusive_equipment_3],
+    form: [elements.caster_speed],
     skills: {
       s1: {
         spdScaling: true,
@@ -1111,7 +1109,7 @@ const heroes = {
         mult: () => 1 + elements.caster_speed.value() * 0.0021,
         multTip: () => ({ caster_speed: 0.21 }),
         enhance: [0.05, 0.05, 0, 0.1, 0.1],
-        elemAdv: () => elements.caster_speed_up.value() || elements.exclusive_equipment_3.value(),
+        elemAdv: () => elements.caster_speed_up.value(),
         single: true,
       }
     }
@@ -1123,7 +1121,7 @@ const heroes = {
     baseAtk: 1252,
     baseHP: 5219,
     baseDef: 564,
-    form: [elements.caster_enrage, elements.exclusive_equipment_3],
+    form: [elements.caster_enrage],
     dot: [dot.bleed],
     skills: {
       s1: {
@@ -1145,7 +1143,6 @@ const heroes = {
         pow: 1,
         mult: () => elements.caster_enrage.value() ? 1.3 : 1,
         multTip: () => ({ caster_rage: 30 }),
-        exEq: () => elements.exclusive_equipment_3.value() ? 0.1 : 0,
         enhance: [0.05, 0.05, 0, 0.1, 0.1],
         aoe: true,
       }
@@ -2038,7 +2035,7 @@ const heroes = {
     baseAtk: 1119,
     baseHP: 5340,
     baseDef: 483,
-    form: [elements.caster_hp_pc, elements.exclusive_equipment_1, elements.exclusive_equipment_2],
+    form: [elements.caster_hp_pc],
     skills: {
       s1: {
         soulburn: true,
@@ -2046,7 +2043,6 @@ const heroes = {
         pow: 1,
         mult: () => 1 + (100 - elements.caster_hp_pc.value()) * 0.0015,
         multTip: () => ({ caster_lost_hp_pc: 0.15 }),
-        exEq: () => elements.exclusive_equipment_1.value() ? 0.1 : 0,
         enhance: [0.05, 0.05, 0, 0.05, 0, 0.15],
         aoe: true,
       },
@@ -2055,7 +2051,6 @@ const heroes = {
         pow: 0.9,
         mult: () => 1 + (100 - elements.caster_hp_pc.value()) * 0.003,
         multTip: () => ({ caster_lost_hp_pc: 0.3 }),
-        exEq: () => elements.exclusive_equipment_2.value() ? 0.1 : 0,
         enhance: [0.05, 0.05, 0, 0.1, 0.1, 0.1],
         single: true,
       }
@@ -2130,7 +2125,7 @@ const heroes = {
     baseHP: 5138,
     baseDef: 522,
     barrier: (hero) => hero.getAtk() * 0.65,
-    form: [elements.target_has_buff, elements.caster_stealth, elements.caster_hp_pc, elements.exclusive_equipment_2],
+    form: [elements.target_has_buff, elements.caster_stealth, elements.caster_hp_pc],
     skills: {
       s1: {
         soulburn: true,
@@ -2149,7 +2144,6 @@ const heroes = {
         rate: 0.9,
         pow: 1,
         penetrate: () => elements.caster_stealth.value() ? 0.6 : 0.3,
-        exEq: () => elements.exclusive_equipment_2.value() ? 0.1 : 0,
         enhance: [0.05, 0.05, 0, 0.1, 0.1],
         aoe: true,
       },
@@ -2169,7 +2163,7 @@ const heroes = {
   //   classType: classType.thief,
   //   baseAtk: 1283,
   //   barrier: (hero) => hero.getAtk() * 0.5,
-  //   form: [elements.target_has_buff, elements.caster_stealth, elements.caster_hp_pc, elements.exclusive_equipment_2],
+  //   form: [elements.target_has_buff, elements.caster_stealth, elements.caster_hp_pc],
   //   skills: {
   //     s1: {
   //       soulburn: true,
@@ -2188,7 +2182,6 @@ const heroes = {
   //       rate: 0.8,
   //       pow: 1,
   //       penetrate: () => elements.caster_stealth.value() ? 0.6 : 0.3,
-  //       exEq: () => elements.exclusive_equipment_2.value() ? 0.1 : 0,
   //       enhance: [0.05, 0.05, 0, 0.1, 0.1],
   //       aoe: true,
   //     },
@@ -2397,13 +2390,11 @@ const heroes = {
     baseAtk: 1119,
     baseHP: 6266,
     baseDef: 627,
-    form: [elements.exclusive_equipment_1, elements.exclusive_equipment_3],
     dot: [dot.bleed],
     skills: {
       s1: {
         rate: 1,
         pow: 1,
-        exEq: () => elements.exclusive_equipment_1.value() ? 0.2 : 0,
         enhance: [0.05, 0, 0.1, 0, 0.15],
         single: true,
       },
@@ -2417,7 +2408,6 @@ const heroes = {
         soulburn: true,
         rate: (soulburn) => soulburn ? 2.6 : 2,
         pow: 0.95,
-        exEq: () => elements.exclusive_equipment_3.value() ? 0.1 : 0,
         enhance: [0.05, 0.05, 0, 0.1, 0.15],
         single: true,
       }
@@ -3424,13 +3414,12 @@ const heroes = {
     baseAtk: 1228,
     baseHP: 5784,
     baseDef: 553,
-    form: [elements.target_nb_debuff, elements.exclusive_equipment_1],
+    form: [elements.target_nb_debuff],
     dot: [dot.bleed],
     skills: {
       s1: {
         rate: 1,
         pow: 1,
-        exEq: () => elements.exclusive_equipment_1.value() ? 0.2 : 0,
         enhance: [0.05, 0, 0.1, 0, 0.15],
         canExtra: true,
         single: true,
@@ -4022,7 +4011,7 @@ const heroes = {
     baseAtk: 1283,
     baseHP: 5138,
     baseDef: 522,
-    form: [elements.caster_speed, elements.exclusive_equipment_2],
+    form: [elements.caster_speed],
     skills: {
       s1: {
         spdScaling: true,
@@ -4045,7 +4034,6 @@ const heroes = {
         pow: 1,
         mult: () => 1 + elements.caster_speed.value() * 0.001125,
         multTip: () => ({ caster_speed: 0.1125 }),
-        exEq: () => elements.exclusive_equipment_2.value() ? 0.1 : 0,
         enhance: [0.05, 0.05, 0, 0.1, 0.1],
         aoe: true,
       }
@@ -4056,7 +4044,7 @@ const heroes = {
   //   element: element.earth,
   //   classType: classType.thief,
   //   baseAtk: 1283,
-  //   form: [elements.caster_speed, elements.exclusive_equipment_2],
+  //   form: [elements.caster_speed],
   //   skills: {
   //     s1: {
   //       rate: 0.85,
@@ -4077,7 +4065,6 @@ const heroes = {
   //       pow: 1,
   //       mult: (soulburn) => 1 + elements.caster_speed.value()*(soulburn ? 0.0009 : 0.00075),
   //       multTip: (soulburn) => ({ caster_speed: soulburn ? 0.09 : 0.075 }),
-  //       exEq: () => elements.exclusive_equipment_2.value() ? 0.1 : 0,
   //       enhance: [0.05, 0.05, 0, 0.1, 0.1],
   //       aoe: true,
   //     }
@@ -4171,12 +4158,11 @@ const heroes = {
     baseAtk: 1228,
     baseHP: 5784,
     baseDef: 553,
-    form: [elements.exclusive_equipment_2, elements.target_silenced],
+    form: [elements.target_silenced],
     skills: {
       s1: {
         rate: 1,
         pow: 1,
-        exEq: () => elements.exclusive_equipment_2.value() ? 0.3 : 0,
         enhance: [0.05, 0.05, 0, 0.05, 0, 0.15],
         single: true,
       },
@@ -4199,12 +4185,11 @@ const heroes = {
   //   element: element.earth,
   //   classType: classType.warrior,
   //   baseAtk: 1228,
-  //   form: [elements.target_has_buff, elements.exclusive_equipment_2],
+  //   form: [elements.target_has_buff],
   //   skills: {
   //     s1: {
   //       rate: 1,
   //       pow: 1,
-  //       exEq: () => elements.exclusive_equipment_2.value() ? 0.3 : 0,
   //       enhance: [0.05, 0.05, 0, 0.05, 0, 0.15],
   //       single: true,
   //     },
@@ -4230,7 +4215,7 @@ const heroes = {
     baseAtk: 1158,
     baseHP: 6002,
     baseDef: 553,
-    form: [elements.caster_speed, elements.nb_targets, elements.exclusive_equipment_3],
+    form: [elements.caster_speed, elements.nb_targets],
     skills: {
       s1: {
         spdScaling: true,
@@ -4263,7 +4248,6 @@ const heroes = {
           }
         },
         multTip: () => ({ per_fewer_target: 20 }),
-        exEq: () => elements.exclusive_equipment_3.value() ? 0.3 : 0,
         enhance: [0.05, 0.05, 0.05, 0.05, 0.1, 0.1, 0.1],
         aoe: true,
       }
