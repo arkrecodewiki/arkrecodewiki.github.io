@@ -78,7 +78,7 @@ const elements = {
     label: 'Target\'s Current HP',
     type: 'slider',
     min: 1000,
-    max: 50000,
+    max: 500000,
     default: () => {
       const defPreset = document.getElementById('def-preset');
       return defPreset.value ? defPreset.options[defPreset.selectedIndex].dataset.hp : 10000;
@@ -91,7 +91,7 @@ const elements = {
     label: 'Target\'s Max HP',
     type: 'slider',
     min: 1000,
-    max: 50000,
+    max: 500000,
     default: () => {
       const defPreset = document.getElementById('def-preset');
       return defPreset.value ? defPreset.options[defPreset.selectedIndex].dataset.hp : 10000;
