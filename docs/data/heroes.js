@@ -74,44 +74,6 @@ const heroes = {
       },
     }
   },
-  adin: {
-    name: 'Adin',
-    element: element.earth,
-    classType: classType.thief,
-    baseAtk: 1081,
-    baseHP: 4572,
-    baseDef: 494,
-    form: [elements.nb_targets],
-    skills: {
-      s1: {
-        rate: 1,
-        pow: 0.95,
-        enhance: [0.05, 0.05, 0.05, 0.1, 0.1],
-        single: true,
-      },
-      s2: {
-        rate: 0.8,
-        pow: 1,
-        mult: () => {
-          switch (elements.nb_targets.value()) {
-          case 3: return 1.2;
-          case 2: return 1.4;
-          case 1: return 1.6;
-          default: return 1;
-          }
-        },
-        multTip: () => ({ per_fewer_target: 20 }),
-        enhance: [0.05, 0.05, 0, 0.1, 0.1],
-        aoe: true,
-      },
-      s3: {
-        rate: 1.8,
-        pow: 1.05,
-        enhance: [0.1, 0, 0, 0, 0.15],
-        single: true,
-      },
-    }
-  },
   adlay: {
     name: 'Adlay',
     element: element.earth,
@@ -1776,36 +1738,6 @@ const heroes = {
       }
     }
   },
-  holy_flame_adin: {
-    name: 'Holy Flame Adin',
-    element: element.fire,
-    classType: classType.thief,
-    baseAtk: 1081,
-    baseHP: 4572,
-    baseDef: 494,
-    form: [elements.skill_tree_completed],
-    skills: {
-      s1: {
-        rate: 1,
-        pow: 0.95,
-        mult: () => elements.skill_tree_completed.value() ? 1.1 : 1,
-        multTip: () => (elements.skill_tree_completed.value() ? { skill_tree: 10 } : null),
-        enhance: [0.05, 0.05, 0.05, 0.1, 0.1],
-        single: true,
-      },
-      s2: {
-        rate: 0.8,
-        pow: 1,
-        aoe: true,
-      },
-      s3: {
-        rate: 1.8,
-        pow: 1.05,
-        enhance: [0.1, 0.1, 0, 0.15, 0.15],
-        single: true,
-      },
-    }
-  },
   hurado: {
     name: 'Hurado',
     element: element.dark,
@@ -3134,37 +3066,6 @@ const heroes = {
       }
     }
   },
-  savior_adin: {
-    name: 'Savior Adin',
-    element: element.light,
-    classType: classType.thief,
-    baseAtk: 1081,
-    baseHP: 4572,
-    baseDef: 494,
-    form: [elements.skill_tree_completed],
-    skills: {
-      s1: {
-        rate: 1,
-        pow: 1,
-        enhance: [0.05, 0.05, 0, 0.1, 0.1],
-        single: true,
-      },
-      s2: {
-        rate: 0.7,
-        pow: 1.3,
-        aoe: true,
-      },
-      s3: {
-        rate: 1.1,
-        pow: 1,
-        enhance: [0.05, 0.05, 0, 0.1, 0.1],
-        penetrate: () => 0.5,
-        mult: () => elements.skill_tree_completed.value() && document.getElementById('elem-adv').checked ? 1.2 : 1,
-        multTip: () => ({ skill_tree_elemental: 20 }),
-        single: true,
-      },
-    }
-  },
   schuri: {
     name: 'Schuri',
     element: element.fire,
@@ -3201,39 +3102,6 @@ const heroes = {
         enhance: [0.05, 0.1, 0, 0, 0.1, 0.1],
         single: true,
       }
-    }
-  },
-  serene_purity_adin: {
-    name: 'Serene Purity Adin',
-    element: element.ice,
-    classType: classType.thief,
-    baseAtk: 1081,
-    baseHP: 4572,
-    baseDef: 494,
-    form: [elements.skill_tree_completed],
-    skills: {
-      s1: {
-        rate: 0.85,
-        pow: 1.05,
-        mult: () => elements.skill_tree_completed.value() ? 1.1 : 1,
-        multTip: () => (elements.skill_tree_completed.value() ? {skill_tree: 10} : null),
-        enhance: [0.05, 0, 0.1, 0, 0.1],
-        single: true,
-      },
-      s2: {
-        rate: 0.6,
-        pow: 1,
-        mult: () => elements.skill_tree_completed.value() ? 1.1 : 1,
-        multTip: () => (elements.skill_tree_completed.value() ? {skill_tree: 10} : null),
-        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
-        aoe: true,
-      },
-      s3: {
-        rate: 1.3,
-        pow: 1.05,
-        enhance: [0.1, 0, 0, 0, 0.15],
-        single: true,
-      },
     }
   },
   serila: {
@@ -3962,48 +3830,6 @@ const heroes = {
   //     }
   //   }
   // },
-  verdant_adin: {
-    name: 'Verdant Adin',
-    element: element.earth,
-    classType: classType.thief,
-    baseAtk: 1081,
-    baseHP: 4572,
-    baseDef: 494,
-    form: [elements.nb_targets, elements.skill_tree_completed],
-    skills: {
-      s1: {
-        rate: 1,
-        pow: 0.95,
-        mult: () => elements.skill_tree_completed.value() ? 1.1 : 1,
-        multTip: () => (elements.skill_tree_completed.value() ? { skill_tree: 10 } : null),
-        enhance: [0.05, 0.05, 0.05, 0.1, 0.1],
-        single: true,
-      },
-      s2: {
-        rate: 0.8,
-        pow: 1,
-        mult: () => {
-          switch (elements.nb_targets.value()) {
-          case 3: return 1.2;
-          case 2: return 1.4;
-          case 1: return 1.6;
-          default: return 1;
-          }
-        },
-        multTip: () => ({ per_fewer_target: 20 }),
-        enhance: [0.05, 0.05, 0, 0.1, 0.1],
-        aoe: true,
-      },
-      s3: {
-        rate: 1.8,
-        pow: 1.05,
-        mult: () => elements.skill_tree_completed.value() ? 1.1 : 1,
-        multTip: () => (elements.skill_tree_completed.value() ? { skill_tree: 10 } : null),
-        enhance: [0.1, 0, 0, 0, 0.15],
-        single: true,
-      },
-    }
-  },
   vildred: {
     name: 'Vildred',
     element: element.earth,

@@ -401,16 +401,6 @@ const artifacts = {
     exclusive: classType.warrior,
     type: artifactDmgType.health_only
   },
-  sword_of_cycling_seasons: {
-    id: 'sword_of_cycling_seasons',
-    name: 'Sword of Cycling Seasons',
-    value: 0.25,
-    type: artifactDmgType.damage,
-    hero_exclusive: [heroes.savior_adin.name, heroes.adin.name, heroes.holy_flame_adin.name, heroes.serene_purity_adin.name, heroes.verdant_adin.name],
-    applies: (skill) => {
-      return document.getElementById('elem-adv').checked || ((skill.elemAdv !== undefined) && skill.elemAdv() === true);
-    },
-  },
   sword_of_summer_twilight: {
     id: 'sword_of_summer_twilight',
     name: 'Sword of Summer Twilight',
