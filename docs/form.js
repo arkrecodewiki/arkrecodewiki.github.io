@@ -262,7 +262,7 @@ const elements = {
   target_bleed_detonate: {
     ref: 'target_bleed_detonate',
     id: 'target-bleed-detonate',
-    label: 'Bleed effects to Detonate',
+    label: 'Bleed effects to Ignite',
     type: 'slider',
     min: 0,
     max: 10,
@@ -274,7 +274,7 @@ const elements = {
   target_burn_detonate: {
     ref: 'target_burn_detonate',
     id: 'target-burn-detonate',
-    label: 'Burn effects to Detonate',
+    label: 'Burn effects to Ignite',
     type: 'slider',
     min: 0,
     max: 10,
@@ -286,7 +286,7 @@ const elements = {
   target_bomb_detonate: {
     ref: 'target_bomb_detonate',
     id: 'target-bomb-detonate',
-    label: 'Bomb effects to Detonate',
+    label: 'Bomb effects to Ignite',
     type: 'slider',
     min: 0,
     max: 10,
@@ -980,15 +980,6 @@ const elements = {
     readonly: true,
     value: () => Number(document.getElementById('torrent-set-stack').value)
   },
-  beehoo_passive: {
-    ref: 'beehoo_passive',
-    id: 'beehoo-passive',
-    label: 'Beehoo on team',
-    type: 'checkbox',
-    default: () => hero.value === 'beehoo',
-    value: () => document.getElementById('beehoo-passive').checked,
-    icon: './assets/heroes/beehoo-icon.png'
-  },
   enemy_defeated: {
     ref: 'enemy_defeated',
     id: 'enemy-defeated',
@@ -1131,13 +1122,6 @@ const showHeroInfo = (hero) => {
 const build = (hero) => {
   showHeroInfo(hero);
   const specificBlock = document.getElementById('custom-block');
-  if (hero.dot?.includes(dot.burn)) {
-    if (hero.form) {
-      hero.form.push(elements.beehoo_passive);
-    } else {
-      hero.form = [elements.beehoo_passive];
-    }
-  }
   if (hero.form) {
     specificBlock.innerHTML = '';
     for (let elem of hero.form) {
@@ -1194,14 +1178,6 @@ const buildArtifact = (artifact) => {
     specificBlock.innerHTML = '';
   }
 
-  // add beehoo passive to arti if not already going to be added to hero
-  if (!heroes[hero.value].dot?.includes(dot.burn) && artifact.dot?.includes(dot.burn)) {
-    if (artifact.form) {
-      artifact.form.push(elements.beehoo_passive);
-    } else {
-      artifact.form = [elements.beehoo_passive];
-    }
-  }
 
   if (!artifact || (!artifact.scale && !artifact.form?.length && !artifact.info)) {
     document.getElementById('artifact-block').style.display = 'none';
