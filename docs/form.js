@@ -702,7 +702,7 @@ const elements = {
   non_attack_skill_stack_8: {
     ref: 'non_attack_skill_stack_8',
     id: 'stack-non-attack-skill-8',
-    label: 'Non-Attack Skill Stack',
+    label: 'S2 (Auto Armor) Stack',
     type: 'slider',
     min: 0,
     max: 8,

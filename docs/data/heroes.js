@@ -1466,12 +1466,12 @@ const heroes = {
     }
   },
   fallen_cecilia: {
-    name: 'Fallen Cecilia',
+    name: 'Shani in Despair',
     element: element.dark,
     classType: classType.knight,
-    baseAtk: 894,
-    baseHP: 6840,
-    baseDef: 694,
+    baseAtk: 744,
+    baseHP: 5890,
+    baseDef: 655,
     form: [elements.caster_max_hp],
     barrier: () => elements.caster_max_hp.value() * 0.1,
     barrierEnhance: 's2',
@@ -1500,12 +1500,12 @@ const heroes = {
     }
   },
   fighter_maya: {
-    name: 'Fighter Maya',
+    name: 'Clone Carolyn',
     element: element.light,
     classType: classType.knight,
-    baseAtk: 821,
-    baseDef: 703,
-    baseHP: 6266,
+    baseAtk: 671,
+    baseDef: 645,
+    baseHP: 5364,
     form: [elements.caster_defense, elements.target_hp_pc],
     skills: {
       s1: {
@@ -1531,11 +1531,11 @@ const heroes = {
     }
   },
   free_spirit_tieria: {
-    name: 'Free Spirit Tieria',
+    name: 'Marsha',
     element: element.light,
     classType: classType.warrior,
-    baseAtk: 957,
-    baseHP: 5057,
+    baseAtk: 807,
+    baseHP: 4637,
     baseDef: 592,
     skills: {
       s1: {
@@ -1561,12 +1561,12 @@ const heroes = {
     }
   },
   general_purrgis: {
-    name: 'General Purrgis',
+    name: 'Clone Bartholo',
     element: element.light,
     classType: classType.warrior,
-    baseAtk: 903,
-    baseHP: 6635,
-    baseDef: 630,
+    baseAtk: 753,
+    baseHP: 5405,
+    baseDef: 578,
     form: [elements.caster_max_hp],
     skills: {
       s1: {
@@ -1590,12 +1590,12 @@ const heroes = {
     }
   },
   gloomyrain: {
-    name: 'Gloomyrain',
+    name: 'Pantasia',
     element: element.light,
     classType: classType.mage,
     form: [elements.caster_has_debuff],
-    baseAtk: 1199,
-    baseHP: 4491,
+    baseAtk: 889,
+    baseHP: 4071,
     baseDef: 613,
     atkUp: () => {
       if (!elements.caster_has_debuff.value()) return 1;
@@ -1627,11 +1627,11 @@ const heroes = {
     }
   },
   hazel: {
-    name: 'Hazel',
+    name: 'Blossom',
     element: element.fire,
     classType: classType.soul_weaver,
-    baseAtk: 762,
-    baseHP: 4450,
+    baseAtk: 608,
+    baseHP: 4030,
     baseDef: 662,
     skills: {
       s1: {
@@ -1643,11 +1643,11 @@ const heroes = {
     }
   },
   helga: {
-    name: 'Helga',
+    name: 'Tina',
     element: element.earth,
     classType: classType.warrior,
-    baseAtk: 1000,
-    baseHP: 4895,
+    baseAtk: 780,
+    baseHP: 4475,
     baseDef: 518,
     skills: {
       s1: {
@@ -1665,12 +1665,12 @@ const heroes = {
     }
   },
   holiday_yufine: {
-    name: 'Holiday Yufine',
+    name: 'Springtime Celeste',
     element: element.fire,
     classType: classType.warrior,
-    baseAtk: 1119,
-    baseHP: 6266,
-    baseDef: 627,
+    baseAtk: 889,
+    baseHP: 5364,
+    baseDef: 592,
     dot: [dot.burn],
     skills: {
       s1: {
@@ -1688,11 +1688,11 @@ const heroes = {
     }
   },
   hurado: {
-    name: 'Hurado',
+    name: 'Yibee',
     element: element.dark,
     classType: classType.mage,
-    baseAtk: 930,
-    baseHP: 4572,
+    baseAtk: 780,
+    baseHP: 4152,
     baseDef: 585,
     skills: {
       s1: {
@@ -1710,11 +1710,11 @@ const heroes = {
     }
   },
   iseria: {
-    name: 'Iseria',
+    name: 'Preema',
     element: element.earth,
     classType: classType.ranger,
-    baseAtk: 1158,
-    baseHP: 6002,
+    baseAtk: 925,
+    baseHP: 5122,
     baseDef: 553,
     skills: {
       s1: {
@@ -1733,11 +1733,11 @@ const heroes = {
     }
   },
   jecht: {
-    name: 'Jecht',
+    name: 'Pamela',
     element: element.earth,
     classType: classType.soul_weaver,
-    baseAtk: 804,
-    baseHP: 3925,
+    baseAtk: 662,
+    baseHP: 3505,
     baseDef: 599,
     skills: {
       s1: {
@@ -1755,20 +1755,25 @@ const heroes = {
     }
   },
   jena: {
-    name: 'Jena',
+    name: 'Olga',
     element: element.ice,
     classType: classType.mage,
-    baseAtk: 1063,
-    baseHP: 4491,
+    baseAtk: 862,
+    form: [elements.target_nb_debuff],
+    baseHP: 4071,
     baseDef: 599,
     skills: {
       s1: {
         rate: 1,
         pow: 0.95,
+        mult: () => 1 + elements.target_nb_debuff.value()*0.1,
+        multTip: () => ({ per_target_debuff: 10 }),
         enhance: [0.05, 0.05, 0.1, 0.15],
         single: true,
       },
       s3: {
+        soulburn: true,
+        rate: (soulburn) => soulburn ? 1.1 : 0.85,
         rate: 0.85,
         pow: 0.95,
         enhance: [0.05, 0.05, 0, 0, 0.1, 0, 0.15],
@@ -1776,79 +1781,23 @@ const heroes = {
       }
     }
   },
-  // jena_old: {
-  //   name: 'Jena (Pre-Balance)',
-  //   element: element.ice,
-  //   classType: classType.mage,
-  //   baseAtk: 1063,
-  //   form: [elements.target_nb_debuff],
-  //   skills: {
-  //     s1: {
-  //       rate: 1,
-  //       pow: 0.95,
-  //       mult: () => 1 + elements.target_nb_debuff.value()*0.1,
-  //       multTip: () => ({ per_target_debuff: 10 }),
-  //       enhance: [0.05, 0.05, 0.1, 0.15],
-  //       single: true,
-  //     },
-  //     s3: {
-  //       soulburn: true,
-  //       rate: (soulburn) => soulburn ? 1.1 : 0.85,
-  //       pow: 0.95,
-  //       enhance: [0.05, 0.05, 0, 0, 0.1, 0, 0.15],
-  //       aoe: true,
-  //     }
-  //   }
-  // },
   judge_kise: {
-    name: 'Judge Kise',
+    name: 'Claire',
     element: element.light,
     classType: classType.warrior,
-    baseAtk: 1039,
-    baseHP: 5340,
+    baseAtk: 889,
+    baseHP: 4920,
     baseDef: 617,
     form: [elements.nb_targets],
     skills: {
       s1: {
         rate: 1,
         pow: 1,
-        enhance: [0.05, 0.05, 0.1, 0.1],
-        penetrate: () => 0.2,
+        enhance: [0.15, 0, 0, 0.15],
         single: true,
       },
       s2: {
-        rate: 1,
-        pow: 1,
-        enhance: [0.15, 0, 0, 0.15],
-        aoe: true,
-      },
-      s3: {
         rate: 1.1,
-        pow: 0.95,
-        mult: () => 1 + (elements.nb_targets.value() - 1) * 0.1,
-        multTip: () => ({ per_target: 10 }),
-        enhance: [0.05, 0.05, 0.05, 0, 0.05, 0.05, 0.1],
-        aoe: true,
-      }
-    }
-  },
-  judge_kise_old: {
-    name: 'Judge Kise (Pre-Balance)',
-    element: element.light,
-    classType: classType.warrior,
-    baseAtk: 1039,
-    baseHP: 5340,
-    baseDef: 617,
-    form: [elements.nb_targets],
-    skills: {
-      s1: {
-        rate: 1,
-        pow: 1,
-        enhance: [0.15, 0, 0, 0.15],
-        single: true,
-      },
-      s2: {
-        rate: 1,
         pow: 1,
         enhance: [0.05, 0.05, 0.1, 0.1],
         aoe: true,
@@ -1864,11 +1813,11 @@ const heroes = {
     }
   },
   judith: {
-    name: 'Judith',
+    name: 'Lana',
     element: element.fire,
     classType: classType.thief,
-    baseAtk: 848,
-    baseHP: 4289,
+    baseAtk: 698,
+    baseHP: 3869,
     baseDef: 494,
     skills: {
       s1: {
@@ -1880,11 +1829,11 @@ const heroes = {
     }
   },
   karin: {
-    name: 'Karin',
+    name: 'Dildri',
     element: element.ice,
     classType: classType.thief,
-    baseAtk: 1188,
-    baseHP: 4855,
+    baseAtk: 880,
+    baseHP: 4435,
     baseDef: 508,
     skills: {
       s1: {
@@ -1910,11 +1859,11 @@ const heroes = {
     }
   },
   kayron: {
-    name: 'Kayron',
+    name: 'Rosalie',
     element: element.fire,
     classType: classType.thief,
-    baseAtk: 1119,
-    baseHP: 5340,
+    baseAtk: 889,
+    baseHP: 4920,
     baseDef: 483,
     form: [elements.caster_hp_pc],
     skills: {
@@ -1938,12 +1887,12 @@ const heroes = {
     }
   },
   ken: {
-    name: 'Ken',
+    name: 'Feliz',
     element: element.fire,
     classType: classType.warrior,
-    baseAtk: 966,
-    baseHP: 7323,
-    baseDef: 657,
+    baseAtk: 816,
+    baseHP: 5850,
+    baseDef: 620,
     form: [elements.caster_max_hp],
     dot: [dot.burn],
     skills: {
@@ -1977,11 +1926,11 @@ const heroes = {
     }
   },
   kiris: {
-    name: 'Kiris',
+    name: 'Cindy',
     element: element.earth,
     classType: classType.ranger,
-    baseAtk: 857,
-    baseHP: 5057,
+    baseAtk: 707,
+    baseHP: 4637,
     baseDef: 543,
     skills: {
       s1: {
@@ -1999,11 +1948,11 @@ const heroes = {
     }
   },
   kise: {
-    name: 'Kise',
+    name: 'Hestia',
     element: element.ice,
     classType: classType.thief,
-    baseAtk: 1283,
-    baseHP: 5138,
+    baseAtk: 961,
+    baseHP: 4718,
     baseDef: 522,
     barrier: (hero) => hero.getAtk() * 0.65,
     form: [elements.target_has_buff, elements.caster_stealth, elements.caster_hp_pc],
@@ -2013,12 +1962,8 @@ const heroes = {
         rate: (soulburn) => soulburn ? 1.4 : 1.1,
         pow: 1,
         enhance: [0.05, 0.05, 0.1, 0.1, 0.1],
-        mult: (soulburn) => {
-          if (!elements.target_has_buff.value()) return 1;
-
-          return soulburn ? 2 : 1.7;
-        },
-        multTip: (soulburn) => ({ target_debuff: soulburn ? 100 : 70 }),
+        mult: () => elements.target_has_buff.value() ? 1.7 : 1.0,
+        multTip: () => ({target_has_buff: 70}),
         single: true,
       },
       s2: {
@@ -2038,51 +1983,13 @@ const heroes = {
       }
     }
   },
-  // kise_old: {
-  //   name: 'Kise (Pre-Balance)',
-  //   element: element.ice,
-  //   classType: classType.thief,
-  //   baseAtk: 1283,
-  //   barrier: (hero) => hero.getAtk() * 0.5,
-  //   form: [elements.target_has_buff, elements.caster_stealth, elements.caster_hp_pc],
-  //   skills: {
-  //     s1: {
-  //       soulburn: true,
-  //       rate: (soulburn) => soulburn ? 1.4 : 1.1,
-  //       pow: 1,
-  //       enhance: [0.05, 0.05, 0.1, 0.1, 0.1],
-  //       mult: (soulburn) => {
-  //         if (!elements.target_has_buff.value()) return 1;
-
-  //         return soulburn ? 2 : 1.7;
-  //       },
-  //       multTip: (soulburn) => ({ target_debuff: soulburn ? 100 : 70 }),
-  //       single: true,
-  //     },
-  //     s2: {
-  //       rate: 0.8,
-  //       pow: 1,
-  //       penetrate: () => elements.caster_stealth.value() ? 0.6 : 0.3,
-  //       enhance: [0.05, 0.05, 0, 0.1, 0.1],
-  //       aoe: true,
-  //     },
-  //     s3: {
-  //       rate: 1.6,
-  //       pow: 1,
-  //       mult: () => 1 + elements.caster_hp_pc.value()*0.0035,
-  //       multTip: () => ({ caster_left_hp_pc: 0.35 }),
-  //       enhance: [0.05, 0.05, 0, 0.1, 0.1],
-  //       single: true,
-  //     }
-  //   }
-  // },
   kluri: {
-    name: 'Kluri',
+    name: 'Zaphael',
     element: element.earth,
     classType: classType.knight,
-    baseAtk: 703,
+    baseAtk: 553,
     baseDef: 596,
-    baseHP: 5914,
+    baseHP: 5041,
     form: [elements.caster_defense],
     skills: {
       s1: {
@@ -2097,12 +2004,12 @@ const heroes = {
     }
   },
   krau: {
-    name: 'Krau',
+    name: 'Ariel',
     element: element.ice,
     classType: classType.knight,
-    baseAtk: 839,
-    baseHP: 6405,
-    baseDef: 752,
+    baseAtk: 689,
+    baseHP: 5647,
+    baseDef: 690,
     form: [elements.caster_max_hp, elements.caster_hp],
     skills: {
       s1: {
@@ -2136,12 +2043,12 @@ const heroes = {
     }
   },
   last_rider_krau: {
-    name: 'Last Rider Krau',
+    name: 'Guardian Ariel',
     element: element.light,
     classType: classType.knight,
-    baseAtk: 839,
-    baseHP: 6405,
-    baseDef: 752,
+    baseAtk: 689,
+    baseHP: 5647,
+    baseDef: 690,
     form: [elements.caster_max_hp, elements.attack_skill_stack_3, elements.caster_speed],
     barrier: () => elements.caster_max_hp.value() * 0.1,
     barrierEnhance: 's2',
@@ -2174,46 +2081,12 @@ const heroes = {
       }
     }
   },
-  // last_rider_krau_old: {
-  //   name: 'Last Rider Krau (Pre-Balance)',
-  //   element: element.light,
-  //   classType: classType.knight,
-  //   baseAtk: 839,
-  //   form: [elements.caster_max_hp, elements.attack_skill_stack_3],
-  //   barrier: () => elements.caster_max_hp.value()*0.07,
-  //   barrierEnhance: 's2',
-  //   skills: {
-  //     s1: {
-  //       rate: 0.7,
-  //       pow: 1,
-  //       flat: () => 0.1*elements.caster_max_hp.value(),
-  //       flatTip: () => ({ caster_max_hp: 10 }),
-  //       enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
-  //       single: true,
-  //     },
-  //     s2: {
-  //       enhance: [0.05, 0.1, 0.1, 0.1, 0.15]
-  //     },
-  //     s3: {
-  //       noCrit: true,
-  //       rate: 0.3,
-  //       pow: 1,
-  //       flat: () => 0.06*elements.caster_max_hp.value(),
-  //       flatTip: () => ({ caster_max_hp: 6 }),
-  //       mult: () => 1 + elements.attack_skill_stack_3.value()*0.2,
-  //       multTip: () => ({ per_stack: 20 }),
-  //       penetrate: () => 1.0,
-  //       enhance: [0.05, 0.05, 0, 0.1, 0.1],
-  //       aoe: true,
-  //     }
-  //   }
-  // },
   leo: {
-    name: 'Leo',
+    name: 'Trist',
     element: element.earth,
     classType: classType.ranger,
-    baseAtk: 930,
-    baseHP: 5380,
+    baseAtk: 780,
+    baseHP: 4960,
     baseDef: 564,
     skills: {
       s1: {
@@ -2237,11 +2110,11 @@ const heroes = {
     }
   },
   lidica: {
-    name: 'Lidica',
+    name: 'Naranthir',
     element: element.fire,
     classType: classType.ranger,
-    baseAtk: 1283,
-    baseHP: 4976,
+    baseAtk: 961,
+    baseHP: 4556,
     baseDef: 536,
     skills: {
       s1: {
@@ -2265,12 +2138,12 @@ const heroes = {
     }
   },
   lilibet: {
-    name: 'Lilibet',
+    name: 'H129',
     element: element.earth,
     classType: classType.warrior,
-    baseAtk: 1119,
-    baseHP: 6266,
-    baseDef: 627,
+    baseAtk: 889,
+    baseHP: 5364,
+    baseDef: 592,
     dot: [dot.bleed],
     skills: {
       s1: {
@@ -2286,20 +2159,19 @@ const heroes = {
         single: true,
       },
       s3: {
-        soulburn: true,
-        rate: (soulburn) => soulburn ? 2.6 : 2,
-        pow: 0.95,
+        rate: 1,
+        pow: 1.1,
         enhance: [0.05, 0.05, 0, 0.1, 0.15],
         single: true,
       }
     }
   },
   lorina: {
-    name: 'Lorina',
+    name: 'Layla',
     element: element.dark,
     classType: classType.warrior,
-    baseAtk: 1144,
-    baseHP: 4895,
+    baseAtk: 843,
+    baseHP: 4475,
     baseDef: 543,
     form: [elements.target_max_hp, elements.target_hp_pc, elements.attack_skill_stack_5],
     atkUp: () => {
@@ -2333,11 +2205,11 @@ const heroes = {
     }
   },
   lots: {
-    name: 'Lots',
+    name: 'Lina',
     element: element.earth,
     classType: classType.soul_weaver,
-    baseAtk: 603,
-    baseHP: 4945,
+    baseAtk: 453,
+    baseHP: 4152,
     baseDef: 662,
     skills: {
       s1: {
@@ -2348,111 +2220,52 @@ const heroes = {
       }
     }
   },
-  lua: {
-    name: 'Lua',
-    element: element.ice,
-    classType: classType.ranger,
-    baseAtk: 993,
-    baseHP: 6002,
-    baseDef: 611,
-    skills: {
-      s1: {
-        rate: 1,
-        pow: 0.95,
-        enhance: [0.05, 0.05, 0, 0.05, 0, 0.1, 0.1],
-        single: true,
-      },
-      s2: {
-        rate: 1.5,
-        pow: 0.9,
-        enhance: [0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.1],
-        single: true,
-      }
-    }
-  },
   martial_artist_ken: {
-    name: 'Martial Artist Ken',
+    name: 'Felicia',
     element: element.dark,
     classType: classType.warrior,
-    baseAtk: 1359,
-    baseHP: 5542,
+    baseAtk: 1025,
+    baseHP: 5122,
     baseDef: 585,
     form: [elements.caster_hp_pc],
     skills: {
       s1: {
-        rate: (soulburn) => soulburn ? 1.3 : 1,
+        rate: 1,
         pow: 0.95,
         enhance: [0.05, 0.05, 0, 0.1, 0, 0.15],
         single: true,
-        soulburn: true,
-        onlyCrit: (soulburn) => soulburn
       },
       s2: {
         onlyCrit: true,
-        rate: 0.95,
-        pow: 1,
+        rate: 1.2,
+        pow: 0.95,
         mult: () => {
-          return (1 + (100 - elements.caster_hp_pc.value()) * 0.004);
+          let extra = 0;
+          for (let i = 0; i < Number(document.getElementById('molagora-s1').value); i++) {
+            extra += heroes.martial_artist_ken.skills.s1.enhance[i];
+          }
+          return (1 + (100 - elements.caster_hp_pc.value()) * 0.004 + extra);
         },
-        multTip: () => ({ caster_lost_hp_pc: 40 }),
-        penetrate: () => 0.4,
+        multTip: () => ({ caster_lost_hp_pc: 0.4 }),
         enhance: [0.05, 0.1, 0.15],
         single: true,
       },
       s3: {
-        rate: 1.1,
+        soulburn: true,
+        rate: (soulburn) => soulburn ? 1.1 : 0.9,
         pow: 1,
         enhance: [0.05, 0, 0, 0.1, 0, 0.15],
         aoe: true,
       }
     }
   },
-  // martial_artist_ken_old: {
-  //   name: 'Martial Artist Ken (Pre-Balance)',
-  //   element: element.dark,
-  //   classType: classType.warrior,
-  //   baseAtk: 1359,
-  //   baseHP: 5542,
-  //   baseDef: 585,
-  //   form: [elements.caster_hp_pc],
-  //   skills: {
-  //     s1: {
-  //       rate: 1,
-  //       pow: 0.95,
-  //       enhance: [0.05, 0.05, 0, 0.1, 0, 0.15],
-  //       single: true,
-  //     },
-  //     s2: {
-  //       onlyCrit: true,
-  //       rate: 1.2,
-  //       pow: 0.95,
-  //       mult: () => {
-  //         let extra = 0;
-  //         for (let i = 0; i < Number(document.getElementById('molagora-s1').value); i++) {
-  //           extra += heroes.martial_artist_ken.skills.s1.enhance[i];
-  //         }
-  //         return (1 + (100 - elements.caster_hp_pc.value()) * 0.004 + extra);
-  //       },
-  //       multTip: () => ({ caster_lost_hp_pc: 40 }),
-  //       enhance: [0.05, 0.1, 0.15],
-  //       single: true,
-  //     },
-  //     s3: {
-  //       soulburn: true,
-  //       rate: (soulburn) => soulburn ? 1.1 : 0.9,
-  //       pow: 1,
-  //       enhance: [0.05, 0, 0, 0.1, 0, 0.15],
-  //       aoe: true,
-  //     }
-  //   }
-  // },
   maya: {
-    name: 'Maya',
+    name: 'Carolyn',
     element: element.fire,
     classType: classType.knight,
-    baseAtk: 821,
+    baseAtk: 671,
     baseDef: 648,
-    baseHP: 6796,
+    baseHP: 5850,
     form: [elements.caster_defense],
     skills: {
       s1: {
@@ -2476,14 +2289,13 @@ const heroes = {
     }
   },
   mercedes: {
-    name: 'Mercedes',
+    name: 'Ith',
     element: element.fire,
     classType: classType.mage,
-    baseAtk: 1187,
-    baseHP: 4491,
+    baseAtk: 952,
+    baseHP: 4071,
     baseDef: 627,
-    form: [elements.nb_targets, elements.target_hp_pc, elements.caster_immense_power],
-    atkUp: () => elements.caster_immense_power.value() ? 1.15 : 1,
+    form: [elements.nb_targets],
     skills: {
       s1: {
         rate: 0.8,
@@ -2526,19 +2338,17 @@ const heroes = {
         rate: 1.15,
         pow: 0.95,
         critDmgBoost: () => 0.2,
-        mult: () => 1 + (100 - elements.target_hp_pc.value()) * 0.003,
-        multTip: () => ({ caster_lost_hp_pc: 0.3 }),
         enhance: [0.05, 0.05, 0, 0.1, 0.15],
         aoe: true,
       }
     }
   },
   milim: {
-    name: 'Milim',
+    name: 'H118',
     element: element.fire,
     classType: classType.mage,
-    baseAtk: 1359,
-    baseHP: 4895,
+    baseAtk: 1025,
+    baseHP: 4475,
     baseDef: 652,
     skills: {
       s1: {
@@ -2549,7 +2359,7 @@ const heroes = {
       },
       s2: {
         rate: 1,
-        pow: 1.3,
+        pow: 1,
         aoe: true,
       },
       s3: {
@@ -2562,11 +2372,11 @@ const heroes = {
     }
   },
   mirsa: {
-    name: 'Mirsa',
+    name: 'Financier',
     element: element.light,
     classType: classType.thief,
-    baseAtk: 885,
-    baseHP: 4410,
+    baseAtk: 735,
+    baseHP: 3990,
     baseDef: 501,
     form: [elements.caster_speed],
     skills: {
@@ -2592,11 +2402,11 @@ const heroes = {
     }
   },
   mistychain: {
-    name: 'Mistychain',
+    name: 'Patea',
     element: element.ice,
     classType: classType.mage,
-    baseAtk: 1244,
-    baseHP: 3925,
+    baseAtk: 952,
+    baseHP: 3505,
     baseDef: 606,
     skills: {
       s1: {
@@ -2621,12 +2431,12 @@ const heroes = {
     }
   },
   montmorancy: {
-    name: 'Montmorancy',
+    name: 'Euphemia',
     element: element.ice,
     classType: classType.soul_weaver,
-    baseAtk: 540,
-    baseHP: 4900,
-    baseDef: 729,
+    baseAtk: 390,
+    baseHP: 4111,
+    baseDef: 669,
     skills: {
       s1: {
         rate: 1,
@@ -2637,11 +2447,11 @@ const heroes = {
     }
   },
   mucacha: {
-    name: 'Mucacha',
+    name: 'Queenie',
     element: element.earth,
     classType: classType.warrior,
-    baseAtk: 1000,
-    baseHP: 4895,
+    baseAtk: 780,
+    baseHP: 4475,
     baseDef: 518,
     form: [elements.caster_speed],
     skills: {
@@ -2666,11 +2476,11 @@ const heroes = {
     }
   },
   nemunas: {
-    name: 'Nemunas',
+    name: 'Ingloroe',
     element: element.fire,
     classType: classType.ranger,
-    baseAtk: 920,
-    baseHP: 4855,
+    baseAtk: 707,
+    baseHP: 4435,
     baseDef: 525,
     form: [elements.target_max_hp],
     skills: {
@@ -2692,7 +2502,7 @@ const heroes = {
     }
   },
   otillie: {
-    name: 'Otillie',
+    name: 'Mulier',
     element: element.dark,
     classType: classType.mage,
     baseAtk: 885,
@@ -2714,11 +2524,11 @@ const heroes = {
     }
   },
   pearlhorizon: {
-    name: 'Pearlhorizon',
+    name: 'Antiya',
     element: element.earth,
     classType: classType.mage,
-    baseAtk: 921,
-    baseHP: 4855,
+    baseAtk: 771,
+    baseHP: 4435,
     baseDef: 631,
     form: [elements.target_max_hp, elements.target_has_sleep],
     skills: {
@@ -2744,12 +2554,12 @@ const heroes = {
     }
   },
   purrgis: {
-    name: 'Purrgis',
+    name: 'Bartholo',
     element: element.earth,
     classType: classType.warrior,
-    baseAtk: 1119,
-    baseHP: 6091,
-    baseDef: 594,
+    baseAtk: 889,
+    baseHP: 5203,
+    baseDef: 561,
     form: [elements.caster_max_hp],
     skills: {
       s1: {
@@ -2784,12 +2594,12 @@ const heroes = {
     }
   },
   pyllis: {
-    name: 'Pyllis',
+    name: 'Veritte',
     element: element.dark,
     classType: classType.knight,
-    baseAtk: 685,
-    baseDef: 703,
-    baseHP: 6403,
+    baseAtk: 535,
+    baseDef: 645,
+    baseHP: 6203,
     form: [elements.caster_defense, elements.caster_attacked_stack_3],
     barrier: () => elements.caster_defense.value() * (1 + elements.caster_attacked_stack_3.value() * 0.1) * 0.6,
     skills: {
@@ -2814,12 +2624,12 @@ const heroes = {
     }
   },
   ras: {
-    name: 'Ras',
+    name: 'Rubi',
     element: element.fire,
     classType: classType.knight,
-    baseAtk: 758,
-    baseHP: 5826,
-    baseDef: 672,
+    baseAtk: 608,
+    baseHP: 4960,
+    baseDef: 617,
     form: [elements.caster_max_hp],
     skills: {
       s1: {
@@ -2849,11 +2659,11 @@ const heroes = {
     }
   },
   requiemroar: {
-    name: 'Requiemroar',
+    name: 'Pennecus',
     element: element.dark,
     classType: classType.soul_weaver,
-    baseAtk: 842,
-    baseHP: 4046,
+    baseAtk: 698,
+    baseHP: 3626,
     baseDef: 613,
     skills: {
       s1: {
@@ -2872,12 +2682,12 @@ const heroes = {
     }
   },
   rikoris: {
-    name: 'Rikoris',
+    name: 'Petit',
     element: element.light,
     classType: classType.warrior,
-    baseAtk: 951,
-    baseHP: 5517,
-    baseDef: 583,
+    baseAtk: 735,
+    baseHP: 4677,
+    baseDef: 550,
     skills: {
       s1: {
         rate: 1,
@@ -2894,11 +2704,11 @@ const heroes = {
     }
   },
   rima: {
-    name: 'Rima',
+    name: 'Vanessa',
     element: element.ice,
     classType: classType.ranger,
-    baseAtk: 822,
-    baseHP: 4693,
+    baseAtk: 617,
+    baseHP: 4273,
     baseDef: 561,
     skills: {
       s1: {
@@ -2916,12 +2726,12 @@ const heroes = {
     }
   },
   rin: {
-    name: 'Rin',
+    name: 'Lottie',
     element: element.earth,
     classType: classType.soul_weaver,
-    baseAtk: 594,
-    baseHP: 5057,
-    baseDef: 691,
+    baseAtk: 444,
+    baseHP: 4637,
+    baseDef: 652,
     form: [elements.caster_max_hp],
     skills: {
       s1: {
@@ -2945,11 +2755,11 @@ const heroes = {
     }
   },
   roozid: {
-    name: 'Roozid',
+    name: 'Taya',
     element: element.earth,
     classType: classType.thief,
-    baseAtk: 812,
-    baseHP: 4370,
+    baseAtk: 608,
+    baseHP: 3950,
     baseDef: 462,
     form: [elements.caster_speed],
     skills: {
@@ -2974,12 +2784,12 @@ const heroes = {
     }
   },
   rose: {
-    name: 'Rose',
+    name: 'Galornia',
     element: element.ice,
     classType: classType.knight,
-    baseAtk: 821,
-    baseDef: 703,
-    baseHP: 6266,
+    baseAtk: 671,
+    baseDef: 645,
+    baseHP: 5364,
     form: [elements.caster_defense],
     barrier: () => elements.caster_defense.value(),
     skills: {
@@ -2995,12 +2805,12 @@ const heroes = {
     }
   },
   ruele_of_light: {
-    name: 'Ruele of Light',
+    name: 'Bernice',
     element: element.light,
     classType: classType.soul_weaver,
-    baseAtk: 621,
-    baseHP: 5474,
-    baseDef: 802,
+    baseAtk: 471,
+    baseHP: 4637,
+    baseDef: 736,
     form: [elements.caster_max_hp],
     barrier: () => elements.caster_max_hp.value() * 0.2,
     skills: {
@@ -3016,11 +2826,11 @@ const heroes = {
     }
   },
   schuri: {
-    name: 'Schuri',
+    name: 'Matilda',
     element: element.fire,
     classType: classType.ranger,
-    baseAtk: 1068,
-    baseHP: 5650,
+    baseAtk: 843,
+    baseHP: 4799,
     baseDef: 536,
     skills: {
       s1: {
@@ -3038,12 +2848,12 @@ const heroes = {
     }
   },
   shooting_star_achates: {
-    name: 'Shooting Star Achates',
+    name: 'Clone Joyce',
     element: element.dark,
     classType: classType.soul_weaver,
-    baseAtk: 576,
-    baseHP: 5700,
-    baseDef: 743,
+    baseAtk: 426,
+    baseHP: 4475,
+    baseDef: 701,
     skills: {
       s1: {
         rate: 1,
@@ -3054,11 +2864,11 @@ const heroes = {
     }
   },
   serila: {
-    name: 'Serila',
+    name: 'Milian',
     element: element.fire,
     classType: classType.mage,
-    baseAtk: 1218,
-    baseHP: 4521,
+    baseAtk: 980,
+    baseHP: 3869,
     baseDef: 683,
     dot: [dot.burn],
     skills: {
@@ -3070,7 +2880,7 @@ const heroes = {
       },
       s2: {
         soulburn: true,
-        rate: (soulburn) => soulburn ? 2.2 : 1.7,
+        rate: (soulburn) => soulburn ? 2 : 1.5,
         pow: 1.05,
         enhance: [0.1, 0, 0, 0, 0.15],
         single: true,
@@ -3083,42 +2893,12 @@ const heroes = {
       }
     }
   },
-  // serila_old: {
-  //   name: 'Serila (Pre-Balance)',
-  //   element: element.fire,
-  //   classType: classType.mage,
-  //   baseAtk: 1218,
-  //   baseHP: 4521,
-  //   baseDef: 683,
-  //   dot: [dot.burn],
-  //   skills: {
-  //     s1: {
-  //       rate: 1,
-  //       pow: 1,
-  //       enhance: [0.05, 0, 0.1, 0, 0.15],
-  //       single: true,
-  //     },
-  //     s2: {
-  //       soulburn: true,
-  //       rate: (soulburn) => soulburn ? 2 : 1.5,
-  //       pow: 1.05,
-  //       enhance: [0.1, 0, 0, 0, 0.15],
-  //       single: true,
-  //     },
-  //     s3: {
-  //       rate: 1.8,
-  //       pow: 1.05,
-  //       enhance: [0.1, 0, 0, 0, 0.15],
-  //       single: true,
-  //     }
-  //   }
-  // },
   sez: {
-    name: 'Sez',
+    name: 'Janis',
     element: element.ice,
     classType: classType.thief,
-    baseAtk: 1228,
-    baseHP: 6266,
+    baseAtk: 989,
+    baseHP: 5364,
     baseDef: 473,
     form: [elements.target_hp_pc],
     skills: {
@@ -3156,52 +2936,12 @@ const heroes = {
       }
     }
   },
-  // sez_old: {
-  //   name: 'Sez (Pre-Balance)',
-  //   element: element.ice,
-  //   classType: classType.thief,
-  //   baseAtk: 1228,
-  //   form: [elements.target_hp_pc],
-  //   skills: {
-  //     s1: {
-  //       rate: 1,
-  //       pow: 0.95,
-  //       mult: () => 1 + (100-elements.target_hp_pc.value())*0.002,
-  //       multTip: () => ({ target_lost_hp_pc: 0.2 }),
-  //       enhance: [0.05, 0.05, 0.05, 0.1, 0.1],
-  //       single: true,
-  //     },
-  //     s2: {
-  //       rate: 0.5,
-  //       pow: 1,
-  //       enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
-  //       aoe: true,
-  //     },
-  //     s3: {
-  //       soulburn: true,
-  //       rate: (soulburn) => soulburn ? 3.2 : 1.8,
-  //       pow: 0.95,
-  //       mult: (soulburn) => 1 + (100-elements.target_hp_pc.value())*(soulburn ? 0.007 : 0.003),
-  //       multTip: (soulburn) => ({ target_lost_hp_pc: soulburn ? 0.7 : 0.3 }),
-  //       enhance: [0.05, 0.05, 0, 0.1, 0.15],
-  //       single: true,
-  //     },
-  //     explosion: {
-  //       name: infoLabel('sez_explosion'),
-  //       rate: 0,
-  //       pow: 0,
-  //       afterMath: () => ({ atkPercent: 1.5, penetrate: 0.7 }),
-  //       noCrit: true,
-  //       noMiss: true,
-  //     }
-  //   }
-  // },
   shadow_rose: {
-    name: 'Shadow Rose',
+    name: 'Berserk Galornia',
     element: element.dark,
     classType: classType.knight,
-    baseAtk: 889,
-    baseHP: 5784,
+    baseAtk: 698,
+    baseHP: 5364,
     baseDef: 610,
     skills: {
       s1: {
@@ -3225,11 +2965,11 @@ const heroes = {
     }
   },
   sigret: {
-    name: 'Sigret',
+    name: 'Gerrimore',
     element: element.ice,
     classType: classType.warrior,
-    baseAtk: 1228,
-    baseHP: 5784,
+    baseAtk: 989,
+    baseHP: 5364,
     baseDef: 553,
     form: [elements.target_nb_debuff],
     dot: [dot.bleed],
@@ -3257,11 +2997,11 @@ const heroes = {
     }
   },
   silk: {
-    name: 'Silk',
+    name: 'Clara',
     element: element.earth,
     classType: classType.ranger,
-    baseAtk: 1188,
-    baseHP: 4693,
+    baseAtk: 880,
+    baseHP: 4273,
     baseDef: 518,
     form: [elements.caster_speed],
     skills: {
@@ -3271,19 +3011,18 @@ const heroes = {
         pow: 0.9,
         mult: () => 1 + elements.caster_speed.value() * 0.00075,
         multTip: () => ({ caster_speed: 0.075 }),
-        enhance: [0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.1],
+        enhance: [0.05, 0.05, 0, 0.05, 0, 0.1, 0.15],
         single: true,
       },
       s1_bis: {
         s1_benefits: true,
         name: infoLabel('silk_automatic_fire'),
         spdScaling: true,
-        rate: 1.2,
+        rate: 1.25,
         pow: 0.9,
-        penetrate: () =>  0.2,
         mult: () => 1 + elements.caster_speed.value() * 0.00075,
         multTip: () => ({ caster_speed: 0.075 }),
-        enhance: [0.05, 0.05, 0, 0.05, 0, 0.1, 0.15],
+        enhance: [0.05, 0.05, 0.05, 0.05],
         single: true,
       },
       s3: {
@@ -3294,50 +3033,12 @@ const heroes = {
       }
     }
   },
-  // silk_old: {
-  //   name: 'Silk (Pre-Balance)',
-  //   element: element.earth,
-  //   classType: classType.ranger,
-  //   baseAtk: 1188,
-  //   baseHP: 4693,
-  //   baseDef: 518,
-  //   form: [elements.caster_speed, elements.caster_nb_focus],
-  //   skills: {
-  //     s1: {
-  //       spdScaling: true,
-  //       rate: 0.9,
-  //       pow: 0.9,
-  //       mult: () => 1 + elements.caster_speed.value() * 0.00075,
-  //       multTip: () => ({ caster_speed: 0.075 }),
-  //       enhance: [0.05, 0.05, 0, 0.05, 0, 0.1, 0.15],
-  //       single: true,
-  //     },
-  //     s1_bis: {
-  //       s1_benefits: true,
-  //       name: infoLabel('silk_automatic_fire'),
-  //       spdScaling: true,
-  //       rate: 1.25,
-  //       pow: 0.9,
-  //       penetrate: () => 0.2,
-  //       mult: () => 1 + elements.caster_speed.value() * 0.00075,
-  //       multTip: () => ({ caster_speed: 0.075 }),
-  //       enhance: [0.05, 0.05, 0, 0.05, 0, 0.1, 0.15],
-  //       single: true,
-  //     },
-  //     s3: {
-  //       rate: 0.95,
-  //       pow: 1.05,
-  //       enhance: [0.1, 0, 0, 0.15],
-  //       aoe: true,
-  //     }
-  //   }
-  // },
   silver_blade_aramintha: {
-    name: 'Silver Blade Aramintha',
+    name: 'Jocelyn',
     element: element.light,
     classType: classType.mage,
-    baseAtk: 1197,
-    baseHP: 4572,
+    baseAtk: 961,
+    baseHP: 4152,
     baseDef: 683,
     dot: [dot.burn],
     skills: {
@@ -3363,11 +3064,11 @@ const heroes = {
     }
   },
   specimen_sez: {
-    name: 'Specimen Sez',
+    name: 'Clone Janis',
     element: element.light,
     classType: classType.thief,
-    baseAtk: 1228,
-    baseHP: 6266,
+    baseAtk: 989,
+    baseHP: 5364,
     baseDef: 473,
     form: [elements.target_is_stunned],
     skills: {
@@ -3378,8 +3079,7 @@ const heroes = {
         single: true,
       },
       s2: {
-        soulburn: true,
-        rate: (soulburn) => soulburn ? 1.15 : 0.9,
+        rate: 0.9,
         pow: 1,
         enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
         aoe: true,
@@ -3387,18 +3087,18 @@ const heroes = {
       s3: {
         rate: 1.5,
         pow: 1,
-        penetrate: () => elements.target_is_stunned.value() ? 1.0 : 0.3,
+        penetrate: () => elements.target_is_stunned.value() ? 1.0 : 0.5,
         enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
         single: true,
       }
     }
   },
   specter_tenebria: {
-    name: 'Specter Tenebria',
+    name: 'Lucima',
     element: element.dark,
     classType: classType.mage,
-    baseAtk: 1197,
-    baseHP: 4572,
+    baseAtk: 961,
+    baseHP: 4152,
     baseDef: 683,
     form: [elements.target_nb_debuff, elements.dead_people, elements.s3_on_cooldown],
     atkUp: () => {
@@ -3429,11 +3129,11 @@ const heroes = {
     }
   },
   straze: {
-    name: 'Straze',
+    name: 'H128',
     element: element.dark,
     classType: classType.warrior,
-    baseAtk: 1228,
-    baseHP: 5784,
+    baseAtk: 989,
+    baseHP: 5364,
     baseDef: 553,
     form: [elements.nb_targets, elements.target_is_highest_max_hp, elements.target_attack],
     skills: {
@@ -3444,7 +3144,7 @@ const heroes = {
         single: true,
       },
       s2: {
-        rate: 0.9,
+        rate: 1.5,
         pow: 1,
         mult: () => {
           switch (elements.nb_targets.value()) {
@@ -3459,8 +3159,8 @@ const heroes = {
         aoe: true,
       },
       s3: {
-        rate: 0.95,
-        pow: 1,
+        rate: 1,
+        pow: 1.1,
         penetrate: () => {
           if (!elements.target_is_highest_max_hp.value()) return 0;
 
@@ -3478,11 +3178,11 @@ const heroes = {
     }
   },
   surin: {
-    name: 'Surin',
+    name: 'Julia',
     element: element.fire,
     classType: classType.thief,
-    baseAtk: 1010,
-    baseHP: 5097,
+    baseAtk: 789,
+    baseHP: 4677,
     baseDef: 497,
     form: [elements.target_nb_bleed],
     dot: [dot.bleed],
@@ -3510,13 +3210,13 @@ const heroes = {
     }
   },
   sven: {
-    name: 'Sven',
+    name: 'Taryn',
     element: element.dark,
     classType: classType.thief,
-    baseAtk: 1039,
-    baseHP: 5517,
+    baseAtk: 816,
+    baseHP: 4677,
     baseDef: 452,
-    form: [elements.caster_hp_pc, elements.target_hp_pc],
+    form: [elements.caster_hp_pc],
     skills: {
       s1: {
         rate: 1,
@@ -3530,26 +3230,26 @@ const heroes = {
         pow: 1,
         enhance_from: 's1',
         mult: () => 1 + (100 - elements.caster_hp_pc.value()) * 0.003,
-        multTip: () => ({ caster_speed: 0.3 }),
+        multTip: () => ({ caster_lost_hp_pc: 0.3 }),
         single: true,
       },
       s3: {
         soulburn: true,
         rate: (soulburn) => soulburn ? 1 : 0.8,
         pow: 0.8,
-        mult: () => 1 + (100 - elements.caster_hp_pc.value()) * 0.005 + (100 - elements.target_hp_pc.value()) * 0.0015,
-        multTip: () => ({caster_lost_hp_pc: 50, target_lost_hp_pc: 15}),
+        mult: () => 1 + (100 - elements.caster_hp_pc.value()) * 0.005,
+        multTip: () => ({ caster_lost_hp_pc: 0.5 }),
         enhance: [0.05, 0.05, 0.1, 0, 0.1, 0.1, 0.1],
         aoe: true,
       }
     }
   },
   tamarinne: {
-    name: 'Tamarinne',
+    name: 'Noclyn',
     element: element.fire,
     classType: classType.soul_weaver,
-    baseAtk: 948,
-    baseHP: 4370,
+    baseAtk: 807,
+    baseHP: 3950,
     baseDef: 652,
     skills: {
       s1: {
@@ -3560,12 +3260,12 @@ const heroes = {
     }
   },
   taranor_guard: {
-    name: 'Taranor Guard',
+    name: 'Tracy',
     element: element.ice,
     classType: classType.warrior,
-    baseAtk: 951,
-    baseHP: 5517,
-    baseDef: 583,
+    baseAtk: 735,
+    baseHP: 4677,
+    baseDef: 550,
     skills: {
       s1: {
         rate: 1,
@@ -3582,11 +3282,11 @@ const heroes = {
     }
   },
   taranor_royal_guard: {
-    name: 'Taranor Royal Guard',
+    name: 'Silvina',
     element: element.ice,
     classType: classType.knight,
-    baseAtk: 842,
-    baseHP: 6463,
+    baseAtk: 653,
+    baseHP: 5122,
     baseDef: 617,
     form: [elements.caster_max_hp],
     skills: {
@@ -3612,11 +3312,11 @@ const heroes = {
     }
   },
   tempest_surin: {
-    name: 'Tempest Surin',
+    name: 'Naksha',
     element: element.light,
     classType: classType.thief,
-    baseAtk: 1010,
-    baseHP: 5097,
+    baseAtk: 789,
+    baseHP: 4677,
     baseDef: 497,
     form: [elements.caster_hp_pc],
     dot: [dot.bleed],
@@ -3625,7 +3325,7 @@ const heroes = {
         rate: 1,
         pow: 1,
         mult: () => 1 + (100 - elements.caster_hp_pc.value()) * 0.0015,
-        multTip: () => ({ caster_lost_hp_pc: 15 }),
+        multTip: () => ({ caster_lost_hp_pc: 0.15 }),
         enhance: [0.05, 0, 0.1, 0, 0.15],
         single: true,
       },
@@ -3634,18 +3334,18 @@ const heroes = {
         rate: (soulburn) => soulburn ? 1.25 : 1,
         pow: 1.05,
         mult: () => 1 + (100 - elements.caster_hp_pc.value()) * 0.002,
-        multTip: () => ({ caster_lost_hp_pc: 20 }),
+        multTip: () => ({ caster_lost_hp_pc: 0.2 }),
         enhance: [0.1, 0, 0, 0, 0.15],
         aoe: true,
       }
     }
   },
   tenebria: {
-    name: 'Tenebria',
+    name: 'Lucia',
     element: element.fire,
     classType: classType.mage,
-    baseAtk: 1359,
-    baseHP: 4895,
+    baseAtk: 1025,
+    baseHP: 4475,
     baseDef: 652,
     skills: {
       s1: {
@@ -3655,56 +3355,27 @@ const heroes = {
         single: true,
       },
       s2: {
-        soulburn: true,
-        rate: (soulburn) => soulburn ? 1.05 : 0.8,
+        rate: 0.8,
         pow: 1,
         enhance: [0.05, 0, 0.1, 0, 0.15],
         aoe: true,
       },
       s3: {
-        rate: 1.1,
+        soulburn: true,
+        rate: (soulburn) => soulburn ? 1.35 : 1.1,
         pow: 1.05,
         enhance: [0.1, 0, 0, 0, 0.15],
         aoe: true,
       }
     }
   },
-  // tenebria_old: {
-  //   name: 'Tenebria (Pre-Balance)',
-  //   element: element.fire,
-  //   classType: classType.mage,
-  //   baseAtk: 1359,
-  //   baseHP: 4895,
-  //   baseDef: 652,
-  //   skills: {
-  //     s1: {
-  //       rate: 1.2,
-  //       pow: 1,
-  //       enhance: [0.05, 0, 0.1, 0, 0.15],
-  //       single: true,
-  //     },
-  //     s2: {
-  //       rate: 0.8,
-  //       pow: 1,
-  //       enhance: [0.05, 0, 0.1, 0, 0.15],
-  //       aoe: true,
-  //     },
-  //     s3: {
-  //       soulburn: true,
-  //       rate: (soulburn) => soulburn ? 1.35 : 1.1,
-  //       pow: 1.05,
-  //       enhance: [0.1, 0, 0, 0, 0.15],
-  //       aoe: true,
-  //     }
-  //   }
-  // },
   tieria: {
-    name: 'Tieria',
+    name: 'Jen',
     element: element.fire,
     classType: classType.warrior,
-    baseAtk: 839,
-    baseHP: 5517,
-    baseDef: 591,
+    baseAtk: 689,
+    baseHP: 4677,
+    baseDef: 543,
     form: [elements.target_max_hp],
     skills: {
       s1: {
@@ -3714,22 +3385,22 @@ const heroes = {
         single: true,
       },
       s3: {
-        soulburn: true,
-        rate: (soulburn) => soulburn ? 1.8 : 1.2,
+        hpScaling: true,
+        rate: 1.8,
         pow: 0.9,
-        flat: (soulburn) => elements.target_max_hp.value() * (soulburn ? 0.06 : 0.04),
-        flatTip: (soulburn) => ({ target_max_hp: soulburn ? 6 : 4 }),
+        flat: () => elements.caster_max_hp.value() * 0.06,
+        flatTip: () => ({caster_max_hp: 6}),
         enhance: [0.05, 0.05, 0.05, 0, 0.05, 0.1, 0.1],
         single: true,
       },
     }
   },
   tywin: {
-    name: 'Tywin',
+    name: 'Dailian',
     element: element.ice,
     classType: classType.knight,
-    baseAtk: 821,
-    baseHP: 6751,
+    baseAtk: 671,
+    baseHP: 5809,
     baseDef: 648,
     form: [elements.caster_max_hp],
     barrier: () => elements.caster_max_hp.value() * 0.2,
@@ -3754,37 +3425,12 @@ const heroes = {
       }
     }
   },
-  // tywin_old: {
-  //   name: 'Tywin (Pre-Balance)',
-  //   element: element.ice,
-  //   classType: classType.knight,
-  //   baseAtk: 821,
-  //   form: [elements.caster_max_hp],
-  //   skills: {
-  //     s1: {
-  //       rate: 0.8,
-  //       pow: 0.95,
-  //       flat: () => elements.caster_max_hp.value()*0.04,
-  //       flatTip: () => ({ caster_max_hp: 4 }),
-  //       enhance: [0.05, 0.05, 0, 0.1, 0, 0.15],
-  //       single: true,
-  //     },
-  //     s3: {
-  //       rate: 0.5,
-  //       pow: 0.95,
-  //       flat: () => elements.caster_max_hp.value()*0.1,
-  //       flatTip: () => ({ caster_max_hp: 10 }),
-  //       enhance: [0.05, 0.05, 0, 0, 0, 0.1, 0.15],
-  //       aoe: true,
-  //     }
-  //   }
-  // },
   vildred: {
-    name: 'Vildred',
+    name: 'Apathy',
     element: element.earth,
     classType: classType.thief,
-    baseAtk: 1283,
-    baseHP: 5138,
+    baseAtk: 961,
+    baseHP: 4718,
     baseDef: 522,
     form: [elements.caster_speed],
     skills: {
@@ -3797,7 +3443,7 @@ const heroes = {
         enhance: [0.05, 0.05, 0.05, 0.1, 0.1]
       },
       s2: {
-        rate: 0.7,
+        rate: 0.5,
         pow: 1,
         enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
         aoe: true,
@@ -3807,50 +3453,19 @@ const heroes = {
         soulburn: true,
         rate: (soulburn) => soulburn ? 1.1 : 0.85,
         pow: 1,
-        mult: () => 1 + elements.caster_speed.value() * 0.001125,
-        multTip: () => ({ caster_speed: 0.1125 }),
+        mult: (soulburn) => 1 + elements.caster_speed.value()*(soulburn ? 0.0009 : 0.00075),
+        multTip: (soulburn) => ({ caster_speed: soulburn ? 0.09 : 0.075 }),
         enhance: [0.05, 0.05, 0, 0.1, 0.1],
         aoe: true,
       }
     }
   },
-  // vildred_old: {
-  //   name: 'Vildred (Pre-Balance)',
-  //   element: element.earth,
-  //   classType: classType.thief,
-  //   baseAtk: 1283,
-  //   form: [elements.caster_speed],
-  //   skills: {
-  //     s1: {
-  //       rate: 0.85,
-  //       pow: 0.95,
-  //       mult: () => 1 + elements.caster_speed.value()*0.00075,
-  //       multTip: () => ({ caster_speed: 0.075 }),
-  //       enhance: [0.05, 0.05, 0.05, 0.1, 0.1]
-  //     },
-  //     s2: {
-  //       rate: 0.5,
-  //       pow: 1,
-  //       enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
-  //       aoe: true,
-  //     },
-  //     s3: {
-  //       soulburn: true,
-  //       rate: (soulburn) => soulburn ? 1.1 : 0.85,
-  //       pow: 1,
-  //       mult: (soulburn) => 1 + elements.caster_speed.value()*(soulburn ? 0.0009 : 0.00075),
-  //       multTip: (soulburn) => ({ caster_speed: soulburn ? 0.09 : 0.075 }),
-  //       enhance: [0.05, 0.05, 0, 0.1, 0.1],
-  //       aoe: true,
-  //     }
-  //   }
-  // },
   wanda: {
-    name: 'Wanda',
+    name: 'Haleth',
     element: element.dark,
     classType: classType.ranger,
-    baseAtk: 1005,
-    baseHP: 4693,
+    baseAtk: 744,
+    baseHP: 4273,
     baseDef: 532,
     skills: {
       s1: {
@@ -3870,39 +3485,46 @@ const heroes = {
     }
   },
   wanderer_silk: {
-    name: 'Wanderer Silk',
+    name: 'Clone Clara',
     element: element.light,
     classType: classType.ranger,
-    baseAtk: 930,
-    baseHP: 5380,
+    baseAtk: 780,
+    baseHP: 4960,
     baseDef: 564,
+    form: [elements.caster_speed],
     skills: {
       s1: {
-        rate: 1.2,
+        spdScaling: true,
+        rate: 1,
         pow: 1,
+        mult: () => 1 + elements.caster_speed.value() * 0.00075,
+        multTip: () => ({ caster_speed: 0.075 }),
         enhance: [0.05, 0.1, 0, 0, 0.15],
         single: true,
       },
       s2: {
-        rate: 1.3,
+        rate: 1.5,
         pow: 0.9,
         enhance: [0.05, 0.05, 0.1, 0.1, 0.1],
         single: true,
       },
       s3: {
-        rate: 2,
+        spdScaling: true,
+        rate: 1.8,
         pow: 0.8,
-        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        mult: () => 1 + elements.caster_speed.value() * 0.001125,
+        multTip: () => ({ caster_speed: 0.1125 }),
+        enhance: [0.1, 0.1, 0, 0.15, 0.15],
         single: true,
       }
     }
   },
   watcher_schuri: {
-    name: 'Watcher Schuri',
+    name: 'Clone Matilda',
     element: element.light,
     classType: classType.ranger,
-    baseAtk: 970,
-    baseHP: 5935,
+    baseAtk: 753,
+    baseHP: 5203,
     baseDef: 557,
     skills: {
       s1: {
@@ -3927,13 +3549,13 @@ const heroes = {
     }
   },
   yufine: {
-    name: 'Yufine',
+    name: 'Celeste',
     element: element.earth,
     classType: classType.warrior,
-    baseAtk: 1228,
-    baseHP: 5784,
+    baseAtk: 989,
+    baseHP: 5364,
     baseDef: 553,
-    form: [elements.target_silenced],
+    form: [elements.target_has_buff],
     skills: {
       s1: {
         rate: 1,
@@ -3949,50 +3571,24 @@ const heroes = {
       s3: {
         rate: 2,
         pow: 0.95,
-        penetrate: () => document.getElementById('target-silenced').checked ? 0.7 : 0,
+        mult: () => elements.target_has_buff.value() ? 1.5 : 1.0,
+        multTip: () => ({target_has_buff: 50}),
         enhance: [0.05, 0.05, 0, 0.05, 0.1, 0.1],
         single: true,
       }
     }
   },
-  // yufine_old: {
-  //   name: 'Yufine (Pre-Balance)',
-  //   element: element.earth,
-  //   classType: classType.warrior,
-  //   baseAtk: 1228,
-  //   form: [elements.target_has_buff],
-  //   skills: {
-  //     s1: {
-  //       rate: 1,
-  //       pow: 1,
-  //       enhance: [0.05, 0.05, 0, 0.05, 0, 0.15],
-  //       single: true,
-  //     },
-  //     s2: {
-  //       rate: 0.9,
-  //       pow: 1,
-  //       aoe: true,
-  //     },
-  //     s3: {
-  //       rate: 2,
-  //       pow: 0.95,
-  //       mult: () => elements.target_has_buff.value() ? 1.5 : 1.0,
-  //       multTip: () => ({target_has_buff: 50}),
-  //       enhance: [0.05, 0.05, 0, 0.05, 0.1, 0.1],
-  //       single: true,
-  //     }
-  //   }
-  // },
   yuna: {
-    name: 'Yuna',
+    name: 'Erica',
     element: element.ice,
     classType: classType.ranger,
-    baseAtk: 1158,
-    baseHP: 6002,
+    baseAtk: 925,
+    baseHP: 5122,
     baseDef: 553,
     form: [elements.caster_speed, elements.nb_targets],
     skills: {
       s1: {
+        onlyCrit: true,
         spdScaling: true,
         soulburn: true,
         rate: (soulburn) => soulburn ? 0.85 : 0.6,
@@ -4029,11 +3625,11 @@ const heroes = {
     }
   },
   zeno: {
-    name: 'Zeno',
+    name: 'Theresa',
     element: element.ice,
     classType: classType.mage,
-    baseAtk: 1039,
-    baseHP: 5299,
+    baseAtk: 889,
+    baseHP: 4879,
     baseDef: 673,
     form: [elements.caster_max_hp, elements.non_attack_skill_stack_8],
     skills: {
@@ -4043,15 +3639,31 @@ const heroes = {
         pow: 1,
         flat: () => elements.caster_max_hp.value() * 0.1,
         flatTip: () => ({ caster_max_hp: 10 }),
+        mult: () => {
+          let extra = 0;
+          for (let i = 0; i < Number(document.getElementById('molagora-s2').value); i++) {
+            extra += heroes.zeno.skills.s2.enhance[i];
+          }
+
+          return 1 + elements.non_attack_skill_stack_8.value() * (0.12 + extra);
+        },
+        multTip: () => {
+          let extra = 0;
+          for (let i = 0; i < Number(document.getElementById('molagora-s2').value); i++) {
+            extra += heroes.zeno.skills.s2.enhance[i] * 100;
+          }
+
+          return { per_stack: 12 + extra };
+        },
         enhance: [0.05, 0, 0.1, 0, 0.15],
         single: true,
       },
       s2: {
-        enhance: [0.005, 0.005, 0.005, 0.005, 0.01],
+        enhance: [0.005, 0.005, 0.005, 0.01, 0.015],
       },
       s3: {
         hpScaling: true,
-        ate: 0.5,
+        rate: 0.5,
         pow: 1,
         flat: () => elements.caster_max_hp.value() * 0.12,
         flatTip: () => ({ caster_max_hp: 12 }),
@@ -4061,7 +3673,7 @@ const heroes = {
             extra += heroes.zeno.skills.s2.enhance[i];
           }
 
-          return 1 + elements.non_attack_skill_stack_8.value() * (0.07 + extra);
+          return 1 + elements.non_attack_skill_stack_8.value() * (0.12 + extra);
         },
         multTip: () => {
           let extra = 0;
@@ -4069,7 +3681,7 @@ const heroes = {
             extra += heroes.zeno.skills.s2.enhance[i] * 100;
           }
 
-          return { per_stack: 7 + extra };
+          return { per_stack: 12 + extra };
         },
         enhance: [0.05, 0, 0.1, 0, 0.15],
         aoe: true,
@@ -4077,11 +3689,11 @@ const heroes = {
     }
   },
   zerato: {
-    name: 'Zerato',
+    name: 'Anheeun',
     element: element.ice,
     classType: classType.mage,
-    baseAtk: 1159,
-    baseHP: 4733,
+    baseAtk: 952,
+    baseHP: 4313,
     baseDef: 627,
     form: [elements.target_has_debuff],
     skills: {
