@@ -1258,7 +1258,7 @@ const buildElement = (elem, parent) => {
 };
 
 const elemIcon = (elem) => {
-  return `<img src='${['jp', 'kr', 'zh', 'zhTW', 'br'].some(locale => window.location.href.includes(`/${locale}`)) ? '.' : ''}./assets/elements/${elem}.png' width='18', height='18' alt='${elem}' />`;
+  return `<img src='${['jp', 'kr', 'zh', 'zhTW', 'br'].some(locale => window.location.href.includes(`/${locale}`)) ? '.' : ''}./assets/elements/${elem}.png' width='16', height='16' alt='${elem}' />`;
 };
 
 const antiElemIcon = (elem) => {
@@ -1276,11 +1276,11 @@ const classIcon = (type) => {
 };
 
 const heroIcon = (name) => {
-  return `<img src='${['jp', 'kr', 'zh', 'zhTW', 'br'].some(locale => window.location.href.includes(`/${locale}`)) ? '.' : ''}./assets/heroes/${name}.png' width='28', height='28' alt='${name}' />`;
+  return `<img src='${['jp', 'kr', 'zh', 'zhTW', 'br'].some(locale => window.location.href.includes(`/${locale}`)) ? '.' : ''}./assets/heroes/${name}.png' width='25', height='25' alt='${name}' />`;
 };
 
 const artifactIcon = (name) => {
-  return `<img src='${['jp', 'kr', 'zh', 'zhTW', 'br'].some(locale => window.location.href.includes(`/${locale}`)) ? '.' : ''}./assets/artifacts/${name}.png' width='28', height='28' alt='${name}' />`;
+  return `<img src='${['jp', 'kr', 'zh', 'zhTW', 'br'].some(locale => window.location.href.includes(`/${locale}`)) ? '.' : ''}./assets/artifacts/${name}.png' width='25', height='25' alt='${name}' />`;
 };
 
 const dedupeForm = (hero, artifact) => {
