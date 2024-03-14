@@ -3615,7 +3615,7 @@ const heroes = {
     }
   },
   milim: {
-    name: 'H118',
+    name: 'H118 (E7 Milim)',
     element: element.fire,
     classType: classType.mage,
     baseAtk: 1025,
@@ -3643,7 +3643,7 @@ const heroes = {
     }
   },
   straze: {
-    name: 'H128',
+    name: 'H128 (E7 Straze)',
     element: element.dark,
     classType: classType.warrior,
     baseAtk: 989,
@@ -3692,7 +3692,7 @@ const heroes = {
     }
   },
   lilibet: {
-    name: 'H129',
+    name: 'H129 (E7 Lilibet)',
     element: element.earth,
     classType: classType.warrior,
     baseAtk: 889,
