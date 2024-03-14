@@ -1258,7 +1258,7 @@ const buildElement = (elem, parent) => {
 };
 
 const elemIcon = (elem) => {
-  return `<img src='${['jp', 'kr', 'zh', 'zhTW', 'br'].some(locale => window.location.href.includes(`/${locale}`)) ? '.' : ''}./assets/elements/${elem}.png' width='20', height='20' alt='${elem}' />`;
+  return `<img src='${['jp', 'kr', 'zh', 'zhTW', 'br'].some(locale => window.location.href.includes(`/${locale}`)) ? '.' : ''}./assets/elements/${elem}.png' width='18', height='18' alt='${elem}' />`;
 };
 
 const antiElemIcon = (elem) => {
@@ -1273,6 +1273,14 @@ const antiElemIcon = (elem) => {
 
 const classIcon = (type) => {
   return `<img src='${['jp', 'kr', 'zh', 'zhTW', 'br'].some(locale => window.location.href.includes(`/${locale}`)) ? '.' : ''}./assets/classes/${type.replace('_', '-')}.png' width='18', height='18' alt='${type}' />`;
+};
+
+const heroIcon = (name) => {
+  return `<img src='${['jp', 'kr', 'zh', 'zhTW', 'br'].some(locale => window.location.href.includes(`/${locale}`)) ? '.' : ''}./assets/heroes/${name}.png' width='28', height='28' alt='${name}' />`;
+};
+
+const artifactIcon = (name) => {
+  return `<img src='${['jp', 'kr', 'zh', 'zhTW', 'br'].some(locale => window.location.href.includes(`/${locale}`)) ? '.' : ''}./assets/artifacts/${name}.png' width='28', height='28' alt='${name}' />`;
 };
 
 const dedupeForm = (hero, artifact) => {
@@ -1328,6 +1336,7 @@ const updateGraphSkillSelect = () => {
   $(`#${damageToUse}-hit`).prop('checked', true);
 };
 
+
 // jQuery's $(() => {}) was not firing at the right time in Firefox, so use standard DOMContentLoaded
 // window.addEventListener('DOMContentLoaded', () => {
 buildInitialForm = () => {
@@ -1336,14 +1345,14 @@ buildInitialForm = () => {
     const artiSelector = document.getElementById('artifact');
     const chartSkillSelector = document.getElementById('chart-skill');
     Object.keys(heroes).map((id => {
-      $(heroSelector).append(`<option value="${id}" data-tokens="${heroNicknames(id)}" data-content="${elemIcon(heroes[id].element)}${classIcon(heroes[id].classType)}<span>${heroName(id)}</span>">${heroName(id)}</option>`);
+      $(heroSelector).append(`<option value="${id}" data-tokens="${heroNicknames(id)}" data-content="${heroIcon(heroes[id].name)} ${elemIcon(heroes[id].element)}${classIcon(heroes[id].classType)}<span> ${heroName(id)}</span>">${heroName(id)}</option>`);
     }));
     $(heroSelector).selectpicker('refresh');
 
     $(artiSelector).append(`<option value="">${artifactName('no_proc')}</option>`);
     $(artiSelector).append('<option data-divider="true"></option>');
     Object.keys(artifacts).map((id => {
-      $(artiSelector).append(`<option value="${id}">${artifactName(id)}</option>`);
+      $(artiSelector).append(`<option value="${id}" data-content="${artifactIcon(artifacts[id].image)}<span> ${artifactName(id)}</span>">${artifactName(id)}</option>`);
     }));
 
     // This is a bit clunky but the #1 alphabetical hero changes so rarely it's not much of an issue. So far it only changed from Achates to Abigail.
