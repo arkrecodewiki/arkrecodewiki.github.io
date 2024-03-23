@@ -969,7 +969,7 @@ const heroes = {
     }
   },
   ambitious_tywin: {
-    name: 'Dailian the Seraph',
+    name: 'Dailian the Radiant',
     element: element.light,
     classType: classType.knight,
     baseAtk: 744,
