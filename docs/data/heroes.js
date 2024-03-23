@@ -29,6 +29,35 @@ const element = {
 };
 
 const heroes = {
+  lilibet: {
+    name: 'Abyss',
+    element: element.earth,
+    classType: classType.warrior,
+    baseAtk: 889,
+    baseHP: 5364,
+    baseDef: 592,
+    dot: [dot.bleed],
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0, 0.1, 0, 0.15],
+        single: true,
+      },
+      s2: {
+        rate: 1.5,
+        pow: 1,
+        enhance: [0.05, 0, 0.1, 0, 0.15],
+        single: true,
+      },
+      s3: {
+        rate: 1,
+        pow: 1.1,
+        enhance: [0.05, 0.05, 0, 0.1, 0.15],
+        single: true,
+      }
+    }
+  },
   eligos: {
     name: 'Akaoni',
     element: element.fire,
@@ -95,6 +124,34 @@ const heroes = {
         enhance: [0.05, 0.05, 0, 0.1, 0.15],
         single: true,
       }
+    }
+  },
+  milim: {
+    name: 'Anastasia',
+    element: element.fire,
+    classType: classType.mage,
+    baseAtk: 1025,
+    baseHP: 4475,
+    baseDef: 652,
+    skills: {
+      s1: {
+        rate: 1.1,
+        pow: 1,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+      },
+      s2: {
+        rate: 1,
+        pow: 1,
+        aoe: true,
+      },
+      s3: {
+        rate: 1.7,
+        pow: 1,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        noTrans: true,
+        single: true,
+      },
     }
   },
   zerato: {
@@ -1276,6 +1333,55 @@ const heroes = {
         enhance: [0.05, 0.1, 0, 0, 0.15],
         single: true,
       }
+    }
+  },
+  straze: {
+    name: 'Eva',
+    element: element.dark,
+    classType: classType.warrior,
+    baseAtk: 989,
+    baseHP: 5364,
+    baseDef: 553,
+    form: [elements.nb_targets, elements.target_is_highest_max_hp, elements.target_attack],
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+      },
+      s2: {
+        rate: 1.5,
+        pow: 1,
+        mult: () => {
+          switch (elements.nb_targets.value()) {
+          case 1: return 1.6;
+          case 2: return 1.4;
+          case 3: return 1.2;
+          default: return 1;
+          }
+        },
+        multTip: () => ({per_fewer_target: 20}),
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        aoe: true,
+      },
+      s3: {
+        rate: 1,
+        pow: 1.1,
+        penetrate: () => {
+          if (!elements.target_is_highest_max_hp.value()) return 0;
+
+          const targetAtk = elements.target_attack.value();
+          const casterAtk = currentHero.getAtk('s3');
+
+          const penDiff = (casterAtk - targetAtk) * 0.00035;
+
+          return Math.min(Math.max(0, penDiff) + 0.3, 1);
+        },
+        penetrateTip: () => ({caster_target_atk_diff: 0.035}),
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        aoe: true,
+      },
     }
   },
   martial_artist_ken: {
@@ -3610,112 +3716,6 @@ const heroes = {
         flat: () => elements.caster_defense.value() * 0.7,
         flatTip: () => ({ caster_defense: 70 }),
         enhance: [0.05, 0.05, 0, 0.05, 0.1, 0.15],
-        single: true,
-      }
-    }
-  },
-  milim: {
-    name: 'H118 (E7 Milim)',
-    element: element.fire,
-    classType: classType.mage,
-    baseAtk: 1025,
-    baseHP: 4475,
-    baseDef: 652,
-    skills: {
-      s1: {
-        rate: 1.1,
-        pow: 1,
-        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
-        single: true,
-      },
-      s2: {
-        rate: 1,
-        pow: 1,
-        aoe: true,
-      },
-      s3: {
-        rate: 1.7,
-        pow: 1,
-        enhance: [0.05, 0.05, 0, 0.1, 0.1],
-        noTrans: true,
-        single: true,
-      },
-    }
-  },
-  straze: {
-    name: 'H128 (E7 Straze)',
-    element: element.dark,
-    classType: classType.warrior,
-    baseAtk: 989,
-    baseHP: 5364,
-    baseDef: 553,
-    form: [elements.nb_targets, elements.target_is_highest_max_hp, elements.target_attack],
-    skills: {
-      s1: {
-        rate: 1,
-        pow: 1,
-        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
-        single: true,
-      },
-      s2: {
-        rate: 1.5,
-        pow: 1,
-        mult: () => {
-          switch (elements.nb_targets.value()) {
-          case 1: return 1.6;
-          case 2: return 1.4;
-          case 3: return 1.2;
-          default: return 1;
-          }
-        },
-        multTip: () => ({per_fewer_target: 20}),
-        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
-        aoe: true,
-      },
-      s3: {
-        rate: 1,
-        pow: 1.1,
-        penetrate: () => {
-          if (!elements.target_is_highest_max_hp.value()) return 0;
-
-          const targetAtk = elements.target_attack.value();
-          const casterAtk = currentHero.getAtk('s3');
-
-          const penDiff = (casterAtk - targetAtk) * 0.00035;
-
-          return Math.min(Math.max(0, penDiff) + 0.3, 1);
-        },
-        penetrateTip: () => ({caster_target_atk_diff: 0.035}),
-        enhance: [0.05, 0.05, 0, 0.1, 0.1],
-        aoe: true,
-      },
-    }
-  },
-  lilibet: {
-    name: 'H129 (E7 Lilibet)',
-    element: element.earth,
-    classType: classType.warrior,
-    baseAtk: 889,
-    baseHP: 5364,
-    baseDef: 592,
-    dot: [dot.bleed],
-    skills: {
-      s1: {
-        rate: 1,
-        pow: 1,
-        enhance: [0.05, 0, 0.1, 0, 0.15],
-        single: true,
-      },
-      s2: {
-        rate: 1.5,
-        pow: 1,
-        enhance: [0.05, 0, 0.1, 0, 0.15],
-        single: true,
-      },
-      s3: {
-        rate: 1,
-        pow: 1.1,
-        enhance: [0.05, 0.05, 0, 0.1, 0.15],
         single: true,
       }
     }

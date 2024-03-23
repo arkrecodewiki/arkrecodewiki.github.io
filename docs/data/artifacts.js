@@ -114,6 +114,14 @@ const artifacts = {
     exclusive: classType.warrior,
     applies: (skill) => getSkillType(skill) === skillTypes.single,
   },
+  golden_rose: {
+    id: 'golden_rose',
+    name: 'Therapeutic Night Raid',
+    image: 'Therapeutic Night Raid',
+    scale: [0.08, 0.088, 0.096, 0.104, 0.112, 0.12, 0.128, 0.136, 0.144, 0.152, 0.16],
+    type: artifactDmgType.damage,
+    exclusive: classType.warrior
+  },
   ancient_sheath: {
     id: 'ancient_sheath',
     name: 'Unexpected Shyness',
@@ -157,17 +165,9 @@ const artifacts = {
     id: 'last_teatime',
     name: 'A0168 Edalia\'s Bond',
     image: 'A0168 Edalias Bond',
-    scale: [0.07, 0.08, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17],
+    scale: [0.07, 0.077, 0.084, 0.091, 0.098, 0.105, 0.112, 0.119, 0.126, 0.133, 0.14],
     type: artifactDmgType.damage,
     exclusive: classType.mage,
     applies: (skill) => getSkillType(skill) === skillTypes.aoe,
-  },
-  golden_rose: {
-    id: 'golden_rose',
-    name: 'A0174 Aoi Hinamori\'s Bond',
-    image: 'A0174 Aoi Hinamoris Bond',
-    scale: [0.08, 0.088, 0.096, 0.104, 0.112, 0.12, 0.128, 0.136, 0.144, 0.152, 0.16],
-    type: artifactDmgType.damage,
-    exclusive: classType.warrior
   },
 };
