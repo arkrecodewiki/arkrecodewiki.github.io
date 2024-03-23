@@ -11,7 +11,7 @@ formDefaults = {
   'defPcUp': 0,
   'dmgReduc': 0,
   'dmgTrans': 0,
-  'hero': 'abigail',
+  'hero': 'abyss',
   'artifact': undefined,
   'atkPreset': undefined,
   'defPreset': undefined,
