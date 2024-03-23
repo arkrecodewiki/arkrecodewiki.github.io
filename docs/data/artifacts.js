@@ -170,4 +170,67 @@ const artifacts = {
     exclusive: classType.mage,
     applies: (skill) => getSkillType(skill) === skillTypes.aoe,
   },
+  torn_sleeve:{
+    id: 'torn_sleeve',
+    name: 'A0177 Drizella\'s Bond',
+    image: 'A0177 Drizellas Bond',
+    type: artifactDmgType.attack,
+    scale: [0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2],
+    dot: [dot.bleed],
+    exclusive: classType.thief
+  },
+  creation_and_destruction: {
+    id: 'creation_and_destruction',
+    name: 'A0192 Abyss\'s Bond',
+    image: 'A0192 Abysss Bond',
+    value: 0.08,
+    type: artifactDmgType.damage,
+    exclusive: classType.warrior,
+    applies: (skill) => getSkillType(skill) === skillTypes.single,
+  },
+  reingar_special_drink: {
+    id: 'reingar_special_drink',
+    name: 'A0204 Seaside Noclyn\'s Bond',
+    image: 'A0204 Seaside Noclyns Bond',
+    type: artifactDmgType.aftermath,
+    atkPercent: 0.3,
+    penetrate: 0.7,
+    exclusive: classType.ranger,
+    applies: (skill) => getSkillType(skill) === skillTypes.aoe
+  },
+  violet_talisman: {
+    id: 'violet_talisman',
+    name: 'A0210 Chaldea\'s Bond',
+    image: 'A0210 Chaldeas Bond',
+    type: artifactDmgType.attack,
+    scale: [0.05, 0.055, 0.06, 0.065, 0.07, 0.075, 0.08, 0.085, 0.09, 0.095, 0.1],
+    form: [elements.turn_stack_3],
+    exclusive: classType.thief,
+    value: (artiScale) => elements.turn_stack_3.value() * artiScale
+  },
+  dux_noctis: {
+    id: 'dux_noctis',
+    name: 'A0219 Bartos\'s Bond',
+    image: 'A0219 Bartoss Bond',
+    type: artifactDmgType.attack,
+    scale: [0.02, 0.022, 0.024, 0.026, 0.028, 0.03, 0.032, 0.034, 0.036, 0.038, 0.04],
+    form: [elements.critical_hit_stack_6],
+    exclusive: classType.ranger,
+    value: (artiScale) => (artiScale * 3) + (elements.critical_hit_stack_6.value() * artiScale)
+  },
+  fairy_tale_for_a_nightmare: {
+    id: 'fairy_tale_for_a_nightmare',
+    name: 'A0237 Projekt Melody\'s Bond',
+    image: 'A0237 Projekt Melodys Bond',
+    type: artifactDmgType.fixedDamage,
+    form: [elements.extra_dual_or_counter],
+    penetrate: 1,
+    scale: [750, 825, 900, 975, 1050, 1125, 1200, 1275, 1350, 1425, 1500],
+    exclusive: classType.mage,
+    applies: (skill) => skill.isExtra || elements.extra_dual_or_counter.value(),
+    value: () => {
+      const artiScale = Math.floor(Number(document.getElementById('artifact-lvl')?.value || '30') / 3)
+      return artifacts['fairy_tale_for_a_nightmare'].scale[artiScale];
+    }
+  },
 };
