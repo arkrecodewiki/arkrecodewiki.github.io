@@ -206,7 +206,7 @@ const elements = {
   target_has_provoke: {
     ref: 'target_has_provoke',
     id: 'target-has-provoke',
-    label: 'Target is Provoked',
+    label: 'Target has Taunt',
     type: 'checkbox',
     value: () => document.getElementById('target-has-provoke').checked,
     icon: './assets/debuffs/provoke-debuff.png'

@@ -390,6 +390,45 @@ const heroes = {
       }
     }
   },
+  pavel: {
+    name: 'Bartos',
+    element: element.earth,
+    classType: classType.ranger,
+    baseAtk: 961,
+    baseHP: 4556,
+    baseDef: 536,
+    form: [elements.caster_speed],
+    skills: {
+      s1: {
+        spdScaling: true,
+        rate: 0.9,
+        pow: 1.1,
+        mult: () => 1 + elements.caster_speed.value() * 0.00075,
+        multTip: () => ({ caster_speed: 0.075 }),
+        enhance: [0.05, 0, 0.05, 0, 0.1],
+        single: true,
+      },
+      s2: {
+        spdScaling: true,
+        rate: 0.8,
+        pow: 1,
+        mult: () => 1 + elements.caster_speed.value() * 0.001125,
+        multTip: () => ({ caster_speed: 0.1125 }),
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        aoe: true,
+      },
+      s3: {
+        spdScaling: true,
+        rate: 1.6,
+        pow: 1,
+        mult: () => 1 + elements.caster_speed.value() * 0.0015,
+        multTip: () => ({ caster_speed: 0.15 }),
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        noTrans: true,
+        single: true,
+      }
+    }
+  },
   carrot: {
     name: 'Belyn',
     element: element.fire,
@@ -439,6 +478,37 @@ const heroes = {
         flatTip: () => ({caster_max_hp: 7}),
         enhance: [0.05, 0, 0.05, 0, 0.1, 0.15],
         single: true,
+      }
+    }
+  },
+  luluca: {
+    name: 'Berrica',
+    element: element.ice,
+    classType: classType.mage,
+    baseAtk: 1070,
+    baseHP: 4111,
+    baseDef: 715,
+    form: [elements.target_hp_pc, elements.s3_stack],
+    barrier: (hero) => hero.getAtk() * (1 + elements.s3_stack.value() * 0.2) * 0.375,
+    barrierEnhance: 's2',
+    atkUp: () => 1 + elements.s3_stack.value() * 0.2,
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        mult: () => 1 + (1 - (elements.target_hp_pc.value() / 100)) * 0.2,
+        multTip: () => ({ target_lost_hp_pc: 0.2 }),
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+      },
+      s2: {
+        enhance: [0.05, 0.05, 0, 0.05, 0.1]
+      },
+      s3: {
+        rate: 0.9,
+        pow: 1.05,
+        enhance: [0.1, 0, 0, 0, 0.15],
+        aoe: true,
       }
     }
   },
@@ -567,6 +637,31 @@ const heroes = {
         mult: () => elements.target_has_buff.value() ? 1.5 : 1.0,
         multTip: () => ({target_has_buff: 50}),
         enhance: [0.05, 0.05, 0, 0.05, 0.1, 0.1],
+        single: true,
+      }
+    }
+  },
+  violet: {
+    name: 'Chaldea',
+    element: element.earth,
+    classType: classType.thief,
+    baseAtk: 989,
+    baseHP: 5364,
+    baseDef: 473,
+    form: [elements.caster_nb_focus, elements.caster_perception],
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 0.9,
+        enhance: [0.05, 0.05, 0, 0.05, 0.05, 0.1, 0.1],
+        single: true,
+      },
+      s3: {
+        rate: 1.5,
+        pow: 0.9,
+        mult: () => 1 + elements.caster_nb_focus.value() * 0.15,
+        multTip: () => ({ per_focus: 15 }),
+        enhance: [0.05, 0.05, 0, 0.05, 0.05, 0.1, 0.1],
         single: true,
       }
     }
@@ -1835,6 +1930,40 @@ const heroes = {
       },
     }
   },
+  ervalen: {
+    name: 'HongKong Doll',
+    element: element.earth,
+    classType: classType.thief,
+    baseAtk: 989,
+    baseHP: 5364,
+    baseDef: 473,
+    form: [elements.caster_max_hp, elements.target_max_hp],
+    barrier: (hero) => hero.getAtk() * 1.2,
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0, 0.1, 0, 0.15],
+        single: true,
+      },
+      s2: {
+        soulburn: true,
+        rate: (soulburn) => soulburn ? 2 : 1.4,
+        pow: 1,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+      },
+      s3: {
+        hpScaling: true,
+        rate: 1.6,
+        pow: 1,
+        mult: () => elements.caster_max_hp.value() < elements.target_max_hp.value() ? 1 + Math.min((elements.target_max_hp.value() - elements.caster_max_hp.value()) * 0.0001, 0.7) : 1,
+        multTip: () => ({caster_vs_target_hp_diff: 1}),
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        single: true,
+      }
+    }
+  },
   nemunas: {
     name: 'Ingloroe',
     element: element.fire,
@@ -2678,6 +2807,22 @@ const heroes = {
       }
     }
   },
+  angel_of_light_angelica: {
+    name: 'Noah',
+    element: element.light,
+    classType: classType.mage,
+    baseAtk: 807,
+    baseHP: 4596,
+    baseDef: 645,
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.1, 0, 0.1, 0, 0.1],
+        single: true,
+      }
+    }
+  },
   tamarinne: {
     name: 'Noclyn',
     element: element.fire,
@@ -2690,6 +2835,35 @@ const heroes = {
         rate: 1,
         pow: 0.75,
         enhance: [0.05, 0.05, 0.05, 0.05, 0.1, 0.1, 0.15]
+      }
+    }
+  },
+  designer_lilibet: {
+    name: 'Oberstein',
+    element: element.dark,
+    classType: classType.warrior,
+    form: [elements.caster_defense],
+    baseAtk: 825,
+    baseDef: 599,
+    baseHP: 5769,
+    skills: {
+      s1: {
+        defenseScaling: true,
+        rate: 0.6,
+        pow: 1,
+        flat: () => elements.caster_defense.value() * 1.0,
+        flatTip: () => ({ caster_defense: 100 }),
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        single: true,
+      },
+      s3: {
+        defenseScaling: true,
+        rate: 0.6,
+        pow: 1,
+        flat: () => elements.caster_defense.value() * 1.15,
+        flatTip: () => ({ caster_defense: 115 }),
+        enhance: [0.05, 0.05, 0, 0.05, 0.15],
+        aoe: true,
       }
     }
   },
@@ -2989,6 +3163,38 @@ const heroes = {
       }
     }
   },
+  fairytale_tenebria: {
+    name: 'Projekt Melody',
+    element: element.ice,
+    classType: classType.mage,
+    baseAtk: 889,
+    baseHP: 4879,
+    baseDef: 673,
+    form: [elements.target_has_provoke, elements.target_max_hp],
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0, 0.1, 0, 0.15],
+        single: true,
+      },
+      s2: {
+        isExtra: true,
+        rate: 0.8,
+        pow: 1,
+        extraDmg: (hitType) => hitType !== hitTypes.miss && elements.target_has_provoke.value() ? elements.target_max_hp.value() * 0.15 : 0,
+        extraDmgTip: () => ({ target_max_hp: elements.target_has_provoke.value() ? 15 : 0 }),
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        aoe: true,
+      },
+      s3: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0.05, 0, 0.1, 0.10],
+        aoe: true,
+      },
+    }
+  },
   mucacha: {
     name: 'Queenie',
     element: element.earth,
@@ -3156,6 +3362,35 @@ const heroes = {
         enhance: [0.05, 0, 0, 0.1, 0.15],
         aoe: true,
       },
+    }
+  },
+seaside_bellona: {
+    name: 'Seaside Noclyn',
+    element: element.ice,
+    classType: classType.ranger,
+    baseAtk: 898,
+    baseHP: 4879,
+    baseDef: 571,
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0, 0.05, 0, 0.1, 0.1],
+        single: true,
+      },
+      s2: {
+        rate: 0.7,
+        pow: 1,
+        enhance: [0.05, 0.1, 0.15],
+        aoe: true,
+      },
+      s3: {
+        rate: 1,
+        pow: 1,
+        critDmgBoost: () => 0.2,
+        enhance: [0.05, 0, 0, 0, 0.1, 0.15],
+        aoe: true,
+      }
     }
   },
   charlotte: {
