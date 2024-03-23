@@ -1296,6 +1296,39 @@ const heroes = {
       }
     }
   },
+  baiken: {
+    name: 'Drizella',
+    element: element.earth,
+    classType: classType.thief,
+    baseAtk: 989,
+    baseHP: 5364,
+    baseDef: 473,
+    form: [elements.target_bleed_detonate],
+    dot: [dot.bleed],
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0, 0.1, 0, 0.15],
+        single: true,
+      },
+      s2: {
+        rate: 1.2,
+        pow: 1,
+        enhance: [0.05, 0, 0.1, 0, 0.15],
+        single: true,
+      },
+      s3: {
+        soulburn: true,
+        rate: (soulburn) => soulburn ? 1.85 : 1.6,
+        pow: 1,
+        enhance: [0.05, 0, 0.1, 0, 0.15],
+        detonate: dot.bleed,
+        detonation: () => 1.3,
+        single: true,
+      }
+    }
+  },
   baal_and_sezan: {
     name: 'Edalia',
     element: element.fire,
@@ -3640,6 +3673,60 @@ seaside_bellona: {
         multTip: () => ({ caster_speed: 0.1125 }),
         enhance: [0.05, 0.1, 0, 0, 0.15],
         single: true,
+      }
+    }
+  },
+  teddy_ith: {
+    name: 'Teddy Ith',
+    element: element.fire,
+    classType: classType.mage,
+    baseAtk: 699,
+    baseHP: 4712,
+    baseDef: 617,
+    form: [elements.nb_targets],
+    skills: {
+      s1: {
+        rate: 0.2,
+        pow: 0.95,
+        enhance: [0.05, 0.05, 0.05, 0.1, 0.1]
+      },
+      s2: {
+        rate: 0.18,
+        pow: 0.9,
+        mult: () => {
+          switch (elements.nb_targets.value()) {
+          case 1: return 1.9;
+          case 2: return 1.6;
+          case 3: return 1.3;
+          default: return 1;
+          }
+        },
+        multTip: () => ({ per_fewer_target: 30 }),
+        enhance: [0.05, 0, 0.1, 0, 0.15],
+        aoe: true,
+      },
+      s2_bis: {
+        name: infoLabel('s2_wave_2'),
+        rate: 0.08,
+        pow: 0.9,
+        mult: () => {
+          switch (elements.nb_targets.value()) {
+          case 1: return 1.9;
+          case 2: return 1.6;
+          case 3: return 1.3;
+          default: return 1;
+          }
+        },
+        multTip: () => ({ per_fewer_target: 30 }),
+        enhance_from: 's2',
+        aoe: true,
+      },
+      s3: {
+        rate: 0.25,
+        pow: 0.95,
+        critDmgBoost: () => 0.2,
+        enhance: [0.05, 0.05, 0, 0.1, 0.15],
+        aoe: true,
       }
     }
   },
