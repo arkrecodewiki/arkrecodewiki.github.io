@@ -51,7 +51,7 @@ const elements = {
   target_atk_up: {
     ref: 'target_atk_up',
     id: 'target-atk-up',
-    label: 'Target has Increased Attack',
+    label: 'Target has ATK Up',
     type: 'checkbox',
     value: () => document.getElementById('target-atk-up').checked,
     icon: './assets/buffs/attack-buff.png'
@@ -59,7 +59,7 @@ const elements = {
   target_atk_up_great: {
     ref: 'target_atk_up_great',
     id: 'target-atk-up-great',
-    label: 'Target has Increased Attack (Great)',
+    label: 'Target has ATK Up+',
     type: 'checkbox',
     value: () => document.getElementById('target-atk-up-great').checked,
     icon: './assets/buffs/greater-attack-buff.png'
@@ -67,7 +67,7 @@ const elements = {
   target_atk_down: {
     ref: 'target_atk_down',
     id: 'target-atk-down',
-    label: 'Target has Decreased Attack',
+    label: 'Target has ATK Down',
     type: 'checkbox',
     value: () => document.getElementById('target-atk-down').checked,
     icon: './assets/debuffs/attack-debuff.png'
@@ -404,7 +404,7 @@ const elements = {
   caster_defense_up: {
     ref: 'caster_defense_up',
     id: 'caster-defense-up',
-    label: 'Increased Defense',
+    label: 'DEF Up',
     type: 'checkbox',
     value: () => document.getElementById('caster-defense-up').checked,
     icon: './assets/buffs/defense-buff.png'
@@ -434,7 +434,7 @@ const elements = {
   caster_speed_up: {
     ref: 'caster_speed_up',
     id: 'caster-speed-up',
-    label: 'Increased Speed',
+    label: 'SPD Up',
     type: 'checkbox',
     value: () => document.getElementById('caster-speed-up').checked,
     icon: './assets/buffs/speed-buff.png'
@@ -559,7 +559,7 @@ const elements = {
   caster_full_fighting_spirit: {
     ref: 'caster_full_fighting_spirit',
     id: 'caster-full-fighting-spirit',
-    label: 'Full Fighting Spirit',
+    label: 'Full Morale',
     type: 'checkbox',
     value: () => document.getElementById('caster-full-fighting-spirit').checked
   },
@@ -577,7 +577,7 @@ const elements = {
   caster_fighting_spirit: {
     ref: 'caster_fighting_spirit',
     id: 'caster-fighting-spirit',
-    label: 'Fighting Spirit',
+    label: 'Morale',
     type: 'slider',
     min: 0,
     max: 100,
@@ -597,7 +597,7 @@ const elements = {
   caster_perception: {
     ref: 'caster_perception',
     id: 'caster-perception',
-    label: 'Caster has Perception',
+    label: 'Caster has Foresight',
     type: 'checkbox',
     value: () => document.getElementById('caster-perception') ? document.getElementById('caster-perception').checked : false,
     icon: './assets/buffs/perception-buff.png'
@@ -901,7 +901,7 @@ const elements = {
   ally_atk_up: {
     ref: 'ally_atk_up',
     id: 'ally-atk-up',
-    label: 'Ally has Increased Attack',
+    label: 'Ally has ATK Up',
     type: 'checkbox',
     value: () => document.getElementById('ally-atk-up').checked,
     icon: './assets/buffs/attack-buff.png'
@@ -909,7 +909,7 @@ const elements = {
   ally_atk_up_great: {
     ref: 'ally_atk_up_great',
     id: 'ally-atk-up-great',
-    label: 'Ally has Increased Attack (Great)',
+    label: 'Ally has ATK Up+',
     type: 'checkbox',
     value: () => document.getElementById('ally-atk-up-great').checked,
     icon: './assets/buffs/greater-attack-buff.png'
