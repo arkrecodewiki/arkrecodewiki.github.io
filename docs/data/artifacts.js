@@ -143,14 +143,6 @@ const artifacts = {
       return input + (elements.enemy_defeated.value() ? artifacts.wind_rider.additional[artifacts.wind_rider.scale.indexOf(input)] : 0);
     }
   },
-  sigurd_scythe: {
-    id: 'sigurd_scythe',
-    name: 'A0156 Gerrimore\'s Bond',
-    image: 'A0156 Gerrimores Bond',
-    type: artifactDmgType.attack,
-    exclusive: classType.warrior,
-    value: () => 0.25
-  },
   border_coin: {
     id: 'border_coin',
     name: 'A0160 Heidi\'s Bond',
