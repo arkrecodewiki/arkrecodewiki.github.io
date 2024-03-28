@@ -349,7 +349,7 @@ const elements = {
   soulburn_stack: {
     ref: 'soulburn_stack',
     id: 'soulburn-stack',
-    label: 'Soulburn Stack',
+    label: 'Astrogen Stack',
     type: 'slider',
     min: 0,
     max: 2,

@@ -99,7 +99,7 @@ const i18n = {
       s2_wave_3: 'S2 Wave 3',
       sez_explosion: 'Splatter Damage',
       unreleased_hero: '<strong>Notice:</strong> This hero is not yet released, and skill multipliers are subject to change.',
-      victorious_flag: 'Elemental advantage must be enabled to see benefits from this artifact; doesn\'t apply to light and dark heroes',
+      victorious_flag: 'Elemental advantage must be enabled to see benefits from this bond; doesn\'t apply to light and dark heroes',
       yoonryoung_slash: 'Dazzling Slash',
       zio_disappear: 'Disappear',
     }
@@ -3294,7 +3294,7 @@ const formLabel = (id) => {
 const skillLabel = (id, soulburn = false, extra = false) => {
   const lang = document.getElementById('root').getAttribute('lang');
   if (lang === 'en') {
-    return (id === 'non_applicable') ? 'n/a' : i18n[lang].skills[id] || id.toUpperCase() + (soulburn ? ' Soulburn' : (extra ? ' (Extra)' : ''));
+    return (id === 'non_applicable') ? 'n/a' : i18n[lang].skills[id] || id.toUpperCase() + (soulburn ? ' Burst' : (extra ? ' (Extra)' : ''));
   } else {
     id = soulburn ? id + '_soulburn' : (extra ? id + '_extra' : id);
     return i18n[lang].skills[id] || i18n['en'].skills[id] || id.toUpperCase();
