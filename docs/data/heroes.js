@@ -1522,29 +1522,28 @@ const heroes = {
     form: [elements.caster_hp_pc],
     skills: {
       s1: {
-        rate: 1,
+        rate: (soulburn) => soulburn ? 1.3 : 1,
         pow: 0.95,
         enhance: [0.05, 0.05, 0, 0.1, 0, 0.15],
         single: true,
+        soulburn: true,
+        onlyCrit: (soulburn) => soulburn
       },
       s2: {
         onlyCrit: true,
-        rate: 1.2,
-        pow: 0.95,
+        rate: 0.95,
+        pow: 1,
         mult: () => {
-          let extra = 0;
-          for (let i = 0; i < Number(document.getElementById('molagora-s1').value); i++) {
-            extra += heroes.martial_artist_ken.skills.s1.enhance[i];
-          }
-          return (1 + (100 - elements.caster_hp_pc.value()) * 0.004 + extra);
+          return (1 + (100 - elements.caster_hp_pc.value()) * 0.004);
         },
-        multTip: () => ({ caster_lost_hp_pc: 0.4 }),
+        multTip: () => ({ caster_lost_hp_pc: 40 }),
+        penetrate: () => 0.4,
         enhance: [0.05, 0.1, 0.15],
         single: true,
       },
       s3: {
-        soulburn: true,
-        rate: (soulburn) => soulburn ? 1.1 : 0.9,
+        onlyCrit: true,
+        rate: 1.1,
         pow: 1,
         enhance: [0.05, 0, 0, 0.1, 0, 0.15],
         aoe: true,
