@@ -3294,7 +3294,7 @@ const formLabel = (id) => {
 const skillLabel = (id, soulburn = false, extra = false) => {
   const lang = document.getElementById('root').getAttribute('lang');
   if (lang === 'en') {
-    return (id === 'non_applicable') ? 'n/a' : i18n[lang].skills[id] || id.toUpperCase() + (soulburn ? ' Burst' : (extra ? ' (Extra)' : ''));
+    return (id === 'non_applicable') ? 'n/a' : i18n[lang].skills[id] || id.toUpperCase() + (soulburn ? ' Burst <img src="./assets/icons/astrogen.png" width="25" height="25" alt="Astrogen">' : (extra ? ' (Extra)' : ''));
   } else {
     id = soulburn ? id + '_soulburn' : (extra ? id + '_extra' : id);
     return i18n[lang].skills[id] || i18n['en'].skills[id] || id.toUpperCase();
