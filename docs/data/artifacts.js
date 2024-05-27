@@ -164,8 +164,8 @@ const artifacts = {
   },
   torn_sleeve:{
     id: 'torn_sleeve',
-    name: 'A0177 Drizella\'s Bond',
-    image: 'A0177 Drizellas Bond',
+    name: 'Queen\'s Pastime',
+    image: 'Queens Pastime',
     type: artifactDmgType.attack,
     scale: [0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2],
     dot: [dot.bleed],
@@ -202,8 +202,8 @@ const artifacts = {
   },
   dux_noctis: {
     id: 'dux_noctis',
-    name: 'A0219 Bartos\'s Bond',
-    image: 'A0219 Bartoss Bond',
+    name: 'A0219 Bartoz\'s Bond',
+    image: 'A0219 Bartozs Bond',
     type: artifactDmgType.attack,
     scale: [0.02, 0.022, 0.024, 0.026, 0.028, 0.03, 0.032, 0.034, 0.036, 0.038, 0.04],
     form: [elements.critical_hit_stack_6],

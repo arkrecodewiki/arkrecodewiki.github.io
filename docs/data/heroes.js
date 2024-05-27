@@ -350,6 +350,30 @@ const heroes = {
       }
     }
   },
+  briar_witch_iseria: {
+    name: 'Aubrynn',
+    element: element.dark,
+    classType: classType.ranger,
+    baseAtk: 898,
+    baseHP: 4879,
+    baseDef: 571,
+    skills: {
+      s1: {
+        rate: 0.85,
+        pow: 1,
+        afterMath: (hitType) => (hitType !== hitTypes.miss) ? { atkPercent: 0.3, penetrate: 0.7 } : null,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        single: true,
+      },
+      s3: {
+        rate: 0.95,
+        pow: 1.1,
+        afterMath: (hitType) => (hitType !== hitTypes.miss) ? { atkPercent: 0.3, penetrate: 0.7 } : null,
+        enhance: [0.05, 0, 0, 0, 0.15],
+        aoe: true,
+      }
+    }
+  },
   purrgis: {
     name: 'Bartholo',
     element: element.earth,
@@ -391,7 +415,7 @@ const heroes = {
     }
   },
   pavel: {
-    name: 'Bartos',
+    name: 'Bartoz',
     element: element.earth,
     classType: classType.ranger,
     baseAtk: 961,
@@ -1164,8 +1188,7 @@ const heroes = {
         aoe: true,
       },
       s3: {
-        soulburn: true,
-        rate: (soulburn) => soulburn ? 1.2 : 0.95,
+        rate: 1.1,
         pow: 1,
         enhance: [0.15, 0, 0, 0, 0.15],
         aoe: true,
@@ -2871,7 +2894,7 @@ const heroes = {
     }
   },
   designer_lilibet: {
-    name: 'Oberstein',
+    name: 'Obsidian',
     element: element.dark,
     classType: classType.warrior,
     form: [elements.caster_defense],
@@ -2895,30 +2918,6 @@ const heroes = {
         flat: () => elements.caster_defense.value() * 1.15,
         flatTip: () => ({ caster_defense: 115 }),
         enhance: [0.05, 0.05, 0, 0.05, 0.15],
-        aoe: true,
-      }
-    }
-  },
-  briar_witch_iseria: {
-    name: 'Obriens',
-    element: element.dark,
-    classType: classType.ranger,
-    baseAtk: 898,
-    baseHP: 4879,
-    baseDef: 571,
-    skills: {
-      s1: {
-        rate: 0.85,
-        pow: 1,
-        afterMath: (hitType) => (hitType !== hitTypes.miss) ? { atkPercent: 0.3, penetrate: 0.7 } : null,
-        enhance: [0.05, 0.05, 0, 0.1, 0.1],
-        single: true,
-      },
-      s3: {
-        rate: 0.95,
-        pow: 1.1,
-        afterMath: (hitType) => (hitType !== hitTypes.miss) ? { atkPercent: 0.3, penetrate: 0.7 } : null,
-        enhance: [0.05, 0, 0, 0, 0.15],
         aoe: true,
       }
     }
