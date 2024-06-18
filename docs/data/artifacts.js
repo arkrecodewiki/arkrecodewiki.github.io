@@ -63,6 +63,15 @@ const artifacts = {
     type: artifactDmgType.damage,
     exclusive: classType.mage
   },
+  torn_sleeve:{
+    id: 'torn_sleeve',
+    name: 'Queen\'s Pastime',
+    image: 'Queens Pastime',
+    type: artifactDmgType.attack,
+    scale: [0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2],
+    dot: [dot.bleed],
+    exclusive: classType.thief
+  },
   els_fist: {
     id: 'els_fist',
     name: 'Rage and Desire',
@@ -161,15 +170,6 @@ const artifacts = {
     type: artifactDmgType.damage,
     exclusive: classType.mage,
     applies: (skill) => getSkillType(skill) === skillTypes.aoe,
-  },
-  torn_sleeve:{
-    id: 'torn_sleeve',
-    name: 'Queen\'s Pastime',
-    image: 'Queens Pastime',
-    type: artifactDmgType.attack,
-    scale: [0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2],
-    dot: [dot.bleed],
-    exclusive: classType.thief
   },
   creation_and_destruction: {
     id: 'creation_and_destruction',
