@@ -665,31 +665,6 @@ const heroes = {
       }
     }
   },
-  violet: {
-    name: 'Nenookaasi',
-    element: element.earth,
-    classType: classType.thief,
-    baseAtk: 989,
-    baseHP: 5364,
-    baseDef: 473,
-    form: [elements.caster_nb_focus, elements.caster_perception],
-    skills: {
-      s1: {
-        rate: 1,
-        pow: 0.9,
-        enhance: [0.05, 0.05, 0, 0.05, 0.05, 0.1, 0.1],
-        single: true,
-      },
-      s3: {
-        rate: 1.5,
-        pow: 0.9,
-        mult: () => 1 + elements.caster_nb_focus.value() * 0.15,
-        multTip: () => ({ per_focus: 15 }),
-        enhance: [0.05, 0.05, 0, 0.05, 0.05, 0.1, 0.1],
-        single: true,
-      }
-    }
-  },
   kiris: {
     name: 'Cindy',
     element: element.earth,
@@ -2819,6 +2794,31 @@ const heroes = {
         rate: 1.6,
         pow: 1,
         enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        single: true,
+      }
+    }
+  },
+  violet: {
+    name: 'Nenookaasi',
+    element: element.earth,
+    classType: classType.thief,
+    baseAtk: 989,
+    baseHP: 5364,
+    baseDef: 473,
+    form: [elements.caster_nb_focus, elements.caster_perception],
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 0.9,
+        enhance: [0.05, 0.05, 0, 0.05, 0.05, 0.1, 0.1],
+        single: true,
+      },
+      s3: {
+        rate: 1.5,
+        pow: 0.9,
+        mult: () => 1 + elements.caster_nb_focus.value() * 0.15,
+        multTip: () => ({ per_focus: 15 }),
+        enhance: [0.05, 0.05, 0, 0.05, 0.05, 0.1, 0.1],
         single: true,
       }
     }
