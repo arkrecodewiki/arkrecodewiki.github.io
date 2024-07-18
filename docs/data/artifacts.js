@@ -28,6 +28,16 @@ const artifacts = {
     exclusive: classType.warrior,
     value: (artiScale) => elements.turn_stack.value() * artiScale
   },
+  reingar_special_drink: {
+    id: 'reingar_special_drink',
+    name: 'Desperate Desire',
+    image: 'Desperate Desire',
+    type: artifactDmgType.aftermath,
+    atkPercent: 0.3,
+    penetrate: 0.7,
+    exclusive: classType.ranger,
+    applies: (skill) => getSkillType(skill) === skillTypes.aoe
+  },
   exorcist_tonfa: {
     id: 'exorcist_tonfa',
     name: 'Fallen Miracle',
@@ -180,20 +190,10 @@ const artifacts = {
     exclusive: classType.warrior,
     applies: (skill) => getSkillType(skill) === skillTypes.single,
   },
-  reingar_special_drink: {
-    id: 'reingar_special_drink',
-    name: 'A0204 Seaside Noclyn\'s Bond',
-    image: 'A0204 Seaside Noclyns Bond',
-    type: artifactDmgType.aftermath,
-    atkPercent: 0.3,
-    penetrate: 0.7,
-    exclusive: classType.ranger,
-    applies: (skill) => getSkillType(skill) === skillTypes.aoe
-  },
   violet_talisman: {
     id: 'violet_talisman',
-    name: 'A0210 Chaldea\'s Bond',
-    image: 'A0210 Chaldeas Bond',
+    name: 'A0210 Nenookaasi\'s Bond',
+    image: 'A0210 Nenookaasis Bond',
     type: artifactDmgType.attack,
     scale: [0.05, 0.055, 0.06, 0.065, 0.07, 0.075, 0.08, 0.085, 0.09, 0.095, 0.1],
     form: [elements.turn_stack_3],

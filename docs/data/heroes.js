@@ -142,7 +142,7 @@ const heroes = {
       },
       s2: {
         rate: 1,
-        pow: 1,
+        pow: 1.3,
         aoe: true,
       },
       s3: {
@@ -666,7 +666,7 @@ const heroes = {
     }
   },
   violet: {
-    name: 'Chaldea',
+    name: 'Nenookaasi',
     element: element.earth,
     classType: classType.thief,
     baseAtk: 989,
@@ -1058,7 +1058,7 @@ const heroes = {
     }
   },
   tywin: {
-    name: 'Dailian',
+    name: 'Darlene',
     element: element.ice,
     classType: classType.knight,
     baseAtk: 671,
@@ -1088,7 +1088,7 @@ const heroes = {
     }
   },
   ambitious_tywin: {
-    name: 'Dailian the Radiant',
+    name: 'Darlene the Radiant',
     element: element.light,
     classType: classType.knight,
     baseAtk: 744,
