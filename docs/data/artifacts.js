@@ -28,6 +28,21 @@ const artifacts = {
     exclusive: classType.warrior,
     value: (artiScale) => elements.turn_stack.value() * artiScale
   },
+  fairy_tale_for_a_nightmare: {
+    id: 'fairy_tale_for_a_nightmare',
+    name: 'Cyber Clash',
+    image: 'Cyber Clash',
+    type: artifactDmgType.fixedDamage,
+    form: [elements.extra_dual_or_counter],
+    penetrate: 1,
+    scale: [750, 825, 900, 975, 1050, 1125, 1200, 1275, 1350, 1425, 1500],
+    exclusive: classType.mage,
+    applies: (skill) => skill.isExtra || elements.extra_dual_or_counter.value(),
+    value: () => {
+      const artiScale = Math.floor(Number(document.getElementById('artifact-lvl')?.value || '30') / 3)
+      return artifacts['fairy_tale_for_a_nightmare'].scale[artiScale];
+    }
+  },
   reingar_special_drink: {
     id: 'reingar_special_drink',
     name: 'Desperate Desire',
@@ -115,6 +130,16 @@ const artifacts = {
     form: [elements.target_max_hp],
     flat: (artiScale) => elements.target_max_hp.value() * artiScale
   },
+  border_coin: {
+    id: 'border_coin',
+    name: 'The Jester\'s Invitation',
+    image: 'The Jesters Invitation',
+    type: artifactDmgType.attack,
+    scale: [0.075, 0.0825, 0.09, 0.0975, 0.105, 0.1125, 0.12, 0.1275, 0.135, 0.1425, 0.15],
+    form: [elements.non_attack_skill_stack_3],
+    exclusive: classType.warrior,
+    value: (artiScale) => elements.non_attack_skill_stack_3.value() * artiScale
+  },
   otherworldly_machinery: {
     id: 'otherworldly_machinery',
     name: 'The Other Side of Calm',
@@ -162,16 +187,6 @@ const artifacts = {
       return input + (elements.enemy_defeated.value() ? artifacts.wind_rider.additional[artifacts.wind_rider.scale.indexOf(input)] : 0);
     }
   },
-  border_coin: {
-    id: 'border_coin',
-    name: 'A0160 Heidi\'s Bond',
-    image: 'A0160 Heidis Bond',
-    type: artifactDmgType.attack,
-    scale: [0.075, 0.0825, 0.09, 0.0975, 0.105, 0.1125, 0.12, 0.1275, 0.135, 0.1425, 0.15],
-    form: [elements.non_attack_skill_stack_3],
-    exclusive: classType.warrior,
-    value: (artiScale) => elements.non_attack_skill_stack_3.value() * artiScale
-  },
   last_teatime: {
     id: 'last_teatime',
     name: 'A0168 Edalia\'s Bond',
@@ -192,10 +207,10 @@ const artifacts = {
   },
   violet_talisman: {
     id: 'violet_talisman',
-    name: 'A0210 Nenookaasi\'s Bond',
-    image: 'A0210 Nenookaasis Bond',
+    name: 'Candid Affection',
+    image: 'Candid Affection',
     type: artifactDmgType.attack,
-    scale: [0.05, 0.055, 0.06, 0.065, 0.07, 0.075, 0.08, 0.085, 0.09, 0.095, 0.1],
+    scale: [0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2],
     form: [elements.turn_stack_3],
     exclusive: classType.thief,
     value: (artiScale) => elements.turn_stack_3.value() * artiScale
@@ -209,20 +224,5 @@ const artifacts = {
     form: [elements.critical_hit_stack_6],
     exclusive: classType.ranger,
     value: (artiScale) => (artiScale * 3) + (elements.critical_hit_stack_6.value() * artiScale)
-  },
-  fairy_tale_for_a_nightmare: {
-    id: 'fairy_tale_for_a_nightmare',
-    name: 'A0237 Projekt Melody\'s Bond',
-    image: 'A0237 Projekt Melodys Bond',
-    type: artifactDmgType.fixedDamage,
-    form: [elements.extra_dual_or_counter],
-    penetrate: 1,
-    scale: [750, 825, 900, 975, 1050, 1125, 1200, 1275, 1350, 1425, 1500],
-    exclusive: classType.mage,
-    applies: (skill) => skill.isExtra || elements.extra_dual_or_counter.value(),
-    value: () => {
-      const artiScale = Math.floor(Number(document.getElementById('artifact-lvl')?.value || '30') / 3)
-      return artifacts['fairy_tale_for_a_nightmare'].scale[artiScale];
-    }
   },
 };

@@ -1960,38 +1960,36 @@ const heroes = {
       },
     }
   },
-  ervalen: {
-    name: 'HongKong Doll',
+  rimuru: {
+    name: 'HongKongDoll',
     element: element.earth,
-    classType: classType.thief,
-    baseAtk: 989,
+    classType: classType.warrior,
+    baseAtk: 889,
     baseHP: 5364,
-    baseDef: 473,
-    form: [elements.caster_max_hp, elements.target_max_hp],
-    barrier: (hero) => hero.getAtk() * 1.2,
+    baseDef: 592,
+    form: [elements.allies_nb_buff],
     skills: {
       s1: {
-        rate: 1,
-        pow: 1,
-        enhance: [0.05, 0, 0.1, 0, 0.15],
-        single: true,
-      },
-      s2: {
-        soulburn: true,
-        rate: (soulburn) => soulburn ? 2 : 1.4,
+        rate: 1.1,
         pow: 1,
         enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
         single: true,
       },
-      s3: {
-        hpScaling: true,
-        rate: 1.6,
+      s2: {
+        rate: 1.65,
         pow: 1,
-        mult: () => elements.caster_max_hp.value() < elements.target_max_hp.value() ? 1 + Math.min((elements.target_max_hp.value() - elements.caster_max_hp.value()) * 0.0001, 0.7) : 1,
-        multTip: () => ({caster_vs_target_hp_diff: 1}),
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        isExtra: true,
+        single: true,
+      },
+      s3: {
+        rate: 1.8,
+        pow: 1,
+        fixed: (hitType) => (hitType !== hitTypes.miss) ? Math.min(5000 + (elements.allies_nb_buff.value() * 625), 10000) : 0,
+        fixedTip: () => ({ allies_buff: 625 }),
         enhance: [0.05, 0.05, 0, 0.1, 0.1],
         single: true,
-      }
+      },
     }
   },
   nemunas: {
@@ -3364,6 +3362,24 @@ const heroes = {
         pow: 1,
         enhance: [0.05, 0.05, 0, 0, 0, 0.1, 0.1],
         aoe: true,
+      }
+    }
+  },
+  emilia: {
+    name: 'Saika Kawakita',
+    element: element.ice,
+    classType: classType.soul_weaver,
+    baseAtk: 499,
+    baseHP: 4435,
+    baseDef: 694,
+    form: [elements.caster_max_hp],
+    barrier: () => elements.caster_max_hp.value() * 0.15,
+    skills: {
+      s1: {
+        rate: 0.95,
+        pow: 1,
+        enhance: [0.05, 0, 0.05, 0.05, 0, 0.1, 0.1],
+        single: true
       }
     }
   },
