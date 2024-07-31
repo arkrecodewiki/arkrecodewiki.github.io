@@ -18,6 +18,16 @@ const artifacts = {
     type: artifactDmgType.attack,
     scale: [0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2],
   },
+  violet_talisman: {
+    id: 'violet_talisman',
+    name: 'Candid Affection',
+    image: 'Candid Affection',
+    type: artifactDmgType.attack,
+    scale: [0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2],
+    form: [elements.turn_stack_3],
+    exclusive: classType.thief,
+    value: (artiScale) => elements.turn_stack_3.value() * artiScale
+  },
   hell_cutter: {
     id: 'hell_cutter',
     name: 'Counterstroke',
@@ -204,16 +214,6 @@ const artifacts = {
     type: artifactDmgType.damage,
     exclusive: classType.warrior,
     applies: (skill) => getSkillType(skill) === skillTypes.single,
-  },
-  violet_talisman: {
-    id: 'violet_talisman',
-    name: 'Candid Affection',
-    image: 'Candid Affection',
-    type: artifactDmgType.attack,
-    scale: [0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2],
-    form: [elements.turn_stack_3],
-    exclusive: classType.thief,
-    value: (artiScale) => elements.turn_stack_3.value() * artiScale
   },
   dux_noctis: {
     id: 'dux_noctis',
