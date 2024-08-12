@@ -2154,11 +2154,10 @@ const heroes = {
         single: true,
       },
       s3: {
-        hpScaling: true,
         rate: 1.8,
         pow: 0.9,
-        flat: () => elements.caster_max_hp.value() * 0.06,
-        flatTip: () => ({caster_max_hp: 6}),
+        flat: () => elements.target_max_hp.value() * 0.06,
+        flatTip: () => ({ target_max_hp: 6 }),
         enhance: [0.05, 0.05, 0.05, 0, 0.05, 0.1, 0.1],
         single: true,
       },
