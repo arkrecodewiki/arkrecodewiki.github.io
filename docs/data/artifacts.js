@@ -65,7 +65,7 @@ const artifacts = {
   },
   creation_and_destruction: {
     id: 'creation_and_destruction',
-    name: 'Desire for Enhancement,
+    name: 'Desire for Enhancement',
     image: 'Desire for Enhancement',
     value: 0.08,
     type: artifactDmgType.damage,
