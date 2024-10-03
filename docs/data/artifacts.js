@@ -18,6 +18,16 @@ const artifacts = {
     type: artifactDmgType.attack,
     scale: [0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2],
   },
+  dux_noctis: {
+    id: 'dux_noctis',
+    name: 'Breakthrough Attempt',
+    image: 'Breakthrough Attempt',
+    type: artifactDmgType.attack,
+    scale: [0.02, 0.022, 0.024, 0.026, 0.028, 0.03, 0.032, 0.034, 0.036, 0.038, 0.04],
+    form: [elements.critical_hit_stack_6],
+    exclusive: classType.ranger,
+    value: (artiScale) => (artiScale * 3) + (elements.critical_hit_stack_6.value() * artiScale)
+  },
   violet_talisman: {
     id: 'violet_talisman',
     name: 'Candid Affection',
@@ -52,6 +62,15 @@ const artifacts = {
       const artiScale = Math.floor(Number(document.getElementById('artifact-lvl')?.value || '30') / 3)
       return artifacts['fairy_tale_for_a_nightmare'].scale[artiScale];
     }
+  },
+  creation_and_destruction: {
+    id: 'creation_and_destruction',
+    name: 'Desire for Enhancement,
+    image: 'Desire for Enhancement',
+    value: 0.08,
+    type: artifactDmgType.damage,
+    exclusive: classType.warrior,
+    applies: (skill) => getSkillType(skill) === skillTypes.single,
   },
   reingar_special_drink: {
     id: 'reingar_special_drink',
@@ -205,24 +224,5 @@ const artifacts = {
     type: artifactDmgType.damage,
     exclusive: classType.mage,
     applies: (skill) => getSkillType(skill) === skillTypes.aoe,
-  },
-  creation_and_destruction: {
-    id: 'creation_and_destruction',
-    name: 'A0192 Abyss\'s Bond',
-    image: 'A0192 Abysss Bond',
-    value: 0.08,
-    type: artifactDmgType.damage,
-    exclusive: classType.warrior,
-    applies: (skill) => getSkillType(skill) === skillTypes.single,
-  },
-  dux_noctis: {
-    id: 'dux_noctis',
-    name: 'A0219 Bartoz\'s Bond',
-    image: 'A0219 Bartozs Bond',
-    type: artifactDmgType.attack,
-    scale: [0.02, 0.022, 0.024, 0.026, 0.028, 0.03, 0.032, 0.034, 0.036, 0.038, 0.04],
-    form: [elements.critical_hit_stack_6],
-    exclusive: classType.ranger,
-    value: (artiScale) => (artiScale * 3) + (elements.critical_hit_stack_6.value() * artiScale)
   },
 };

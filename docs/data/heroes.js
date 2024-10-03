@@ -51,8 +51,9 @@ const heroes = {
         single: true,
       },
       s3: {
-        rate: 1,
-        pow: 1.1,
+        soulburn: true,
+        rate: (soulburn) => soulburn ? 2.6 : 2,
+        pow: 0.95,
         enhance: [0.05, 0.05, 0, 0.1, 0.15],
         single: true,
       }
@@ -1477,7 +1478,7 @@ const heroes = {
         single: true,
       },
       s2: {
-        rate: 1.5,
+        rate: 0.9,
         pow: 1,
         mult: () => {
           switch (elements.nb_targets.value()) {
@@ -1492,8 +1493,8 @@ const heroes = {
         aoe: true,
       },
       s3: {
-        rate: 1,
-        pow: 1.1,
+        rate: 0.95,
+        pow: 1,
         penetrate: () => {
           if (!elements.target_is_highest_max_hp.value()) return 0;
 
