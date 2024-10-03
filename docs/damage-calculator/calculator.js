@@ -175,11 +175,6 @@ const manageSetForms = () => {
 
 /* eslint-disable no-unused-vars */
 const torrentSetToggled = () => {
-  window.dataLayer.push({
-    'event': 'toggle_torrent_set',
-    'torrent_set': torrentSetInput.checked ? 'on' : 'off'
-  });
-
   // reset value when toggling torrent set off
   if (!torrentSetInput.checked) {
     torrentSetStackInput.value = formDefaults.torrentSetStack;
@@ -805,11 +800,6 @@ const toggleChart = () => {
   chartButton = document.getElementById('chart-button-text');
 
   if (chartContainer.style.display == 'none') {
-    window.dataLayer.push({
-      'event': 'show_chart',
-      'hero': inputValues['hero'],
-      'lang': lang
-    });
     updateGraphSkillSelect();
     // This one doesn't really need to be debounced because it doesn't cause any visible lag if you toggle it a lot
     calculateChart(inputValues);
