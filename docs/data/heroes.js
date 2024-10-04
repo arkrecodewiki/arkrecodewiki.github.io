@@ -3510,7 +3510,7 @@ seaside_bellona: {
     baseHP: 5890,
     baseDef: 655,
     form: [elements.caster_max_hp],
-    barrier: () => elements.caster_max_hp.value() * 0.1,
+    barrier: () => elements.caster_max_hp.value() * 0.13,
     barrierEnhance: 's2',
     skills: {
       s1: {
