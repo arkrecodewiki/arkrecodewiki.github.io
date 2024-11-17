@@ -187,6 +187,33 @@ const heroes = {
       }
     }
   },
+ ae_giselle: {
+    name: 'Annin Miru',
+    element: element.earth,
+    classType: classType.mage,
+    form: [elements.target_hp_pc],
+    baseAtk: 1043,
+    baseHP: 4313,
+    baseDef: 652,
+    skills: {
+      s1: {
+        mult: () => 1 + elements.target_hp_pc.value() * 0.002,
+        multTip: () => ({ target_current_hp: 0.2 }),
+        soulburn: true,
+        rate: (soulburn) => soulburn ? 1.7 : 1,
+        pow: 1,
+        enhance: [0.05, 0, 0.1, 0, 0.15],
+        single: true,
+      },
+      s3: {
+        rate: 2,
+        pow: 1,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        single: true,
+        noTrans: true,
+      }
+    }
+  },
   pearlhorizon: {
     name: 'Antiya',
     element: element.earth,
@@ -2916,6 +2943,7 @@ const heroes = {
         flat: () => elements.caster_defense.value() * 1.15,
         flatTip: () => ({ caster_defense: 115 }),
         enhance: [0.05, 0.05, 0, 0.05, 0.15],
+        penetrate: () => 0.5,
         aoe: true,
       }
     }

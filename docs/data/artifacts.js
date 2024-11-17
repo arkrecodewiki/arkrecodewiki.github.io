@@ -18,6 +18,15 @@ const artifacts = {
     type: artifactDmgType.attack,
     scale: [0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2],
   },
+  frame_of_light: {
+    id: 'frame_of_light',
+    name: 'Breached Defenses',
+    image: 'Breached Defenses',
+    scale: [0.08, 0.088, 0.096, 0.104, 0.112, 0.12, 0.128, 0.136, 0.144, 0.152, 0.16],
+    type: artifactDmgType.damage,
+    exclusive: classType.mage,
+    applies: (skill) => getSkillType(skill) === skillTypes.single,
+  },
   dux_noctis: {
     id: 'dux_noctis',
     name: 'Breakthrough Attempt',
