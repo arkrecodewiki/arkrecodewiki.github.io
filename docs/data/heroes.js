@@ -59,6 +59,32 @@ const heroes = {
       }
     }
   },
+  ae_winter: {
+    name: 'Akane',
+    element: element.fire,
+    classType: classType.thief,
+    baseAtk: 907,
+    baseHP: 5122,
+    baseDef: 532,
+    form: [elements.attack_skill_stack_3],
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0.05, 0, 0.05, 0, 0.05, 0.1],
+        single: true,
+      },
+      s3: {
+        rate: 0.8,
+        pow: 0.95,
+        fixed: (hitType) => (hitType === hitTypes.crit) ? 5000 * (elements.attack_skill_stack_3.value() + 1)  : 0,
+        fixedTip: () => ({fixed: 5000, per_stack: 5000 }),
+        enhance: [0.05, 0.05, 0, 0.05, 0.05, 0.1, 0.1],
+        single: true,
+      },
+    }
+  },
+
   eligos: {
     name: 'Akaoni',
     element: element.fire,
