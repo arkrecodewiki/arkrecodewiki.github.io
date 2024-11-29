@@ -719,6 +719,47 @@ const heroes = {
       }
     }
   },
+  luna: {
+    name: 'Christmas Mirabelle',
+    element: element.fire,
+    classType: classType.warrior,
+    baseAtk: 889,
+    baseHP: 5364,
+    baseDef: 592,
+    form: [elements.caster_hp_above_50pc, elements.nb_hits],
+    atkUp: () => {
+      if (!elements.caster_hp_above_50pc.value()) {
+        return 1;
+      }
+
+      let mult = 1.2;
+      for (let i = 0; i < Number(document.getElementById('molagora-s2').value); i++) {
+        mult += heroes.luna.skills.s2.enhance[i];
+      }
+
+      return mult;
+    },
+    skills: {
+      s1: {
+        soulburn: true,
+        rate: (soulburn) => (soulburn ? 3 : elements.nb_hits.value()) * 0.7,
+        pow: 0.95,
+        enhance: [0.05, 0.05, 0.05, 0.1, 0.1],
+        single: true,
+      },
+      s2: {
+        enhance: [0.01, 0.02, 0.02, 0.02, 0.03]
+      },
+      s3: {
+        rate: 1.1,
+        pow: 1.05,
+        penetrate: () => 0.5,
+        enhance: [0.05, 0, 0.1, 0, 0.1],
+        elemAdv: () => true,
+        single: true,
+      }
+    }
+  },
   kiris: {
     name: 'Cindy',
     element: element.earth,
@@ -1399,8 +1440,8 @@ const heroes = {
         soulburn: true,
         rate: (soulburn) => soulburn ? 1.35 : 1.1,
         pow: 0.9,
-        mult: () => 1 + (elements.target_nb_debuff.value() * 0.15),
-        multTip: () => ({ per_target_debuff: 15 }),
+        mult: () => 1 + (elements.target_nb_debuff.value() * 0.2),
+        multTip: () => ({ per_target_debuff: 20 }),
         enhance: [0.05, 0.05, 0, 0.1, 0.1, 0.1],
         aoe: true,
       },
@@ -1774,7 +1815,7 @@ const heroes = {
     dot: [dot.bleed],
     skills: {
       s1: {
-        rate: 1,
+        rate: 1.2,
         pow: 1,
         enhance: [0.05, 0, 0.1, 0, 0.15],
         canExtra: true,
