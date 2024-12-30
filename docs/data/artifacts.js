@@ -110,6 +110,13 @@ const artifacts = {
       return (elements.enemy_defeated.value() ? input : 0);
     }
   },
+  portrait_of_the_saviors: {
+    id: 'portrait_of_the_saviors',
+    name: 'Hello, Loyal Customer!',
+    image: 'Hello Loyal Customer',
+    scale: [0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2],
+    type: artifactDmgType.damage
+  },
   draco_plate: {
     id: 'draco_plate',
     name: 'Lonely Salvation',
