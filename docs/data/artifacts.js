@@ -110,6 +110,14 @@ const artifacts = {
       return (elements.enemy_defeated.value() ? input : 0);
     }
   },
+  draco_plate: {
+    id: 'draco_plate',
+    name: 'Lonely Salvation',
+    image: 'Lonely Salvation',
+    scale: [0.15, 0.17, 0.18, 0.2, 0.21, 0.23, 0.24, 0.26, 0.27, 0.29, 0.3],
+    type: artifactDmgType.critDmgBoost,
+    exclusive: classType.warrior
+  },
   elyha_knife: {
     id: 'elyha_knife',
     name: 'Loving Caress',

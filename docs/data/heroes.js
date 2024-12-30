@@ -732,7 +732,7 @@ const heroes = {
         return 1;
       }
 
-      let mult = 1.2;
+      let mult = 1.3;
       for (let i = 0; i < Number(document.getElementById('molagora-s2').value); i++) {
         mult += heroes.luna.skills.s2.enhance[i];
       }
@@ -1766,7 +1766,7 @@ const heroes = {
         single: true,
       },
       s1_alt: {
-        rate: 1.2,
+        rate: 1.4,
         pow: 1,
         name: 'Desperate Sword Dance',
         mult: () => 1 + (100 - elements.target_hp_pc.value()) * 0.004,
