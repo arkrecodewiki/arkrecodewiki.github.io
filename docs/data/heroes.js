@@ -3461,7 +3461,7 @@ const heroes = {
     }
   },
   emilia: {
-    name: 'Saika Kawakita',
+    name: 'Saika',
     element: element.ice,
     classType: classType.soul_weaver,
     baseAtk: 499,
