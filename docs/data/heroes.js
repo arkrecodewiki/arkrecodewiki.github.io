@@ -3631,6 +3631,41 @@ seaside_bellona: {
       }
     }
   },
+  landy: {
+    name: 'Shinonome ft. Fang',
+    element: element.earth,
+    classType: classType.ranger,
+    baseAtk: 925,
+    baseHP: 5122,
+    baseDef: 553,
+    form: [elements.caster_full_fighting_spirit, elements.attack_skill_stack_3],
+    atkUp: () => {
+      let boost = 0.15;
+      for (let i = 0; i < Number(document.getElementById('molagora-s2').value); i++) {
+        boost += heroes.landy.skills.s2.enhance[i];
+      }
+
+      return 1 + elements.attack_skill_stack_3.value() * boost;
+    },
+    skills: {
+      s1: {
+        rate: 1.1,
+        pow: 1,
+        enhance: [0.05, 0, 0.1, 0, 0.15],
+        single: true,
+      },
+      s2: {
+        enhance: [0.005, 0.005, 0.01, 0.01, 0.02]
+      },
+      s3: {
+        aoe: true,
+        rate: 0.9,
+        pow: 1,
+        penetrate: () => elements.caster_full_fighting_spirit.value() ? 0.5 : 0,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1]
+      }
+    }
+  },
   alexa: {
     name: 'Silbal',
     element: element.ice,
@@ -3719,6 +3754,45 @@ seaside_bellona: {
         enhance: [0.05, 0.05, 0, 0.05, 0.15],
         aoe: true,
       }
+    }
+  },
+  summertime_iseria: {
+    name: 'Springtime Mina',
+    element: element.fire,
+    classType: classType.ranger,
+    baseAtk: 853,
+    baseHP: 5284,
+    baseDef: 585,
+    form: [elements.target_bomb_detonate],
+    dot: [dot.bomb],
+    innateAtkUp: () => {
+      let boost = 0.35;
+      for (let i = 0; i < Number(document.getElementById('molagora-s2').value); i++) {
+        boost += heroes.summertime_iseria.skills.s2.enhance[i];
+      }
+
+      return boost;
+    },
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0, 0.1, 0, 0.15],
+        single: true,
+        noCrit: true,
+      },
+      s2: {
+        enhance: [0.02, 0.02, 0.03, 0.03, 0.05],
+      },
+      s3: {
+        rate: 1.2,
+        pow: 1,
+        detonate: dot.bomb,
+        detonation: () => 1.1,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        aoe: true,
+        noCrit: true,
+      },
     }
   },
   sven: {
