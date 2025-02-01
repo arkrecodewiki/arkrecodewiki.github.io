@@ -2665,6 +2665,35 @@ const heroes = {
       }
     }
   },
+  tempest_surin: {
+    name: 'Naksha',
+    element: element.light,
+    classType: classType.thief,
+    baseAtk: 789,
+    baseHP: 4677,
+    baseDef: 497,
+    form: [elements.caster_hp_pc],
+    dot: [dot.bleed],
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        mult: () => 1 + (100 - elements.caster_hp_pc.value()) * 0.0015,
+        multTip: () => ({ caster_lost_hp_pc: 15 }),
+        enhance: [0.05, 0, 0.1, 0, 0.15],
+        single: true,
+      },
+      s3: {
+        soulburn: true,
+        rate: (soulburn) => soulburn ? 1.25 : 1,
+        pow: 1.05,
+        mult: () => 1 + (100 - elements.caster_hp_pc.value()) * 0.002,
+        multTip: () => ({ caster_lost_hp_pc: 20 }),
+        enhance: [0.1, 0, 0, 0, 0.15],
+        aoe: true,
+      }
+    }
+  },
  bask: {
     name: 'Maeve',
     element: element.ice,
