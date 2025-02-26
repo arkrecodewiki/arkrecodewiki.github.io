@@ -183,6 +183,15 @@ const artifacts = {
     form: [elements.target_max_hp],
     flat: (artiScale) => elements.target_max_hp.value() * artiScale
   },
+  last_teatime: {
+    id: 'last_teatime',
+    name: 'Sweet Contrast',
+    image: 'Sweet Contrast',
+    scale: [0.09, 0.099, 0.108, 0.117, 0.126, 0.135, 0.144, 0.153, 0.162, 0.171, 0.18],
+    type: artifactDmgType.damage,
+    exclusive: classType.mage,
+    applies: (skill) => getSkillType(skill) === skillTypes.aoe,
+  },
   border_coin: {
     id: 'border_coin',
     name: 'The Jester\'s Invitation',
@@ -239,14 +248,5 @@ const artifacts = {
     value: (input) => {
       return input + (elements.enemy_defeated.value() ? artifacts.wind_rider.additional[artifacts.wind_rider.scale.indexOf(input)] : 0);
     }
-  },
-  last_teatime: {
-    id: 'last_teatime',
-    name: 'Sweet Contrast',
-    image: 'Sweet Contrast',
-    scale: [0.09, 0.099, 0.108, 0.117, 0.126, 0.135, 0.144, 0.153, 0.162, 0.171, 0.18],
-    type: artifactDmgType.damage,
-    exclusive: classType.mage,
-    applies: (skill) => getSkillType(skill) === skillTypes.aoe,
   },
 };
