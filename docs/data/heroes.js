@@ -660,6 +660,36 @@ const heroes = {
       }
     }
   },
+ ran: {
+    name: 'Bunny Girl Erica',
+    element: element.ice,
+    classType: classType.thief,
+    baseAtk: 889,
+    baseHP: 4960,
+    baseDef: 483,
+    form: [elements.caster_speed, elements.target_speed],
+    skills: {
+      s1: {
+        spdScaling: true,
+        rate: 0.9,
+        pow: 0.9,
+        mult: () => 1 + elements.caster_speed.value() * 0.00075,
+        multTip: () => ({ caster_speed: 0.075 }),
+        penetrate: () => 0.2,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+      },
+      s3: {
+        spdScaling: true,
+        rate: 0.8,
+        pow: 1,
+        mult: () => 1 + elements.caster_speed.value() * 0.00075 + elements.target_speed.value() * 0.0015,
+        multTip: () => ({ caster_speed: 0.075, target_speed: 0.15 }),
+        enhance: [0.05, 0.05, 0, 0, 0, 0.1, 0.1],
+        aoe: true,
+      }
+    }
+  },
   maya: {
     name: 'Carolyn',
     element: element.fire,
@@ -756,6 +786,7 @@ const heroes = {
         penetrate: () => 0.5,
         enhance: [0.05, 0, 0.1, 0, 0.1],
         elemAdv: () => true,
+        noTrans: true,
         single: true,
       }
     }
@@ -1434,6 +1465,8 @@ const heroes = {
       s1: {
         rate: 1,
         pow: 1,
+        mult: () => 1 + (elements.target_nb_debuff.value() * 0.2),
+        multTip: () => ({ per_target_debuff: 20 }),
         enhance: [0.15, 0, 0.15]
       },
       s2: {
@@ -1448,6 +1481,8 @@ const heroes = {
       s3: {
         rate: 0.8,
         pow: 1,
+        mult: () => 1 + (elements.target_nb_debuff.value() * 0.2),
+        multTip: () => ({ per_target_debuff: 20 }),
         enhance: [0.05, 0, 0, 0, 0.1, 0.15],
         aoe: true,
       }
@@ -2336,6 +2371,31 @@ const heroes = {
       },
     }
   },
+  lucy: {
+    name: 'Kagura',
+    element: element.earth,
+    classType: classType.soul_weaver,
+    baseAtk: 408,
+    baseHP: 4313,
+    baseDef: 624,
+    form: [elements.caster_max_hp],
+    barrier: () => elements.caster_max_hp.value() * 0.2,
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 0.95,
+        enhance: [0.05, 0.05, 0, 0.05, 0, 0.1, 0.1],
+        single: true,
+      },
+      s2: {
+        rate: 0.9,
+        pow: 0.95,
+        enhance: [0.05, 0.05, 0, 0.05, 0, 0.1, 0.1],
+        aoe: true,
+      }
+    }
+  },
+
   cartuja: {
     name: 'Kalici',
     element: element.earth,
@@ -3377,6 +3437,36 @@ const heroes = {
       }
     }
   },
+  ae_karina: {
+    name: 'Radiant Vow Rubi',
+    element: element.ice,
+    classType: classType.knight,
+    baseAtk: 671,
+    baseDef: 648,
+    baseHP: 5809,
+    form: [elements.caster_defense],
+    skills: {
+      s1: {
+        defenseScaling: true,
+        rate: 0.5,
+        pow: 1,
+        flat: () =>  elements.caster_defense.value() * 1.0,
+        flatTip: () => ({ caster_defense: 100 }),
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        single: true,
+      },
+      s3: {
+        defenseScaling: true,
+        rate: 0.5,
+        pow: 1,
+        flat: () => elements.caster_defense.value() * 0.5,
+        flatTip: () => ({ caster_defense: 50 }),
+        afterMath: (hitType) => (hitType !== hitTypes.miss) ? { defPercent: 1.4, penetrate: 0.7 } : null,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        single: true,
+      },
+    }
+  },
   diene: {
     name: 'Rafael',
     element: element.ice,
@@ -4074,6 +4164,28 @@ seaside_bellona: {
         rate: 0.8,
         pow: 0.8,
         enhance: [0.05, 0.05, 0, 0.1, 0.15],
+        aoe: true,
+      }
+    }
+  },
+ elena: {
+    name: 'Urd',
+    element: element.ice,
+    classType: classType.soul_weaver,
+    baseAtk: 499,
+    baseHP: 4435,
+    baseDef: 694,
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0.05, 0.1, 0.1],
+        single: true,
+      },
+      s3: {
+        rate: 0.9,
+        pow: 1,
+        enhance: [0.05, 0, 0.1, 0.15],
         aoe: true,
       }
     }

@@ -242,9 +242,9 @@ const artifacts = {
   },
   last_teatime: {
     id: 'last_teatime',
-    name: 'A0168 Edalia\'s Bond',
-    image: 'A0168 Edalias Bond',
-    scale: [0.07, 0.077, 0.084, 0.091, 0.098, 0.105, 0.112, 0.119, 0.126, 0.133, 0.14],
+    name: 'Sweet Contrast',
+    image: 'Sweet Contrast',
+    scale: [0.09, 0.099, 0.108, 0.117, 0.126, 0.135, 0.144, 0.153, 0.162, 0.171, 0.18],
     type: artifactDmgType.damage,
     exclusive: classType.mage,
     applies: (skill) => getSkillType(skill) === skillTypes.aoe,
