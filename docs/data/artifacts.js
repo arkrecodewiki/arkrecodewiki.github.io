@@ -169,9 +169,9 @@ const artifacts = {
     id: 'sword_of_winter_shadow',
     name: 'Secret Compensation',
     image: 'Secret Compensation',
-    type: artifactDmgType.damage
-    exclusive: classType.thief,
     scale: [0.12, 0.132, 0.144, 0.156, 0.168, 0.18, 0.192, 0.204, 0.216, 0.228, 0.24],
+    type: artifactDmgType.damage,
+    exclusive: classType.thief
   },
   an_offer_you_cant_refuse: {
     id: 'an_offer_you_cant_refuse',
