@@ -3530,7 +3530,7 @@ const heroes = {
       },
     }
   },
-  conqueror_lilias: {
+  radiant_vow_teddy_ith: {
     name: 'Radiant Vow Teddy Ith',
     element: element.light,
     classType: classType.warrior,
