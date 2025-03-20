@@ -2031,6 +2031,44 @@ const heroes = {
       },
     }
   },
+  kawerik: {
+    name: 'Heroic',
+    element: element.fire,
+    classType: classType.mage,
+    baseAtk: 1061,
+    baseHP: 3828,
+    baseDef: 652,
+    form: [elements.caster_speed],
+    skills: {
+      s1: {
+        spdScaling: true,
+        rate: 0.9,
+        pow: 1,
+        mult: () => 1 + elements.caster_speed.value() * 0.00081,
+        multTip: () => ({ caster_speed: 0.081 }),
+        enhance: [0.05, 0, 0.1, 0, 0.15],
+        single: true,
+      },
+      s2: {
+        rate: 1.4,
+        pow: 1,
+        mult: () => 1 + elements.caster_speed.value() * 0.003231,
+        multTip: () => ({ caster_speed: 0.3231 }),
+        enhance: [0.05, 0, 0.1, 0, 0.15],
+        single: true,
+      },
+      s3: {
+        spdScaling: true,
+        rate: 0.8,
+        pow: 0.95,
+        mult: () => 1 + elements.caster_speed.value() * 0.00081,
+        multTip: () => ({ caster_speed: 0.081 }),
+        penetrate: () => 0.3,
+        enhance: [0.05, 0.05, 0, 0.1, 0.15],
+        aoe: true,
+      }
+    }
+  },
   kise: {
     name: 'Hestia',
     element: element.ice,
@@ -3446,6 +3484,22 @@ const heroes = {
       }
     }
   },
+  conqueror_lilias: {
+    name: 'Radiant Vow Ith',
+    element: element.light,
+    classType: classType.warrior,
+    baseAtk: 735,
+    baseHP: 5405,
+    baseDef: 613,
+    skills: {
+      s1: {
+        rate: 1.2,
+        pow: 0.95,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+      }
+    }
+  },
   ae_karina: {
     name: 'Radiant Vow Rubi',
     element: element.ice,
@@ -3474,6 +3528,22 @@ const heroes = {
         enhance: [0.05, 0.05, 0, 0.1, 0.1],
         single: true,
       },
+    }
+  },
+  conqueror_lilias: {
+    name: 'Radiant Vow Teddy Ith',
+    element: element.light,
+    classType: classType.warrior,
+    baseAtk: 608,
+    baseHP: 4960,
+    baseDef: 617,
+    skills: {
+      s1: {
+        rate: 0.2,
+        pow: 0.95,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+      }
     }
   },
   diene: {
