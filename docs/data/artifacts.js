@@ -257,4 +257,16 @@ const artifacts = {
       return input + (elements.enemy_defeated.value() ? artifacts.wind_rider.additional[artifacts.wind_rider.scale.indexOf(input)] : 0);
     }
   },
+  rocket_punch_gauntlet: {
+    id: 'rocket_punch_gauntlet',
+    name: 'Rocket Punch Gauntlet',
+    image: 'A0263',
+    type: artifactDmgType.aftermath,
+    form: [elements.caster_defense],
+    defenseScaling: true,
+    defPercent: 1.0,
+    penetrate: 0.7,
+    exclusive: classType.knight,
+    applies: (skill) => getSkillType(skill) === skillTypes.single,
+  },
 };
