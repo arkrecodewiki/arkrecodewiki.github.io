@@ -1352,7 +1352,7 @@ const updateGraphSkillSelect = () => {
 // window.addEventListener('DOMContentLoaded', () => {
 buildInitialForm = () => {
   try {
-    const  ector = document.getElementById('hero');
+    const heroSelector = document.getElementById('hero');
     const artiSelector = document.getElementById('artifact');
     const chartSkillSelector = document.getElementById('chart-skill');
     Object.keys(heroes).map((id => {
