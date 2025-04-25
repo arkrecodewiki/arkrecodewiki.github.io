@@ -697,7 +697,7 @@ const heroes = {
     baseAtk: 671,
     baseDef: 648,
     baseHP: 5850,
-    form: [elements.caster_defense],
+    form: [elements.caster_defense, elements.caster_defense_increase],
     skills: {
       s1: {
         defenseScaling: true,
@@ -917,7 +917,7 @@ const heroes = {
     baseAtk: 671,
     baseDef: 645,
     baseHP: 5364,
-    form: [elements.caster_defense, elements.target_hp_pc],
+    form: [elements.caster_defense, elements.caster_defense_increase, elements.target_hp_pc],
     skills: {
       s1: {
         defenseScaling: true,
@@ -1495,7 +1495,7 @@ const heroes = {
     baseAtk: 571,
     baseDef: 683,
     baseHP: 5769,
-    form: [elements.caster_defense],
+    form: [elements.caster_defense, elements.caster_defense_increase],
     barrier: () => elements.caster_defense.value() * 1,
     skills: {
       s1: {
@@ -1562,7 +1562,7 @@ const heroes = {
     baseAtk: 671,
     baseDef: 645,
     baseHP: 5364,
-    form: [elements.caster_defense],
+    form: [elements.caster_defense, elements.caster_defense_increase],
     skills: {
       s1: {
         defenseScaling: true,
@@ -1825,7 +1825,7 @@ const heroes = {
     baseAtk: 671,
     baseDef: 645,
     baseHP: 5364,
-    form: [elements.caster_defense],
+    form: [elements.caster_defense, elements.caster_defense_increase],
     barrier: () => elements.caster_defense.value(),
     skills: {
       s1: {
@@ -3125,7 +3125,7 @@ const heroes = {
     name: 'Obsidian',
     element: element.dark,
     classType: classType.warrior,
-    form: [elements.caster_defense],
+    form: [elements.caster_defense, elements.caster_defense_increase],
     baseAtk: 825,
     baseDef: 599,
     baseHP: 5769,
@@ -3229,7 +3229,7 @@ const heroes = {
     baseAtk: 753,
     baseDef: 578,
     baseHP: 5405,
-    form: [elements.caster_defense, elements.caster_enrage],
+    form: [elements.caster_defense, elements.caster_defense_increase, elements.caster_enrage],
     skills: {
       s1: {
         defenseScaling: true,
@@ -3507,7 +3507,7 @@ const heroes = {
     baseAtk: 671,
     baseDef: 648,
     baseHP: 5809,
-    form: [elements.caster_defense],
+    form: [elements.caster_defense, elements.caster_defense_increase],
     skills: {
       s1: {
         defenseScaling: true,
@@ -4365,7 +4365,7 @@ seaside_bellona: {
     baseAtk: 535,
     baseDef: 645,
     baseHP: 6203,
-    form: [elements.caster_defense, elements.caster_attacked_stack_3],
+    form: [elements.caster_defense, elements.caster_defense_increase, elements.caster_attacked_stack_3],
     barrier: () => elements.caster_defense.value() * (1 + elements.caster_attacked_stack_3.value() * 0.1) * 0.6,
     skills: {
       s1: {
@@ -4439,7 +4439,7 @@ seaside_bellona: {
     baseAtk: 553,
     baseDef: 596,
     baseHP: 5041,
-    form: [elements.caster_defense],
+    form: [elements.caster_defense, elements.caster_defense_increase],
     skills: {
       s1: {
         defenseScaling: true,

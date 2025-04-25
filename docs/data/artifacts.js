@@ -146,7 +146,7 @@ const artifacts = {
     name: 'Pristine Sincerity',
     image: 'Pristine Sincerity',
     type: artifactDmgType.aftermath,
-    form: [elements.caster_defense],
+    form: [elements.caster_defense, elements.caster_defense_increase],
     defenseScaling: true,
     defPercent: 1.0,
     penetrate: 0.7,

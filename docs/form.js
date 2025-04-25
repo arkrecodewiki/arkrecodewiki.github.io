@@ -396,10 +396,21 @@ const elements = {
       }
       return Number(document.getElementById('caster-defense').value)
       * (1 + (elements.caster_defense_up.value() ? battleConstants.defUp : 0)
+         + (elements.caster_defense_increase.value() / 100 )
          + (document.getElementById('vigor').checked ? battleConstants.vigor - 1 : 0)
          + (document.getElementById('caster-fury')?.checked ? battleConstants['caster-fury'] - 1 : 0)
          + (document.getElementById('caster-has-trauma')?.checked ? battleConstants['trauma'] : 0));
     }
+  },
+  caster_defense_increase: {
+    ref: 'caster_defense_increase',
+    id: 'caster-defense-increase',
+    label: 'Defense Increase %',
+    type: 'slider',
+    min: 0,
+    max: 200,
+    default: 0,
+    value: () => Number(document.getElementById('caster-defense-increase').value)
   },
   caster_defense_up: {
     ref: 'caster_defense_up',
