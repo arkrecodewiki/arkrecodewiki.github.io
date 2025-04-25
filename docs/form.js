@@ -1352,7 +1352,7 @@ const updateGraphSkillSelect = () => {
 // window.addEventListener('DOMContentLoaded', () => {
 buildInitialForm = () => {
   try {
-    const heroSelector = document.getElementById('hero');
+    const  ector = document.getElementById('hero');
     const artiSelector = document.getElementById('artifact');
     const chartSkillSelector = document.getElementById('chart-skill');
     Object.keys(heroes).map((id => {
@@ -1363,7 +1363,7 @@ buildInitialForm = () => {
     $(artiSelector).append(`<option value="">${artifactName('no_proc')}</option>`);
     $(artiSelector).append('<option data-divider="true"></option>');
     Object.keys(artifacts).map((id => {
-      $(artiSelector).append(`<option value="${id}" data-content="${artifactIcon(artifacts[id].image)}<span> ${artifactName(id)}</span>">${artifactName(id)}</option>`);
+      $(artiSelector).append(`<option value="${id}" data-content="${artifactIcon(artifacts[id].image)}${classIcon(artifacts[id].exclusive ? artifacts[id].exclusive : 'any')}<span> ${artifactName(id)}</span>">${artifactName(id)}</option>`); 
     }));
 
     // This is a bit clunky but the #1 alphabetical hero changes so rarely it's not much of an issue. So far it only changed from Achates to Abigail.
