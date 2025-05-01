@@ -86,7 +86,7 @@ const artifacts = {
     name: 'Desperate Desire',
     image: 'Desperate Desire',
     type: artifactDmgType.aftermath,
-    atkPercent: 0.3,
+    atkPercent: 0.45,
     penetrate: 0.7,
     exclusive: classType.ranger,
     applies: (skill) => getSkillType(skill) === skillTypes.aoe

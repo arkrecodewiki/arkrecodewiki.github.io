@@ -3715,7 +3715,7 @@ seaside_bellona: {
     name: 'Seaside Noclyn',
     element: element.ice,
     classType: classType.ranger,
-    baseAtk: 898,
+    baseAtk: 1024,
     baseHP: 4879,
     baseDef: 571,
     skills: {
@@ -3726,7 +3726,7 @@ seaside_bellona: {
         single: true,
       },
       s2: {
-        rate: 0.7,
+        rate: 0.8,
         pow: 1,
         enhance: [0.05, 0.1, 0.15],
         aoe: true,
