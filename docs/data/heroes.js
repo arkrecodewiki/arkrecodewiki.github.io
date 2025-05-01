@@ -3726,8 +3726,10 @@ seaside_bellona: {
         single: true,
       },
       s2: {
-        rate: 0.8,
+        rate: 0.7,
         pow: 1,
+        mult: () => 1.1,
+        multTip: () => (1.1),
         enhance: [0.05, 0.1, 0.15],
         aoe: true,
       },
