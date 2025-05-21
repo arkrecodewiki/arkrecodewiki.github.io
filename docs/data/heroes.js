@@ -303,7 +303,7 @@ const heroes = {
     name: 'Apathy',
     element: element.earth,
     classType: classType.thief,
-    baseAtk: 961,
+    baseAtk: 1096,
     baseHP: 4718,
     baseDef: 522,
     form: [elements.caster_speed],
@@ -317,7 +317,7 @@ const heroes = {
         enhance: [0.05, 0.05, 0.05, 0.1, 0.1]
       },
       s2: {
-        rate: 0.5,
+        rate: 0.7,
         pow: 1,
         enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
         aoe: true,
@@ -729,7 +729,7 @@ const heroes = {
     form: [elements.target_has_buff],
     skills: {
       s1: {
-        rate: 1,
+        rate: 1.3,
         pow: 1,
         enhance: [0.05, 0.05, 0, 0.05, 0, 0.15],
         single: true,
@@ -1037,7 +1037,7 @@ const heroes = {
     element: element.light,
     classType: classType.thief,
     baseAtk: 989,
-    baseHP: 5364,
+    baseHP: 6437,
     baseDef: 473,
     form: [elements.target_is_stunned],
     skills: {
@@ -2830,6 +2830,22 @@ const heroes = {
       }
     }
   },
+  ray: {
+    name: 'Mandragora',
+    element: element.earth,
+    classType: classType.soul_weaver,
+    baseAtk: 544,
+    baseHP: 4435,
+    baseDef: 655,
+    skills: {
+      s1: {
+        rate: 0.9,
+        pow: 1,
+        enhance: [0.05, 0.1, 0.15],
+        single: true,
+      }
+    }
+  },
   free_spirit_tieria: {
     name: 'Marsha',
     element: element.light,
@@ -3580,10 +3596,10 @@ const heroes = {
     skills: {
       s1: {
         soulburn: true,
-        rate: (soulburn) => soulburn ? 1.35 : 0.85,
+        rate: (soulburn) => soulburn ? 1.1 : 0.9,
         pow: 1,
-        mult: () => 1 + (100 - elements.caster_hp_pc.value()) * 0.0015,
-        multTip: () => ({ caster_lost_hp_pc: 0.15 }),
+        mult: () => 1 + (100 - elements.caster_hp_pc.value()) * 0.002,
+        multTip: () => ({ caster_lost_hp_pc: 0.2 }),
         enhance: [0.05, 0.05, 0, 0.05, 0, 0.15],
         aoe: true,
       },
