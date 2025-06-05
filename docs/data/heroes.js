@@ -1598,7 +1598,7 @@ const heroes = {
     baseAtk: 989,
     baseHP: 5364,
     baseDef: 553,
-    form: [elements.nb_targets, elements.target_is_highest_max_hp, elements.target_attack],
+    form: [elements.nb_targets, elements.target_is_highest_max_hp],
     skills: {
       s1: {
         rate: 1,
@@ -1624,17 +1624,7 @@ const heroes = {
       s3: {
         rate: 0.95,
         pow: 1,
-        penetrate: () => {
-          if (!elements.target_is_highest_max_hp.value()) return 0;
-
-          const targetAtk = elements.target_attack.value();
-          const casterAtk = currentHero.getAtk('s3');
-
-          const penDiff = (casterAtk - targetAtk) * 0.00035;
-
-          return Math.min(Math.max(0, penDiff) + 0.3, 1);
-        },
-        penetrateTip: () => ({caster_target_atk_diff: 0.035}),
+        penetrate: () => 1.0,
         enhance: [0.05, 0.05, 0, 0.1, 0.1],
         aoe: true,
       },
