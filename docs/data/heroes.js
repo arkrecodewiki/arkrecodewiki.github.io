@@ -1624,7 +1624,7 @@ const heroes = {
       s3: {
         rate: 0.95,
         pow: 1,
-        penetrate: () => 1.0,
+        penetrate: () => document.getElementById('target-is-highest-max-hp').checked ? 0.4 : 0,
         enhance: [0.05, 0.05, 0, 0.1, 0.1],
         aoe: true,
       },
