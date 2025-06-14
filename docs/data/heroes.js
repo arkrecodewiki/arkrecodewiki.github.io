@@ -4008,6 +4008,67 @@ seaside_bellona: {
       },
     }
   },
+  elphelt_valentine: {
+    name: 'Summertime Joyce',
+    element: element.fire,
+    classType: classType.ranger,
+    baseAtk: 853,
+    baseHP: 5284,
+    baseDef: 585,
+    form: [elements.target_nb_debuff],
+    skills: {
+      s1: {
+        rate: 1.1,
+        pow: 1,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        single: true,
+      },
+      s2: {
+        rate: 1,
+        pow: 1,
+        mult: () => 1 + (elements.target_nb_debuff.value() * 0.2),
+        multTip: () => ({ per_target_debuff: 20 }),
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+      },
+      s3: {
+        rate: 1.1,
+        pow: 1.1,
+        enhance: [0.05, 0, 0, 0, 0.15],
+        single: true,
+      }
+    }
+  },
+  roana: {
+    name: 'Summertime Petra',
+    element: element.earth,
+    classType: classType.soul_weaver,
+    baseAtk: 471,
+    baseHP: 4637,
+    baseDef: 736,
+    form: [elements.caster_max_hp],
+    barrierSkills: ['S1', 'S3'],
+    barrier: () => {
+      const scale = [0, 0.05, 0, 0.1, 0, 0.1, 0];
+      let boost = 1.0;
+      for (let i = 0; i < Number(document.getElementById('molagora-s1').value); i++) {
+        boost += scale[i];
+      }
+
+      return elements.caster_max_hp.value() * 0.1 * boost;
+    },
+    barrier2: () => {
+      return elements.caster_max_hp.value() * 0.15;
+    },
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0, 0.05, 0, 0.1, 0, 0.1],
+        single: true,
+      }
+    }
+  },
   sven: {
     name: 'Taryn',
     element: element.dark,
