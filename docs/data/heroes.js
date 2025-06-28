@@ -749,6 +749,42 @@ const heroes = {
       }
     }
   },
+  operator_sigret: {
+    name: 'Chouko',
+    element: element.dark,
+    classType: classType.ranger,
+    baseAtk: 853,
+    baseHP: 5082,
+    baseDef: 564,
+    form: [elements.target_has_barrier, elements.caster_speed],
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+      },
+      s2: {
+        spdScaling: true,
+        rate: 0.75,
+        pow: 1,
+        mult: () => 1 + elements.caster_speed.value() * 0.001125,
+        multTip: () => ({ caster_speed: 0.1125 }),
+        penetrate: () => elements.target_has_barrier.value() ? 1.0 : 0.7,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+      },
+      s3: {
+        spdScaling: true,
+        rate: 1,
+        pow: 1.1,
+        mult: () => 1 + elements.caster_speed.value() * 0.001215,
+        multTip: () => ({ caster_speed: 0.1215 }),
+        enhance: [0.05, 0, 0, 0, 0.15],
+        aoe: true,
+      }
+    }
+  },
   luna: {
     name: 'Christmas Mirabelle',
     element: element.fire,
