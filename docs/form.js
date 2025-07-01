@@ -234,7 +234,7 @@ const elements = {
   target_has_barrier: {
     ref: 'target_has_barrier',
     id: 'target-has-barrier',
-    label: 'Target has Barrier',
+    label: 'Target has Shield',
     type: 'checkbox',
     value: () => document.getElementById('target-has-barrier').checked,
     icon: './assets/buffs/barrier-buff.png'
@@ -547,7 +547,7 @@ const elements = {
   caster_has_multilayer_barrier: {
     ref: 'caster_has_multilayer_barrier',
     id: 'caster-has-multilayer-barrier',
-    label: 'Caster has Multilayer Barrier',
+    label: 'Caster has Multilayer Shield',
     type: 'checkbox',
     value: () => document.getElementById('caster-has-multilayer-barrier').checked,
     icon: './assets/buffs/multilayer-barrier-buff.png'
