@@ -4105,6 +4105,34 @@ seaside_bellona: {
       }
     }
   },
+  rem:{
+    name: 'Swimsuit Specter Janis',
+    element: element.ice,
+    classType: classType.warrior,
+    baseAtk: 971,
+    baseHP: 5567,
+    baseDef: 582,
+    skills: {
+      s1: {
+        rate: 0.9,
+        pow: 1,
+        enhance: [0.05, 0, 0.1, 0, 0.15],
+        canExtra: true,
+        single: true
+      },
+      s2: {
+        rate: 0.8, 
+        pow: 1.3,
+        aoe: true
+      },
+      s3: {
+        rate: 1, 
+        pow: 1,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        aoe: true
+      }
+    }
+  },
   sven: {
     name: 'Taryn',
     element: element.dark,
