@@ -59,41 +59,6 @@ const heroes = {
       }
     }
   },
-  little_queen_charlotte: {
-    name: 'Amamiya Sakuya',
-    element: element.light,
-    classType: classType.warrior,
-    baseAtk: 889,
-    baseHP: 5364,
-    baseDef: 592,
-    skills: {
-      s1: {
-        rate: 1.2,
-        pow: 1,
-        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
-        elemAdv: () => true,
-        single: true,
-      },
-      s3: {
-        rate: 1.5,
-        pow: 1,
-        mult: () => document.getElementById('elem-adv').checked ? 1.5 : 1,
-        multTip: () => ({ elemental_advantage: 50 }),
-        penetrate: () => 0.7,
-        enhance: [0.05, 0.05, 0, 0.05, 0.15],
-        elemAdv: () => true,
-        single: true,
-      },
-      s3_splash: {
-        name: infoLabel('lqc_s3_splash'),
-        rate: 0,
-        pow: 0,
-        afterMath: () => document.getElementById('elem-adv').checked ? { atkPercent: 1.2, penetrate: 0.7 } : null,
-        noCrit: true,
-        noMiss: true,
-      }
-    }
-  },
   ae_winter: {
     name: 'Akane',
     element: element.fire,
@@ -185,6 +150,41 @@ const heroes = {
         pow: 0.95,
         enhance: [0.05, 0.05, 0, 0.1, 0.15],
         single: true,
+      }
+    }
+  },
+  little_queen_charlotte: {
+    name: 'Amamiya Sakuya',
+    element: element.light,
+    classType: classType.warrior,
+    baseAtk: 889,
+    baseHP: 5364,
+    baseDef: 592,
+    skills: {
+      s1: {
+        rate: 1.2,
+        pow: 1,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        elemAdv: () => true,
+        single: true,
+      },
+      s3: {
+        rate: 1.5,
+        pow: 1,
+        mult: () => document.getElementById('elem-adv').checked ? 1.5 : 1,
+        multTip: () => ({ elemental_advantage: 50 }),
+        penetrate: () => 0.7,
+        enhance: [0.05, 0.05, 0, 0.05, 0.15],
+        elemAdv: () => true,
+        single: true,
+      },
+      s3_splash: {
+        name: infoLabel('lqc_s3_splash'),
+        rate: 0,
+        pow: 0,
+        afterMath: () => document.getElementById('elem-adv').checked ? { atkPercent: 1.2, penetrate: 0.7 } : null,
+        noCrit: true,
+        noMiss: true,
       }
     }
   },
