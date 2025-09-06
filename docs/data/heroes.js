@@ -3104,6 +3104,38 @@ const heroes = {
       }
     }
   },
+  benimaru: {
+    name: 'Neko Matsuri',
+    element: element.fire,
+    classType: classType.warrior,
+    form: [elements.caster_has_multilayer_barrier],
+    baseAtk: 943,
+    baseHP: 5122,
+    baseDef: 553,
+    skills: {
+      s1: {
+        soulburn: true,
+        rate: (soulburn) => soulburn ? 1.7 : 1,
+        pow: 1,
+        mult: () => 1 + (elements.caster_has_multilayer_barrier.value() ? 0.3 : 0),
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+      },
+      s2: {
+        rate: 1.2,
+        pow: 1,
+        penetrate: () => elements.caster_has_multilayer_barrier.value() ? 0.6 : 0.3,
+        isExtra: true,
+        aoe: true,
+      },
+      s3: {
+        rate: 2,
+        pow: 1,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        single: true,
+      },
+    }
+  },
   violet: {
     name: 'Nenookaasi',
     element: element.earth,

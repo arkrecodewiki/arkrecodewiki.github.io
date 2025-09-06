@@ -547,7 +547,7 @@ const elements = {
   caster_has_multilayer_barrier: {
     ref: 'caster_has_multilayer_barrier',
     id: 'caster-has-multilayer-barrier',
-    label: 'Caster has Multilayer Shield',
+    label: 'Caster has STFU',
     type: 'checkbox',
     value: () => document.getElementById('caster-has-multilayer-barrier').checked,
     icon: './assets/buffs/multilayer-barrier-buff.png'
