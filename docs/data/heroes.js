@@ -2100,7 +2100,7 @@ const heroes = {
     baseAtk: 1061,
     baseHP: 3828,
     baseDef: 652,
-    form: [elements.caster_speed],
+    form: [elements.caster_speed, elements.target_speed],
     skills: {
       s1: {
         spdScaling: true,
@@ -2114,15 +2114,15 @@ const heroes = {
       s2: {
         rate: 1.4,
         pow: 1,
-        mult: () => 1 + elements.caster_speed.value() * 0.003231,
-        multTip: () => ({ caster_speed: 0.3231 }),
+        mult: () => 1 + elements.target_speed.value() * 0.003231,
+        multTip: () => ({ target_speed: 0.3231 }),
         enhance: [0.05, 0, 0.1, 0, 0.15],
         single: true,
       },
       s3: {
         spdScaling: true,
         rate: 0.8,
-        pow: 0.95,
+        pow: 1.14,
         mult: () => 1 + elements.caster_speed.value() * 0.00081,
         multTip: () => ({ caster_speed: 0.081 }),
         penetrate: () => 0.3,
@@ -3675,6 +3675,28 @@ const heroes = {
         rate: 1,
         pow: 0.95,
         enhance: [0.05, 0, 0.05, 0.05, 0, 0.1, 0.1],
+        single: true,
+      }
+    }
+  },
+  lua: {
+    name: 'Redeemer Lucia',
+    element: element.ice,
+    classType: classType.ranger,
+    baseAtk: 843,
+    baseHP: 5122,
+    baseDef: 561,
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 0.95,
+        enhance: [0.05, 0.05, 0, 0.05, 0, 0.1, 0.1],
+        single: true,
+      },
+      s2: {
+        rate: 1.5,
+        pow: 0.9,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.1],
         single: true,
       }
     }
