@@ -4348,7 +4348,7 @@ seaside_bellona: {
     baseAtk: 889,
     baseHP: 4879,
     baseDef: 673,
-    form: [elements.caster_max_hp, elements.non_attack_skill_stack_8],
+    form: [elements.caster_max_hp, elements.non_attack_skill_stack_5],
     skills: {
       s1: {
         hpScaling: true,
@@ -4362,7 +4362,7 @@ seaside_bellona: {
             extra += heroes.zeno.skills.s2.enhance[i];
           }
 
-          return 1 + elements.non_attack_skill_stack_8.value() * (0.12 + extra);
+          return 1 + elements.non_attack_skill_stack_5.value() * (0.12 + extra);
         },
         multTip: () => {
           let extra = 0;
@@ -4390,7 +4390,7 @@ seaside_bellona: {
             extra += heroes.zeno.skills.s2.enhance[i];
           }
 
-          return 1 + elements.non_attack_skill_stack_8.value() * (0.12 + extra);
+          return 1 + elements.non_attack_skill_stack_5.value() * (0.12 + extra);
         },
         multTip: () => {
           let extra = 0;

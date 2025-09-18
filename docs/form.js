@@ -710,16 +710,16 @@ const elements = {
     readonly: true,
     value: () => Number(document.getElementById('critical-hit-stack-6').value)
   },
-  non_attack_skill_stack_8: {
-    ref: 'non_attack_skill_stack_8',
-    id: 'stack-non-attack-skill-8',
+  non_attack_skill_stack_5: {
+    ref: 'non_attack_skill_stack_5',
+    id: 'stack-non-attack-skill-5',
     label: 'S2 (Auto Armor) Stack',
     type: 'slider',
     min: 0,
-    max: 8,
+    max: 5,
     default: 0,
     readonly: true,
-    value: () => Number(document.getElementById('stack-non-attack-skill-8').value)
+    value: () => Number(document.getElementById('stack-non-attack-skill-5').value)
   },
   non_attack_skill_stack_10: {
     ref: 'non_attack_skill_stack_10',
