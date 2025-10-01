@@ -57,6 +57,16 @@ const artifacts = {
     exclusive: classType.warrior,
     value: (artiScale) => elements.turn_stack.value() * artiScale
   },
+  prayer_of_solitude: {
+    id: 'prayer_of_solitude',
+    name: 'Covert Strategy',
+    image: 'Covert Strategy',
+    extraAttack: true,
+    scale: [0.05, 0.055, 0.06, 0.065, 0.07, 0.075, 0.08, 0.085, 0.09, 0.095, 0.1],
+    value:(artiScale, skill, isExtra) => (skill.isExtra || isExtra) ? artiScale * 2 : artiScale,
+    exclusive: classType.warrior,
+    type: artifactDmgType.damage
+  },
   fairy_tale_for_a_nightmare: {
     id: 'fairy_tale_for_a_nightmare',
     name: 'Cyber Clash',

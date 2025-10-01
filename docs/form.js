@@ -311,8 +311,18 @@ const elements = {
       const artifactObject = artifacts[currentArtifact.id];
       const artifactHP = (artifactObject?.type === artifactDmgType.health_only && artifactObject.scale?.length) ? artifactObject.scale[Math.floor(inputValues['artifact-lvl']/3)] : (artifactObject?.maxHP || 1);
 
-      return Number(document.getElementById('caster-max-hp').value) * artifactHP;
+      return Number(document.getElementById('caster-max-hp').value) * (1 + (elements.caster_hp_increase.value() / 100 ));
     }
+  },
+  caster_hp_increase: {
+    ref: 'caster_hp_increase',
+    id: 'caster-hp-increase',
+    label: 'HP Increase %',
+    type: 'slider',
+    min: 0,
+    max: 10,
+    default: 0,
+    value: () => Number(document.getElementById('caster-hp-increase').value)
   },
   caster_hp_pc: {
     ref: 'caster_hp_pc',

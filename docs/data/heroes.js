@@ -4134,6 +4134,41 @@ seaside_bellona: {
       },
     }
   },
+  lethe: {
+    name: 'Successor Mikael',
+    element: element.ice,
+    classType: classType.warrior,
+    baseAtk: 735,
+    baseHP: 5405,
+    baseDef: 613,
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+      },
+      s2: {
+        hpScaling: true,
+        name: infoLabel('lethe_call_of_the_abyss'),
+        rate: 0.3,
+        pow: 1.3,
+        flat: () => elements.caster_max_hp.value() * 0.22,
+        flatTip: () => ({caster_max_hp: 22}),
+        penetrate: () => 1,
+        noCrit: true,
+        isExtra: true,
+        aoe: true,
+      },
+      s3: {
+        rate: 1,
+        pow: 1.05,
+        enhance: [0.0, 0.1, 0, 0, 0.15],
+        aoe: true,
+      }
+    }
+  },
   elphelt_valentine: {
     name: 'Summertime Joyce',
     element: element.fire,
