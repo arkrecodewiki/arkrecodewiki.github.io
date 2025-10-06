@@ -312,7 +312,7 @@ const heroes = {
     baseAtk: 834,
     baseHP: 5364,
     baseDef: 585,
-    form: [elements.caster_max_hp],
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
     skills: {
       s1: {
         hpScaling: true,
@@ -470,7 +470,7 @@ const heroes = {
     baseAtk: 889,
     baseHP: 5203,
     baseDef: 561,
-    form: [elements.caster_max_hp],
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
     skills: {
       s1: {
         hpScaling: true,
@@ -960,7 +960,7 @@ const heroes = {
     baseAtk: 753,
     baseHP: 5405,
     baseDef: 578,
-    form: [elements.caster_max_hp],
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
     skills: {
       s1: {
         hpScaling: true,
@@ -1433,7 +1433,7 @@ const heroes = {
     baseAtk: 816,
     baseHP: 5850,
     baseDef: 620,
-    form: [elements.caster_max_hp],
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
     skills: {
       s1: {
         hpScaling: true,
@@ -1747,7 +1747,7 @@ const heroes = {
     baseAtk: 816,
     baseHP: 5850,
     baseDef: 620,
-    form: [elements.caster_max_hp],
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
     dot: [dot.burn],
     skills: {
       s1: {
@@ -2503,7 +2503,7 @@ const heroes = {
     baseAtk: 753,
     baseHP: 5405,
     baseDef: 578,
-    form: [elements.caster_max_hp, elements.caster_hp_pc],
+    form: [elements.caster_max_hp, elements.caster_hp_increase, elements.caster_hp_pc],
     skills: {
       s1: {
         hpScaling: true,
@@ -3168,7 +3168,7 @@ const heroes = {
     baseAtk: 843,
     baseHP: 4475,
     baseDef: 543,
-    form: [elements.caster_max_hp],
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
     dot: [dot.bleed],
     skills: {
       s1: {
