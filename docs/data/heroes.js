@@ -407,7 +407,7 @@ const heroes = {
     baseAtk: 689,
     baseHP: 5647,
     baseDef: 690,
-    form: [elements.caster_max_hp, elements.caster_hp],
+    form: [elements.caster_max_hp, elements.caster_hp, elements.caster_hp_increase],
     skills: {
       s1: {
         hpScaling: true,
@@ -580,7 +580,7 @@ const heroes = {
     baseAtk: 471,
     baseHP: 4637,
     baseDef: 736,
-    form: [elements.caster_max_hp],
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
     barrier: () => elements.caster_max_hp.value() * 0.2,
     skills: {
       s1: {
@@ -1237,7 +1237,7 @@ const heroes = {
     baseAtk: 671,
     baseHP: 5809,
     baseDef: 648,
-    form: [elements.caster_max_hp],
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
     barrier: () => elements.caster_max_hp.value() * 0.2,
     skills: {
       s1: {
@@ -1267,7 +1267,7 @@ const heroes = {
     baseAtk: 744,
     baseHP: 5890,
     baseDef: 655,
-    form: [elements.caster_max_hp, elements.caster_enrage],
+    form: [elements.caster_max_hp, elements.caster_enrage, elements.caster_hp_increase],
     skills: {
       s1: {
         hpScaling: true,
@@ -1989,7 +1989,7 @@ const heroes = {
     baseAtk: 689,
     baseHP: 5647,
     baseDef: 690,
-    form: [elements.caster_max_hp, elements.attack_skill_stack_3, elements.caster_speed],
+    form: [elements.caster_max_hp, elements.attack_skill_stack_3, elements.caster_speed, elements.caster_hp_increase],
     barrier: () => elements.caster_max_hp.value() * 0.1,
     barrierEnhance: 's2',
     skills: {
@@ -2478,7 +2478,7 @@ const heroes = {
     baseAtk: 408,
     baseHP: 4313,
     baseDef: 624,
-    form: [elements.caster_max_hp],
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
     barrier: () => elements.caster_max_hp.value() * 0.2,
     skills: {
       s1: {
@@ -2541,7 +2541,7 @@ const heroes = {
     baseAtk: 608,
     baseHP: 4960,
     baseDef: 617,
-    form: [elements.caster_max_hp],
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
     barrier: () => elements.caster_max_hp.value() * 0.2,
     skills: {
       s1: {
@@ -2717,7 +2717,7 @@ const heroes = {
     baseAtk: 444,
     baseHP: 4637,
     baseDef: 652,
-    form: [elements.caster_max_hp],
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
     skills: {
       s1: {
         hpScaling: true,
@@ -2870,7 +2870,7 @@ const heroes = {
     baseAtk: 653,
     baseHP: 5122,
     baseDef: 617,
-    form: [elements.caster_max_hp],
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
     skills: {
       s1: {
         hpScaling: true,
@@ -3014,7 +3014,7 @@ const heroes = {
     baseAtk: 426,
     baseHP: 4475,
     baseDef: 701,
-    form: [elements.caster_max_hp],
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
     barrier: () => elements.caster_max_hp.value() * 0.15,
     skills: {
       s1: {
@@ -3736,7 +3736,7 @@ const heroes = {
     baseAtk: 608,
     baseHP: 4960,
     baseDef: 617,
-    form: [elements.caster_max_hp],
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
     skills: {
       s1: {
         hpScaling: true,
@@ -3804,7 +3804,7 @@ const heroes = {
     baseAtk: 499,
     baseHP: 4435,
     baseDef: 694,
-    form: [elements.caster_max_hp],
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
     barrier: () => elements.caster_max_hp.value() * 0.15,
     skills: {
       s1: {
@@ -3905,7 +3905,7 @@ seaside_bellona: {
     baseAtk: 671,
     baseHP: 5809,
     baseDef: 648,
-    form: [elements.caster_max_hp],
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
     skills: {
       s1: {
         hpScaling: true,
@@ -3943,7 +3943,7 @@ seaside_bellona: {
     baseAtk: 744,
     baseHP: 5890,
     baseDef: 655,
-    form: [elements.caster_max_hp],
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
     barrier: () => elements.caster_max_hp.value() * 0.13,
     barrierEnhance: 's2',
     skills: {
@@ -4049,7 +4049,7 @@ seaside_bellona: {
     baseAtk: 653,
     baseHP: 5122,
     baseDef: 617,
-    form: [elements.caster_max_hp],
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
     skills: {
       s1: {
         hpScaling: true,
@@ -4231,7 +4231,7 @@ seaside_bellona: {
     baseAtk: 471,
     baseHP: 4637,
     baseDef: 736,
-    form: [elements.caster_max_hp],
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
     barrierSkills: ['S1', 'S3'],
     barrier: () => {
       const scale = [0, 0.05, 0, 0.1, 0, 0.1, 0];
@@ -4407,7 +4407,7 @@ seaside_bellona: {
     baseAtk: 889,
     baseHP: 4879,
     baseDef: 673,
-    form: [elements.caster_max_hp, elements.non_attack_skill_stack_5],
+    form: [elements.caster_max_hp, elements.non_attack_skill_stack_5, elements.caster_hp_increase],
     skills: {
       s1: {
         hpScaling: true,

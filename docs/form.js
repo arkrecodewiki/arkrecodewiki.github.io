@@ -311,7 +311,13 @@ const elements = {
       const artifactObject = artifacts[currentArtifact.id];
       const artifactHP = (artifactObject?.type === artifactDmgType.health_only && artifactObject.scale?.length) ? artifactObject.scale[Math.floor(inputValues['artifact-lvl']/3)] : (artifactObject?.maxHP || 1);
 
-      return Number(document.getElementById('caster-max-hp').value) * (1 + (elements.caster_hp_increase.value() / 100 ));
+      let hpIncrease = 1;
+
+      if (elements.caster_hp_increase.value) {
+        hpIncrease = 1 + (elements.caster_hp_increase.value() / 100 );
+      }
+
+      return Number(document.getElementById('caster-max-hp').value) * hpIncrease;
     }
   },
   caster_hp_increase: {
