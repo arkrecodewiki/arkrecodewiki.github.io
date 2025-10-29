@@ -187,6 +187,15 @@ const artifacts = {
       return 0.1;
     }
   },
+  jack_o_symbol: {
+    id: 'jack_o_symbol',
+    name: 'Reckless Temptation',
+    image: 'Reckless Temptation',
+    scale: [0.08, 0.088, 0.096, 0.104, 0.112, 0.12, 0.128, 0.136, 0.144, 0.152, 0.16],
+    type: artifactDmgType.damage,
+    exclusive: classType.warrior,
+    applies: (skill) => (getSkillType(skill) === skillTypes.single) && elements.target_has_debuff.value() !== false,
+  },
   sword_of_winter_shadow: {
     id: 'sword_of_winter_shadow',
     name: 'Secret Compensation',
