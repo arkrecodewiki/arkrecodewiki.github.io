@@ -4142,6 +4142,12 @@ seaside_bellona: {
         rate: 0.8,
         pow: 1,
         enhance: [0.05, 0, 0.1, 0, 0.15],
+      },
+      s2: {
+        name: 'S1 AoE Version (Self Turn)',
+        rate: 0.8,
+        pow: 1,
+        enhance: [0.1, 0, 0.2, 0, 0.3],
         aoe: true,
       },
       s3: {

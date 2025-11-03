@@ -131,7 +131,7 @@ const artifacts = {
     id: 'draco_plate',
     name: 'Lonely Salvation',
     image: 'Lonely Salvation',
-    scale: [0.15, 0.17, 0.18, 0.2, 0.21, 0.23, 0.24, 0.26, 0.27, 0.29, 0.3],
+    scale: [0.15, 0.165, 0.18, 0.195, 0.21, 0.225, 0.24, 0.255, 0.27, 0.285, 0.3],
     type: artifactDmgType.critDmgBoost,
     exclusive: classType.warrior
   },
