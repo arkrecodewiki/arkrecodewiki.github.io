@@ -784,6 +784,32 @@ const heroes = {
       }
     }
   },
+  zahhak: {
+    name: 'Cheerleader Berrica',
+    element: element.earth,
+    classType: classType.warrior,
+    baseAtk: 943,
+    baseHP: 5122,
+    baseDef: 553,
+    form: [elements.target_has_buff],
+    skills: {
+      s1: {
+        soulburn: true,
+        rate: (soulburn) => soulburn ? 1.8 : 1.1,
+        pow: 1,
+        mult: () => elements.target_has_buff.value() ? 1.3 : 1,
+        multTip: () => ({ target_has_buff: 30 }),
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+      },
+      s3: {
+        rate: 1.9,
+        pow: 1,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        single: true,
+      },
+    }
+  },
   operator_sigret: {
     name: 'Chouko',
     element: element.dark,
