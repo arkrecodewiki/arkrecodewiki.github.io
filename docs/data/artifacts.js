@@ -120,6 +120,18 @@ const artifacts = {
       return (elements.enemy_defeated.value() ? input : 0);
     }
   },
+  pure_white_trust: {
+    id: 'pure_white_trust',
+    name: 'Fervent Cheer',
+    image: 'Fervent Cheer',
+    form: [elements.nonattack_used],
+    scale: [0.15, 0.165, 0.18, 0.195, 0.21, 0.225, 0.24, 0.255, 0.27, 0.285, 0.3],
+    type: artifactDmgType.critDmgBoost,
+    exclusive: classType.warrior,
+    value: (input) => {
+      return (elements.nonattack_used.value() ? input : 0);
+    }
+  },
   portrait_of_the_saviors: {
     id: 'portrait_of_the_saviors',
     name: 'Hello, Loyal Customer!',

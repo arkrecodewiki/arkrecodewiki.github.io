@@ -1015,6 +1015,14 @@ const elements = {
     default: true,
     value: () => document.getElementById('enemy-defeated').checked
   },
+  nonattack_used: {
+    ref: 'nonattack_used',
+    id: 'nonattack-used',
+    label: 'Caster used a non-attacking skill',
+    type: 'checkbox',
+    default: true,
+    value: () => document.getElementById('nonattack-used').checked
+  },
 };
 
 elements.caster_speed.sub_elements = [elements.caster_speed_up];
