@@ -77,7 +77,7 @@ const heroes = {
       s3: {
         rate: 0.8,
         pow: 0.95,
-        fixed: (hitType) => (hitType === hitTypes.crit) ? 5000 * (elements.attack_skill_stack_3.value() + 1)  : 0,
+        fixed: (hitType) => (((hitType === hitTypes.crit) ? 5000 * (elements.attack_skill_stack_3.value() + 1)  : 0) * (1 - (inputValues.dmgTrans / 100))),
         fixedTip: () => ({fixed: 5000, per_stack: 5000 }),
         enhance: [0.05, 0.05, 0, 0.05, 0.05, 0.1, 0.1],
         single: true,
@@ -539,6 +539,40 @@ const heroes = {
         enhance: [0.05, 0.05, 0, 0.1, 0.1],
         noTrans: true,
         single: true,
+      }
+    }
+  },
+  twisted_eidolon_kayron: {
+    name: 'Belle',
+    element: element.light,
+    classType: classType.thief,
+    baseAtk: 989,
+    baseHP: 5364,
+    baseDef: 473,
+    form: [elements.caster_max_hp, elements.caster_hp_increase, elements.caster_fighting_spirit],
+    barrier: () => elements.caster_max_hp.value() * 0.12,
+    skills: {
+      s1: {
+        soulburn: true,
+        rate: (soulburn) => soulburn ? 1.7 : 1,
+        pow: 1,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+      },
+      s1_bis: {
+        name: 'S1 AoE Version (Counter)',
+        rate: 1,
+        pow: 1,
+        enhance_from: 's1',
+        aoe: true,
+      },
+      s3: {
+        rate: 1,
+        pow: 1,
+        fixed: (hitType) => ((4000 + ((hitType !== hitTypes.miss) ? Math.min(80 * elements.caster_fighting_spirit.value(), 8000) : Math.min(80 * elements.caster_fighting_spirit.value(), 8000))) * (1 - (inputValues.dmgTrans / 100))),
+        fixedTip: (fixedDamage) => ({ fixed: fixedDamage }),
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        aoe: true,
       }
     }
   },
@@ -2241,7 +2275,7 @@ const heroes = {
       s3: {
         rate: 1.8,
         pow: 1,
-        fixed: (hitType) => (hitType !== hitTypes.miss) ? Math.min(5000 + (elements.allies_nb_buff.value() * 625), 10000) : 0,
+        fixed: (hitType) => (((hitType !== hitTypes.miss) ? Math.min(5000 + (elements.allies_nb_buff.value() * 625), 10000) : 0) * (1 - (inputValues.dmgTrans / 100))),
         fixedTip: () => ({ allies_buff: 625 }),
         enhance: [0.05, 0.05, 0, 0.1, 0.1],
         single: true,
