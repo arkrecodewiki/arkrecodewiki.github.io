@@ -16,7 +16,8 @@ const battleConstants = {
   'target': 1.15,
   'caster-fury': 1.3,
   'spdUp': 1.3, 
-  'casterRage': 1.1,
+  'caster-enrage': 1.3,
+  'casterRage': 1.3,
   'caster-has-stars-blessing': 1.15,
   'trauma': -0.7,
   'caster-possession': 1.25
@@ -30,7 +31,7 @@ const heroConstants = {
 const casterBuffs = [
   'atk-up', 'vigor', 'atk-up-great', 'crit-dmg-up', 'caster-defense-up', 'caster-speed-up',
   'caster-has-flame-alchemist', 'caster-has-multilayer-barrier', 'caster-invincible',
-  'caster-perception', 'caster-enrage', 'caster-fury', 'caster-stealth'
+  'caster-perception', 'caster-enrage', 'caster-cluster', 'caster-fury', 'caster-stealth'
 ];
 
 const displayConstants = {

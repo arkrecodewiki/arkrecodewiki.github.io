@@ -325,8 +325,8 @@ const getGlobalAtkMult = () => {
     mult += inputValues[mod] ? (battleConstants[mod] - 1) : 0.0;
   });
 
-  if (elements.caster_enrage.value()) {
-    mult += 0.1;
+  if (elements.caster_cluster.value()) {
+    mult += 0.3;
   }
 
   return mult + (inputValues.atkPcUp / 100);
@@ -472,6 +472,7 @@ class Hero {
     if (this.def) {
       return this.def * (1 + (elements.caster_defense_up.value() ? battleConstants.defUp : 0)
            + (document.getElementById('vigor').checked ? battleConstants.vigor - 1 : 0)
+           + (document.getElementById('caster-enrage')?.checked ? battleConstants['caster-enrage'] - 1 : 0)
            + (document.getElementById('caster-fury')?.checked ? battleConstants['caster-fury'] - 1 : 0));
     }
     return elements.caster_defense.value();
@@ -484,7 +485,7 @@ class Hero {
   getSpd() {
     if (this.spd) {
       return Math.floor(this.spd) * (1 + (elements.caster_speed_up.value() ? battleConstants.spdUp - 1 : 0)
-           + (document.getElementById('caster-enrage')?.checked ? battleConstants['casterRage'] - 1 : 0));
+           + (document.getElementById('caster-cluster')?.checked ? battleConstants['casterRage'] - 1 : 0));
     }
     return elements.caster_speed.value();
   }

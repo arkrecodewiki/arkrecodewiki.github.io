@@ -1327,7 +1327,7 @@ const heroes = {
     baseAtk: 744,
     baseHP: 5890,
     baseDef: 655,
-    form: [elements.caster_max_hp, elements.caster_enrage, elements.caster_hp_increase],
+    form: [elements.caster_max_hp, elements.caster_cluster, elements.caster_hp_increase],
     skills: {
       s1: {
         hpScaling: true,
@@ -1525,7 +1525,7 @@ const heroes = {
     baseAtk: 934,
     baseHP: 4799,
     baseDef: 564,
-    form: [elements.caster_enrage],
+    form: [elements.caster_cluster],
     dot: [dot.bleed],
     skills: {
       s1: {
@@ -1545,8 +1545,8 @@ const heroes = {
         soulburn: true,
         rate: (soulburn) => soulburn ? 1.05 : 0.8,
         pow: 1,
-        mult: () => elements.caster_enrage.value() ? 1.3 : 1,
-        multTip: () => ({ caster_rage: 30 }),
+        mult: () => elements.caster_cluster.value() ? 1.3 : 1,
+        multTip: () => ({ caster_cluster: 30 }),
         enhance: [0.05, 0.05, 0, 0.1, 0.1],
         aoe: true,
       }
@@ -3905,6 +3905,27 @@ const heroes = {
         pow: 1,
         enhance: [0.05, 0, 0.05, 0.05, 0, 0.1, 0.1],
         single: true
+      }
+    }
+  },
+  ocean_breeze_luluca: {
+    name: 'Saku',
+    element: element.earth,
+    classType: classType.soul_weaver,
+    baseAtk: 499,
+    baseHP: 4435,
+    baseDef: 694,
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0.05, 0, 0.05, 0, 0.05, 0.1],
+        single: true,
+      },
+      s2: {
+        rate: 1,
+        pow: 1,
+        aoe: true,
       }
     }
   },

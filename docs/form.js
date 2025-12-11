@@ -643,10 +643,18 @@ const elements = {
   caster_enrage: {
     ref: 'caster_enrage',
     id: 'caster-enrage',
-    label: 'Caster has Rage',
+    label: 'Caster has Enrage',
     type: 'checkbox',
     value: () => document.getElementById('caster-enrage') ? document.getElementById('caster-enrage').checked : false,
     icon: './assets/buffs/rage-buff.png'
+  },
+  caster_cluster: {
+    ref: 'caster_cluster',
+    id: 'caster-cluster',
+    label: 'Caster has Cluster',
+    type: 'checkbox',
+    value: () => document.getElementById('caster-cluster') ? document.getElementById('caster-cluster').checked : false,
+    icon: './assets/buffs/cluster-buff.png'
   },
   caster_fury: {
     ref: 'caster_fury',
