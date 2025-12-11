@@ -414,6 +414,7 @@ const elements = {
       * (1 + (elements.caster_defense_up.value() ? battleConstants.defUp : 0)
          + (elements.caster_defense_increase.value() / 100 )
          + (document.getElementById('vigor').checked ? battleConstants.vigor - 1 : 0)
+         + (document.getElementById('caster-enrage')?.checked ? battleConstants['caster-enrage'] - 1 : 0)
          + (document.getElementById('caster-fury')?.checked ? battleConstants['caster-fury'] - 1 : 0)
          + (document.getElementById('caster-has-trauma')?.checked ? battleConstants['trauma'] : 0));
     }
