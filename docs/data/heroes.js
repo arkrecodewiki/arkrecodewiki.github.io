@@ -2672,6 +2672,34 @@ const heroes = {
       }
     }
   },
+  ravi: {
+    name: 'Kumome',
+    element: element.fire,
+    classType: classType.warrior,
+    baseAtk: 816,
+    baseHP: 5850,
+    baseDef: 620,
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
+    skills: {
+      s1: {
+        onlyCrit: true,
+        soulburn: true,
+        rate: (soulburn) => soulburn ? 2.5 : 1,
+        pow: 1,
+        flat: (soulburn) => elements.caster_max_hp.value() * (soulburn ? 0.2 : 0.08),
+        enhance: [0.05, 0, 0.1, 0, 0.15],
+        single: true,
+      },
+      s3: {
+        onlyCrit: true,
+        rate: 1.2,
+        pow: 0.95,
+        flat: () => elements.caster_max_hp.value() * 0.096,
+        enhance: [0.05, 0.05, 0, 0.1, 0.15],
+        aoe: true,
+      }
+    }
+  },
   faithless_lidica: {
     name: 'Laiisma',
     element: element.light,

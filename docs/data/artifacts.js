@@ -155,6 +155,13 @@ const artifacts = {
     type: artifactDmgType.penetrate,
     exclusive: classType.thief
   },
+  mighty_yaksha: {
+    id: 'mighty_yaksha',
+    name: 'Master and Pet',
+    image: 'Master and Pet',
+    type: artifactDmgType.attack,
+    scale: [0.05, 0.055, 0.06, 0.065, 0.07, 0.075, 0.08, 0.085, 0.09, 0.095, 0.1],
+  },
   kaladra: {
     id: 'kaladra',
     name: 'Pleasure of Anticipation',
@@ -277,6 +284,14 @@ const artifacts = {
     scale: [0.08, 0.088, 0.096, 0.104, 0.112, 0.12, 0.128, 0.136, 0.144, 0.152, 0.16],
     type: artifactDmgType.damage,
     exclusive: classType.warrior
+  },
+  sigurd_scythe: {
+    id: 'sigurd_scythe',
+    name: 'Treacherous Snare',
+    image: 'Treacherous Snare',
+    type: artifactDmgType.attack,
+    exclusive: classType.warrior,
+    scale: [0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2],
   },
   ancient_sheath: {
     id: 'ancient_sheath',
