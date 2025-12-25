@@ -314,4 +314,12 @@ const artifacts = {
       return input + (elements.enemy_defeated.value() ? artifacts.wind_rider.additional[artifacts.wind_rider.scale.indexOf(input)] : 0);
     }
   },
+  mature_sunglasses: {
+    id: 'mature_sunglasses',
+    name: 'Winter Night\'s Chime',
+    image: 'Winter Nights Chime',
+    scale: [0.15, 0.17, 0.18, 0.2, 0.21, 0.23, 0.24, 0.26, 0.27, 0.29, 0.3],
+    type: artifactDmgType.critDmgBoost,
+    exclusive: classType.knight
+  },
 };

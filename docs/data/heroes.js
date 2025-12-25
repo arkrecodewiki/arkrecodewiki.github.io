@@ -2531,6 +2531,29 @@ const heroes = {
       },
     }
   },
+  summer_break_charlotte: {
+    name: 'Junior Innkeeper Silbal',
+    element: element.ice,
+    classType: classType.knight,
+    baseAtk: 762,
+    baseHP: 5728,
+    baseDef: 634,
+    skills: {
+      s1: {
+        rate: 0.9,
+        pow: 1,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        single: true,
+      },
+      s3: {
+        rate: 1.5,
+        pow: 1,
+        penetrate: () => 0.7,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+      },
+    }
+  },
   lucy: {
     name: 'Kagura',
     element: element.earth,
@@ -3091,6 +3114,35 @@ const heroes = {
         rate: 1.8,
         pow: 1.05,
         enhance: [0.1, 0, 0, 0, 0.15],
+        single: true,
+      }
+    }
+  },
+  top_model_luluca: {
+    name: 'Mitsuki',
+    element: element.dark,
+    classType: classType.mage,
+    baseAtk: 989,
+    baseHP: 3950,
+    baseDef: 662,
+    form: [elements.caster_speed, elements.target_has_lower_speed],
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        noTrans: true,
+        single: true,
+      },
+      s3: {
+        spdScaling: true,
+        soulburn: true,
+        rate: (soulburn) => soulburn ? 2 : 1.6,
+        pow: 1,
+        penetrate: () => document.getElementById('target-has-lower-speed').checked ? 0.5 : 0,
+        mult: () => 1 + elements.caster_speed.value() * 0.001605,
+        multTip: () => ({ caster_speed: 0.1605 }),
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
         single: true,
       }
     }

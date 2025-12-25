@@ -151,6 +151,13 @@ const elements = {
     default: 150,
     value: () => Number(document.getElementById('target-speed').value)
   },
+  target_has_lower_speed: {
+    ref: 'target_has_lower_speed',
+    id: 'target-has-lower-speed',
+    label: 'Target has lower Speed',
+    type: 'checkbox',
+    value: () => document.getElementById('target-has-lower-speed').checked
+  },
   target_nb_buff: {
     ref: 'target_nb_buff',
     id: 'target-nb-buff',
