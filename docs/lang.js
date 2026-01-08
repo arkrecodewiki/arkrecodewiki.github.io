@@ -59,6 +59,7 @@ const i18n = {
         target_has_debuff: 'Target has Debuff: {v}%',
         target_has_no_buff: 'Target has no Buff: {v}%',
         target_has_provoke: 'Target is Provoked: {v}%', // TODO: Translate
+        target_has_sleep: 'Target has Sleep: {v}%',
         target_lost_hp_pc: '{v}% Target lost HP%',
         target_magic_nail: 'Curse Seal: {v}%',
         target_max_hp: '{v}% Target max HP',

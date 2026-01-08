@@ -844,6 +844,41 @@ const heroes = {
       },
     }
   },
+  sage_baal_and_sezan: {
+    name: 'Chloe',
+    element: element.light,
+    classType: classType.mage,
+    baseAtk: 889,
+    baseHP: 4879,
+    baseDef: 673,
+    form: [elements.caster_max_hp, elements.caster_hp_increase, elements.target_has_sleep],
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1.1,
+        enhance: [0.05, 0, 0.05, 0, 0.1],
+        single: true,
+      },
+      s2: {
+        rate: 0.85,
+        pow: 1.3,
+        aoe: true,
+      },
+      s3: {
+        hpScaling: true,
+        rate: 0.3,
+        pow: 1,
+        mult: () => elements.target_has_sleep.value() ? 1.5 : 1.0,
+        multTip: () => ({ target_has_sleep: 50 }),
+        penetrate: () => 1.0,
+        flat: () => elements.caster_max_hp.value() * 0.24,
+        flatTip: () => ({caster_max_hp: 24}),
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        noCrit: true,
+        single: true,
+      }
+    }
+  },
   operator_sigret: {
     name: 'Chouko',
     element: element.dark,
@@ -4263,6 +4298,44 @@ seaside_bellona: {
         flatTip: () => ({ caster_max_hp: 5 }),
         enhance: [0.05, 0.05, 0, 0.1, 0.15],
         single: true,
+      }
+    }
+  },
+  dizzy: {
+    name: 'Sora',
+    element: element.earth,
+    classType: classType.mage,
+    baseAtk: 889,
+    baseHP: 4879,
+    baseDef: 673,
+    form: [elements.target_has_debuff],
+    skills: {
+      s1: {
+        onlyCrit: true,
+        rate: 0.7,
+        pow: 1,
+        mult: () => elements.target_has_debuff.value() ? 1.2 : 1.0,
+        multTip: () => ({ target_debuff: 20 }),
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        aoe: true,
+      },
+      s2: {
+        onlyCrit: true,
+        rate: 1,
+        pow: 1,
+        mult: () => elements.target_has_debuff.value() ? 1.2 : 1.0,
+        multTip: () => ({ target_debuff: 20 }),
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        aoe: true,
+      },
+      s3: {
+        onlyCrit: true,
+        rate: 1.5,
+        pow: 0.8,
+        mult: () => elements.target_has_debuff.value() ? 1.2 : 1.0,
+        multTip: () => ({ target_debuff: 20 }),
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        aoe: true,
       }
     }
   },

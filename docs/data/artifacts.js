@@ -212,7 +212,15 @@ const artifacts = {
     image: 'Reckless Temptation',
     scale: [0.08, 0.088, 0.096, 0.104, 0.112, 0.12, 0.128, 0.136, 0.144, 0.152, 0.16],
     type: artifactDmgType.damage,
-    exclusive: classType.warrior,
+    exclusive: classType.warrior
+  },
+  necro_and_undine: {
+    id: 'necro_and_undine',
+    name: 'Rite of the Divine',
+    image: 'Rite of the Divine',
+    scale: [0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15],
+    type: artifactDmgType.critDmgBoost,
+    exclusive: classType.mage
   },
   sword_of_winter_shadow: {
     id: 'sword_of_winter_shadow',
