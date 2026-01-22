@@ -18,6 +18,19 @@ const artifacts = {
     type: artifactDmgType.attack,
     scale: [0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2],
   },
+  wings_of_light_and_shadow: {
+    id: 'wings_of_light_and_shadow',
+    name: 'Bittersweet Past',
+    image: 'Bittersweet Past',
+    scale: [0.07, 0.077, 0.084, 0.091, 0.098, 0.105, 0.112, 0.119, 0.126, 0.133, 0.14],
+    additional: [0.04, 0.044, 0.048, 0.052, 0.056, 0.06, 0.064, 0.068, 0.072, 0.076, 0.08],
+    type: artifactDmgType.damage,
+    exclusive: classType.knight,
+    form: [elements.last_attack_crit],
+    value: (input) => {
+      return input + (elements.last_attack_crit.value() ? artifacts.wings_of_light_and_shadow.additional[artifacts.wings_of_light_and_shadow.scale.indexOf(input)] : 0);
+    }
+  },
   frame_of_light: {
     id: 'frame_of_light',
     name: 'Breached Defenses',

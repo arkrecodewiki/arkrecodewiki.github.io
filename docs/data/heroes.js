@@ -3106,6 +3106,53 @@ const heroes = {
       }
     }
   },
+  ilynav: {
+    name: 'Memoria Marsha',
+    element: element.fire,
+    classType: classType.knight,
+    baseAtk: 762,
+    baseHP: 5728,
+    baseDef: 634,
+    form: [elements.caster_max_hp, elements.caster_hp_increase, elements.target_injuries],
+    skills: {
+      s1: {
+        hpScaling: true,
+        rate: 0.7,
+        pow: 1,
+        flat: () => elements.caster_max_hp.value() * 0.1,
+        flatTip: () => ({ caster_max_hp: 10 }),
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+      },
+      s2: {
+        hpScaling: true,
+        soulburn: true,
+        rate: (soulburn) => soulburn ? 1.4 : 1,
+        pow: 1,
+        flat: (soulburn) => elements.caster_max_hp.value() * (soulburn ? 0.28 : 0.18),
+        flatTip: (soulburn) => ({ caster_max_hp: (soulburn ? 28 : 18) }),
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        single: true,
+      },
+      explosion: { 
+        name: infoLabel('ilynav_explosion'),
+        rate: 0,
+        pow: 0,
+        afterMath: () => ({ injuryPercent: 0.5, penetrate: 0.7 }),
+        noCrit: true,
+        noMiss: true,
+      },
+      s3: {
+        hpScaling: true,
+        rate: 0.7,
+        pow: 1,
+        flat: () => elements.caster_max_hp.value() * 0.15,
+        flatTip: () => ({ caster_max_hp: 15 }),
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        aoe: true,
+      }
+    }
+  },
   aither: {
     name: 'Mikael',
     element: element.ice,

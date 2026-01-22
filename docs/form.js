@@ -1039,6 +1039,14 @@ const elements = {
     default: true,
     value: () => document.getElementById('nonattack-used').checked
   },
+  last_attack_crit: {
+    ref: 'last_attack_crit',
+    id: 'last-attack-crit',
+    label: 'Last attack Crit',
+    type: 'checkbox',
+    default: true,
+    value: () => document.getElementById('last-attack-crit').checked
+  },
 };
 
 elements.caster_speed.sub_elements = [elements.caster_speed_up];
