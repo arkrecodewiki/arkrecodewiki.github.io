@@ -4575,6 +4575,55 @@ seaside_bellona: {
       }
     }
   },
+  blooming_lidica: {
+    name: 'Sweetheart Dawn',
+    element: element.earth,
+    classType: classType.thief,
+    form: [elements.caster_max_hp, elements.caster_hp_increase, elements.caster_speed, elements.target_speed, elements.enemy_number_of_debuffs],
+    baseAttack: 907,
+    baseHP: 5122,
+    baseDefense: 532,
+    spdUp: () => {
+      return 1 + Math.min(elements.enemy_number_of_debuffs.value(), 7) * 0.1;
+    },
+    skills: {
+      s1: {
+        hpScaling: true,
+        rate: () => 0.5,
+        pow: () => 1,
+        flat: () => elements.caster_max_hp.value() * 0.12,
+        flatTip: () => ({ caster_max_hp: 12 }),
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        single: true,
+      },
+      s2: {
+        hpScaling: true,
+        rate: () => 0.5,
+        pow: () => 1,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        flat: () => elements.caster_max_hp.value() * 0.07,
+        flatTip: () => ({ caster_max_hp: 7 }),
+        isExtra: true,
+        aoe: true,
+      },
+      s3: {
+        hpScaling: true,
+        rate: () => 0.5,
+        pow: () => 1,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        flat: () => elements.caster_max_hp.value() * 0.3,
+        flatTip: () => ({ caster_max_hp: 30 }),
+        penetrate: () => {
+          const penDiff = (elements.caster_speed.value() - elements.target_speed.value()) * 0.0034;
+
+          return Math.min(Math.max(0, penDiff) + 0.5, 1);
+        },
+        penetrateTip: () => ({caster_target_spd_diff: 0.0034}),
+        single: true,
+        noCrit: true,
+      }
+    }
+  },
   rem:{
     name: 'Swimsuit Specter Janis',
     element: element.ice,
