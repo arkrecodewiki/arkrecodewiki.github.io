@@ -2980,6 +2980,37 @@ const heroes = {
       }
     }
   },
+  melissa: {
+    name: 'Luna',
+    element: element.fire,
+    classType: classType.mage,
+    baseAtk: 1070,
+    baseHP: 3828,
+    baseDef: 645,
+    form: [elements.caster_hp_pc],
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1.1,
+        mult: () => 1 + (100 - elements.caster_hp_pc.value()) * 0.0035,
+        multTip: () => ({ caster_lost_hp_pc: 0.35 }),
+        enhance: [0.05, 0, 0.05, 0, 0.1],
+        single: true,
+      },
+      s2: {
+        rate: 1.8,
+        pow: 0.95,
+        enhance: [0.05, 0.05, 0.05, 0.1, 0.1],
+        single: true,
+      },
+      s3: {
+        rate: 1.2,
+        pow: 1,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        single: true,
+      }
+    }
+  },
   tempest_surin: {
     name: 'Naksha',
     element: element.light,
@@ -3982,6 +4013,34 @@ const heroes = {
         multTip: () => ({ caster_lost_hp_pc: 0.3 }),
         enhance: [0.05, 0.05, 0, 0.1, 0.1, 0.1],
         single: true,
+      }
+    }
+  },
+  eda: {
+    name: 'Riria',
+    element: element.ice,
+    classType: classType.mage,
+    baseAtk: 1043,
+    baseHP: 4596,
+    baseDef: 652,
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        single: true,
+      },
+      s2: {
+        rate: 0.9,
+        pow: 1,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        aoe: true
+      },
+      s3: {
+        rate: 1.05,
+        pow: 1.1,
+        enhance: [0.05, 0, 0, 0, 0.15],
+        aoe: true
       }
     }
   },
