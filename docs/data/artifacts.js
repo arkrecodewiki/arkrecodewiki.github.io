@@ -243,6 +243,16 @@ const artifacts = {
     type: artifactDmgType.damage,
     exclusive: classType.thief
   },
+  spear_of_a_new_dawn: {
+    id: 'spear_of_a_new_dawn',
+    name: 'Secret Development',
+    image: 'Secret Development',
+    type: artifactDmgType.aftermath,
+    atkPercent: 0.4,
+    penetrate: 0.7,
+    exclusive: classType.knight,
+    applies: (skill, skillId) => skillId === 's1' || skill.s1_benefits,
+  },
   an_offer_you_cant_refuse: {
     id: 'an_offer_you_cant_refuse',
     name: 'Succubus Incoming',

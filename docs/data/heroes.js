@@ -818,6 +818,38 @@ const heroes = {
       }
     }
   },
+  peira: {
+    name: 'Chaotic Star Heidi',
+    element: element.ice,
+    classType: classType.thief,
+    baseAtk: 925,
+    baseHP: 4718,
+    baseDef: 487,
+    barrier: () => {
+      let boost = 1.0;
+      for (let i = 0; i < Number(document.getElementById('molagora-s3').value); i++) {
+        boost += heroes.peira.skills.s3.enhance[i];
+      }
+      return 180 * boost * 60;
+    },
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0, 0.1, 0, 0.15],
+        single: true,
+      },
+      s2: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        aoe: true,
+      },
+      s3: {
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+      }
+    }
+  },
   zahhak: {
     name: 'Cheerleader Berrica',
     element: element.earth,
@@ -1296,6 +1328,40 @@ const heroes = {
       }
     }
   },
+  senya: {
+    name: 'Combat Mechanic Trist',
+    element: element.earth,
+    classType: classType.knight,
+    baseAtk: 815,
+    baseDef: 645,
+    baseHP: 6346,
+    innateAtkUp: () => 0.3,
+    barrier: (hero) => hero.getAtk() * 0.35,
+    skills: {
+      s1: {
+        rate: 0.95,
+        pow: 1,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        noCrit: true,
+        single: true,
+      },
+      s2: {
+        rate: 0,
+        pow: 0,
+        afterMath: () => ({ atkPercent: 0.45, penetrate: 0.7 }),
+        noCrit: true,
+        noMiss: true,
+        single: true,
+      },
+      s3: {
+        rate: 1.5,
+        pow: 1.1,
+        enhance: [0.05, 0, 0, 0, 0.15],
+        noCrit: true,
+        aoe: true,
+      }
+    }
+  },
   cerise: {
     name: 'Cosma',
     element: element.ice,
@@ -1323,6 +1389,57 @@ const heroes = {
         elemAdv: () => true,
         aoe: true,
       },
+    }
+  },
+  edward_elric: {
+    name: 'Crimson Hare Bartholo',
+    element: element.fire,
+    classType: classType.warrior,
+    baseAtk: 834,
+    baseHP: 5364,
+    baseDef: 585,
+    form: [elements.caster_max_hp, elements.attack_skill_stack_3, elements.caster_hp_increase],
+    barrier: () => {
+      const scale = [0, 0.1, 0, 0.15, 0];
+      let boost = 1.0;
+      for (let i = 0; i < Number(document.getElementById('molagora-s1').value); i++) {
+        boost += scale[i];
+      }
+
+      return elements.caster_max_hp.value() * 0.08 * boost;
+    },
+    skills: {
+      s1: {
+        hpScaling: true,
+        rate: 1,
+        pow: 1,
+        flat: () => elements.caster_max_hp.value() * 0.1,
+        flatTip: () => ({caster_max_hp: 10}),
+        enhance: [0.05, 0, 0.1, 0, 0.15],
+        single: true,
+      },
+      s2: {
+        hpScaling: true,
+        rate: 0.7,
+        pow: 1,
+        flat: () => elements.caster_max_hp.value() * 0.08,
+        flatTip: () => ({caster_max_hp: 8}),
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        isExtra: true,
+        aoe: true
+      },
+      s3: {
+        hpScaling: true,
+        rate: 1.2,
+        pow: 1,
+        flat: () => elements.caster_max_hp.value() * 0.25,
+        flatTip: () => ({caster_max_hp: 25}),
+        mult: () => 1 + elements.attack_skill_stack_3.value() * 0.2,
+        multTip: () => ({per_stack: 20}),
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        noTrans: true,
+        single: true
+      }
     }
   },
   tywin: {
@@ -4306,6 +4423,38 @@ seaside_bellona: {
       }
     }
   },
+  apocalypse_ravi: {
+    name: 'Shien',
+    element: element.dark,
+    classType: classType.warrior,
+    baseAtk: 825,
+    baseHP: 5769,
+    baseDef: 599,
+    form: [elements.caster_max_hp, elements.dead_people, elements.caster_hp_increase],
+    skills: {
+      s1: {
+        hpScaling: true,
+        soulburn: true,
+        rate: (soulburn) => soulburn ? 2 : 1,
+        pow: 0.95,
+        flat: (soulburn) => elements.caster_max_hp.value() * (soulburn ? 0.2 : 0.12),
+        flatTip: (soulburn) => ({ caster_max_hp: soulburn ? 20 : 12 }),
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+      },
+      s3: {
+        hpScaling: true,
+        rate: 1.3,
+        pow: 0.95,
+        flat: () => elements.caster_max_hp.value() * 0.2,
+        flatTip: () => ({ caster_max_hp: 20 }),
+        mult: () => 1 + Math.min(elements.dead_people.value(), 3) * 0.25,
+        multTip: () => ({ dead_people: 25 }),
+        enhance: [0.05, 0.05, 0, 0.05, 0.1, 0.1],
+        single: true,
+      }
+    }
+  },
   landy: {
     name: 'Shinonome ft. Fang',
     element: element.earth,
@@ -4630,6 +4779,36 @@ seaside_bellona: {
         rate: 1,
         pow: 1,
         enhance: [0.05, 0, 0.05, 0, 0.1, 0, 0.1],
+        single: true,
+      }
+    }
+  },
+  commander_pavel: {
+    name: 'Sweet Dreams Anheeun',
+    element: element.light,
+    classType: classType.ranger,
+    baseAtk: 998,
+    baseHP: 4718,
+    baseDef: 582,
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        single: true,
+      },
+      s2: {
+        rate: 0.8,
+        pow: 1,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        aoe: true,
+      },
+      s3: {
+        rate: (soulburn) => soulburn ? 1.3 : 0.85,
+        pow: 1,
+        penetrate: () => 0.7,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        noTrans: true,
         single: true,
       }
     }
