@@ -830,6 +830,17 @@ const elements = {
     readonly: true,
     value: () => Number(document.getElementById('stack-non-attack-skill-3').value)
   },
+  extra_attack_skill_stack_4: {
+    ref: 'extra_attack_skill_stack_4',
+    id: 'stack-extra-attack-skill-4',
+    label: 'Follup-up Skill Stack',
+    type: 'slider',
+    min: 0,
+    max: 4,
+    default: 0,
+    readonly: true,
+    value: () => Number(document.getElementById('stack-extra-attack-skill-4').value)
+  },
   turn_stack: {
     ref: 'turn_stack',
     id: 'turn-stack',

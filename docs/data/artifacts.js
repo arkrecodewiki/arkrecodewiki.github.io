@@ -152,6 +152,16 @@ const artifacts = {
     scale: [0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2],
     type: artifactDmgType.damage
   },
+  fullmetals_automail: {
+    id: 'fullmetals_automail',
+    name: 'Hopping Passion',
+    image: 'Hopping Passion',
+    type: artifactDmgType.critDmgBoost,
+    scale: [0.04, 0.044, 0.048, 0.052, 0.056, 0.06, 0.064, 0.068, 0.072, 0.076, 0.08],
+    form: [elements.extra_attack_skill_stack_4],
+    exclusive: classType.warrior,
+    value: (artiScale) => elements.extra_attack_skill_stack_4.value() * artiScale
+  },
   draco_plate: {
     id: 'draco_plate',
     name: 'Lonely Salvation',
