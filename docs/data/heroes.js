@@ -2635,6 +2635,35 @@ const heroes = {
       },
     }
   },
+  mui: {
+    name: 'Joki',
+    element: element.earth,
+    classType: classType.warrior,
+    baseAtk: 1039,
+    baseHP: 5340,
+    baseDef: 617,
+    dot: [dot.bleed],
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        single: true,
+      },
+      s2: {
+        rate: 0.7,
+        pow: 1,
+        enhance: [0.05, 0, 0, 0.1, 0.15],
+        aoe: true,
+      },
+      s3: {
+        rate: 1,
+        pow: 0.95,
+        enhance: [0.05, 0.05, 0, 0.1, 0.15],
+        aoe: true,
+      }
+    }
+  },
   achates: {
     name: 'Joyce',
     element: element.fire,
@@ -3301,6 +3330,46 @@ const heroes = {
       }
     }
   },
+ haste: {
+    name: 'Mero',
+    element: element.fire,
+    classType: classType.thief,
+    baseAtk: 862,
+    baseHP: 4960,
+    baseDef: 511,
+    form: [elements.nb_targets, elements.target_bleed_detonate],
+    dot: [dot.bleed],
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        single: true,
+      },
+      s2: {
+        soulburn: true,
+        rate: (soulburn) => soulburn ? 2 : 1.5,
+        pow: 1,
+        enhance: [0.05, 0, 0.1, 0, 0.15],
+        single: true,
+      },
+      s3: {
+        rate: 1.2,
+        pow: 1,
+        mult: () => {
+          switch (elements.nb_targets.value()) {
+          case 1: return 2.5;
+          case 2: return 2.0;
+          case 3: return 1.5;
+          default: return 1.0;
+          }
+        },
+        multTip: () => ({ per_fewer_target: 50 }),
+        enhance: [0.15, 0, 0, 0, 0.15],
+        aoe: true,
+      }
+    }
+  },
   aither: {
     name: 'Mikael',
     element: element.ice,
@@ -3376,6 +3445,22 @@ const heroes = {
         noTrans: true,
         single: true,
       }
+    }
+  },
+  flan: {
+    name: 'Mizuki',
+    element: element.ice,
+    classType: classType.ranger,
+    baseAtk: 853,
+    baseHP: 5284,
+    baseDef: 585,
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0, 0.05, 0, 0.1, 0, 0.1],
+        single: true,
+      },
     }
   },
   angelica: {
@@ -4487,6 +4572,36 @@ seaside_bellona: {
         pow: 1,
         penetrate: () => elements.caster_full_fighting_spirit.value() ? 0.5 : 0,
         enhance: [0.05, 0.05, 0, 0.1, 0.1]
+      }
+    }
+  },
+  ludwig: {
+    name: 'Shizuna',
+    element: element.earth,
+    classType: classType.mage,
+    baseAtk: 1220,
+    baseHP: 3828,
+    baseDef: 645,
+    form: [elements.caster_invincible],
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0, 0.1, 0, 0.15],
+        single: true,
+      },
+      s2: {
+        rate: 1.65,
+        pow: 1.05,
+        enhance: [0.1, 0, 0, 0, 0.15],
+        single: true,
+      },
+      s3: {
+        rate: 0.965,
+        pow: 0.95,
+        penetrate: () => elements.caster_invincible.value() ? 0.6 : 0.3,
+        enhance: [0.05, 0.05, 0, 0.1, 0.15],
+        aoe: true,
       }
     }
   },
