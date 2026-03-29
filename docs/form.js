@@ -1462,11 +1462,6 @@ buildInitialForm = () => {
         if (!loadingQueryParams) {
           deleteParams(heroes[currentHero.id].form?.map(element => element.id));
         }
-
-        window.dataLayer.push({
-          'event': 'select_hero',
-          'hero': hero.name
-        });
         refreshCompareBadge();
   
         $(chartSkillSelector).find('option').remove();
@@ -1501,10 +1496,6 @@ buildInitialForm = () => {
           update(elements.target_max_hp.id);
         }
         oneshotInput.value = selected.dataset.hp;
-        window.dataLayer.push({
-          'event': 'select_preset_def',
-          'def_unit': selected.value
-        });
       } else {
         // To ensure caides damage reduction is removed when switching to manual
         resolve();
@@ -1528,10 +1519,6 @@ buildInitialForm = () => {
           update('def-pc-up');
         
         }
-        window.dataLayer.push({
-          'event': 'select_preset_dmg_red',
-          'dmg_red': selected.value
-        });
       }
     };
 
@@ -1556,11 +1543,6 @@ buildInitialForm = () => {
       dedupeForm(hero, artifact);
       buildArtifact(artifact);
       resolve();
-      window.dataLayer.push({
-        'event': 'select_artifact',
-        'artifact': artifact.name,
-        'hero': heroes[heroSelector.value]?.name || 'None'
-      });
     };
 
     const hero = heroes[heroSelector.value];
@@ -1612,10 +1594,6 @@ function applyTheme() {
     initTheme();
     darkSwitch.addEventListener('change', () => {
       applyTheme();
-      window.dataLayer.push({
-        'event': 'toggle_dark_mode',
-        'dark_mode': darkSwitch.checked ? 'on' : 'off'
-      });
     });
   }
 })();
