@@ -4919,7 +4919,8 @@ seaside_bellona: {
         aoe: true,
       },
       s3: {
-        rate: (soulburn) => soulburn ? 1.3 : 0.85,
+        soulburn: true,
+        rate: (soulburn) => soulburn ? 1.2 : 0.85,
         pow: 1,
         penetrate: () => 0.7,
         enhance: [0.05, 0.05, 0, 0.1, 0.1],
