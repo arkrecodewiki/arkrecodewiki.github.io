@@ -1335,7 +1335,6 @@ const heroes = {
     baseAtk: 815,
     baseDef: 645,
     baseHP: 6346,
-    innateAtkUp: () => 0.3,
     barrier: (hero) => hero.getAtk() * 0.35,
     skills: {
       s1: {
