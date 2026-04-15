@@ -1350,7 +1350,6 @@ const heroes = {
         afterMath: () => ({ atkPercent: 0.45, penetrate: 0.7 }),
         noCrit: true,
         noMiss: true,
-        single: true,
       },
       s3: {
         rate: 1.5,
