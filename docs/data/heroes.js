@@ -2057,6 +2057,41 @@ const heroes = {
       }
     }
   },
+  lone_crescent_bellona: {
+    name: 'Gagarin',
+    element: element.dark,
+    classType: classType.warrior,
+    form: [elements.attack_skill_stack_5],
+    baseAtk: 971,
+    baseHP: 5567,
+    baseDef: 582,
+    atkUp: () => 1 + elements.attack_skill_stack_5.value() * 0.1,
+    skills: {
+      s1: {
+        onlyCrit: true,
+        rate: (soulburn) => soulburn ? 1.6 : 0.9,
+        pow: 1,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+        soulburn: true
+      },
+      s2: {
+        onlyCrit: true,
+        rate: 0.6,
+        pow: 1,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        isExtra: true,
+        aoe: true,
+      },
+      s3: {
+        onlyCrit: true,
+        rate: 1.7,
+        pow: 1,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+      }
+    }
+  },
   closer_charles: {
     name:  'Gail',
     element: element.dark,
