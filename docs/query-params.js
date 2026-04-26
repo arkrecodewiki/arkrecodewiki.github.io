@@ -283,16 +283,6 @@ const loadQueryParams = async () => {
         }
       }
     }
-        
-    // push event to dataLayer
-    const queryString = queryParams.toString();
-    if (queryString.length) {
-      window.dataLayer.push({
-        'event': 'loaded_query_params',
-        'page': page,
-        'loaded_params': queryString
-      });
-    }
   } catch (error) {  // probably only going to reach here on some ancient browser that won't load the site properly anyway
     console.log(`Could not load queryParams: ${error}`);
   }
@@ -485,10 +475,4 @@ const copyLinkToClipboard = () => {
       shareButton.innerText = i18n[lang].form.link_copied || 'Link Copied!';
     }
   }
-
-  window.dataLayer.push({
-    'event': 'shared_query_params',
-    'page': page,
-    'shared_params': linkURL.search
-  });
 };
