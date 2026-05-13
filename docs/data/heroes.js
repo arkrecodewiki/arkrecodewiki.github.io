@@ -990,6 +990,46 @@ const heroes = {
       }
     }
   },
+  choux: {
+    name: 'Chrono Agent Aoi',
+    element: element.ice,
+    classType: classType.warrior,
+    baseAtk: 816,
+    baseHP: 5850,
+    baseDef: 620,
+    form: [elements.caster_max_hp, elements.caster_hp_increase, elements.caster_full_focus],
+    skills: {
+      s1: {
+        hpScaling: true,
+        rate: 0.5,
+        pow: 1,
+        flat: () => elements.caster_max_hp.value() * 0.1,
+        flatTip: () => ({ caster_max_hp: 10 }),
+        enhance: [0.05, 0, 0.05, 0, 0.05, 0.15],
+        single: true,
+      },
+      s2: {
+        hpScaling: true,
+        rate: 0.5,
+        pow: 1,
+        flat: () => elements.caster_max_hp.value() * (elements.caster_full_focus.value() ? 0.15 : 0.11),
+        flatTip: () => ({ caster_max_hp: (elements.caster_full_focus.value() ? 15 : 11) }),
+        penetrate: () => 0.7,
+        enhance: [0.05, 0.1, 0.15],
+        canExtra: true,
+        single: true,
+      },
+      s3: {
+        hpScaling: true,
+        rate: 0.5,
+        pow: 1,
+        flat: () => elements.caster_max_hp.value() * 0.15,
+        flatTip: () => ({ caster_max_hp: 15 }),
+        enhance: [0.05, 0.05, 0, 0.05, 0.05, 0.1],
+        aoe: true,
+      }
+    }
+  },
   kiris: {
     name: 'Cindy',
     element: element.earth,
