@@ -1831,6 +1831,34 @@ const heroes = {
       }
     }
   },
+  aria: {
+    name: 'Ephemeral Love Darlene',
+    element: element.ice,
+    classType: classType.mage,
+    baseAtk: 889,
+    baseDef: 673,
+    baseHP: 4879,
+    form: [elements.caster_defense],
+    barrier: () => elements.caster_defense.value() * 1.0,
+    skills: {
+      s1: {
+        defenseScaling: true,
+        rate: 0.7,
+        pow: 1,
+        flat: () => elements.caster_defense.value() * 0.85,
+        flatTip: () => ({ caster_defense: 85 }),
+        enhance: [0.05, 0.05, 0, 0.05, 0, 0.05, 0.1],
+      },
+      s2: {
+        defenseScaling: true,
+        rate: 0.7,
+        pow: 1.3,
+        flat: () => elements.caster_defense.value() * 1.4,
+        flatTip: () => ({ caster_defense: 140 }),
+        aoe: true,
+      }
+    }
+  },
   yuna: {
     name: 'Erica',
     element: element.ice,
@@ -3443,6 +3471,37 @@ const heroes = {
       }
     }
   },
+  midnight_gala_lilias: {
+    name: 'Midsummer Blossom Carolyn',
+    element: element.earth,
+    classType: classType.thief,
+    baseAtk: 971,
+    baseHP: 4758,
+    baseDef: 508,
+    form: [elements.caster_max_hp, elements.target_max_hp, elements.caster_hp_increase],
+    skills: {
+      s1: {
+        onlyCrit: true,
+        soulburn: true,
+        rate: (soulburn) => soulburn ? 1.8 : 1.1,
+        pow: 1,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+      },
+      s3: {
+        onlyCrit: true,
+        hpScaling: true,
+        rate: 0.5,
+        pow: 1,
+        penetrate:() => elements.caster_max_hp.value() < elements.target_max_hp.value()
+          ? Math.min((elements.target_max_hp.value() - elements.caster_max_hp.value()) * 0.0000625, 1)
+          : 0,
+        penetrateTip: () => ({ caster_vs_target_hp_diff: 6.25 }),
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        single: true,
+      },
+    }
+  },
   aither: {
     name: 'Mikael',
     element: element.ice,
@@ -4259,6 +4318,22 @@ const heroes = {
         rate: 1.5,
         pow: 0.9,
         enhance: [0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+      }
+    }
+  },
+  maid_chloe: {
+    name: 'Resolute Lana',
+    element: element.light,
+    classType: classType.soul_weaver,
+    baseAtk: 694,
+    baseHP: 4435,
+    baseDef: 694,
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0, 0.05, 0, 0.1, 0, 0.1],
         single: true,
       }
     }

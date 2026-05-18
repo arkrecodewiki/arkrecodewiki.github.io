@@ -263,6 +263,13 @@ const artifacts = {
     exclusive: classType.knight,
     applies: (skill, skillId) => skillId === 's1' || skill.s1_benefits,
   },
+  a_symbol_of_unity: {
+    id: 'a_symbol_of_unity',
+    name: 'Submissive Nemesis',
+    image: 'Submissive Nemesis',
+    scale: [0.08, 0.088, 0.096, 0.104, 0.112, 0.12, 0.128, 0.136, 0.144, 0.152, 0.16],
+    type: artifactDmgType.damage,
+  },
   an_offer_you_cant_refuse: {
     id: 'an_offer_you_cant_refuse',
     name: 'Succubus Incoming',
