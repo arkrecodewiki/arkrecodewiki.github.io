@@ -1838,7 +1838,7 @@ const heroes = {
     baseAtk: 889,
     baseDef: 673,
     baseHP: 4879,
-    form: [elements.caster_defense],
+    form: [elements.caster_defense, elements.caster_defense_increase],
     barrier: () => elements.caster_defense.value() * 1.0,
     skills: {
       s1: {
