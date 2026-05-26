@@ -185,6 +185,20 @@ const artifacts = {
     type: artifactDmgType.attack,
     scale: [0.05, 0.055, 0.06, 0.065, 0.07, 0.075, 0.08, 0.085, 0.09, 0.095, 0.1],
   },
+  shepherd_of_the_hollow: {
+    id: 'shepherd_of_the_hollow',
+    name: 'Morning Caress',
+    scale: [0.12, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2, 0.21, 0.22, 0.24],
+    type: artifactDmgType.damage,
+    exclusive: classType.thief,
+    form: [elements.caster_hp_pc],
+    value: (artiScale) => {
+      if (elements.caster_hp_pc.value() < 25) return artiScale;
+      if (elements.caster_hp_pc.value() < 50) return artiScale * 0.83;
+      if (elements.caster_hp_pc.value() < 75) return artiScale * 0.66;
+      return artiScale * 0.5;
+    }
+  },
   kaladra: {
     id: 'kaladra',
     name: 'Pleasure of Anticipation',
