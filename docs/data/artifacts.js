@@ -188,6 +188,7 @@ const artifacts = {
   shepherd_of_the_hollow: {
     id: 'shepherd_of_the_hollow',
     name: 'Morning Caress',
+    image: 'Morning Caress',
     scale: [0.12, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2, 0.21, 0.22, 0.24],
     type: artifactDmgType.damage,
     exclusive: classType.thief,
