@@ -185,6 +185,20 @@ const artifacts = {
     type: artifactDmgType.attack,
     scale: [0.05, 0.055, 0.06, 0.065, 0.07, 0.075, 0.08, 0.085, 0.09, 0.095, 0.1],
   },
+  hostess_of_the_banquet: {
+    id: 'hostess_of_the_banquet',
+    name: 'Moment\'s Possession',
+    image: 'Moments Possession',
+    scale: [0.08, 0.088, 0.096, 0.104, 0.112, 0.12, 0.128, 0.136, 0.144, 0.152, 0.16],
+    type: artifactDmgType.damage,
+    exclusive: classType.thief,
+    applies: (skill) => getSkillType(skill) === skillTypes.single,
+    form: [elements.target_hp_pc],
+    value: (artiScale) => {
+      if (elements.target_hp_pc.value() > 50) return artiScale * 1.8;
+      return artiScale;
+    }
+  },
   shepherd_of_the_hollow: {
     id: 'shepherd_of_the_hollow',
     name: 'Morning Caress',

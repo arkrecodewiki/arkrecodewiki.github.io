@@ -3497,6 +3497,8 @@ const heroes = {
           ? Math.min((elements.target_max_hp.value() - elements.caster_max_hp.value()) * 0.0000625, 1)
           : 0,
         penetrateTip: () => ({ caster_vs_target_hp_diff: 6.25 }),
+        noTrans: true,
+        noReduc: true,
         enhance: [0.05, 0.05, 0, 0.1, 0.1],
         single: true,
       },
@@ -5616,6 +5618,34 @@ seaside_bellona: {
         enhance: [0.05, 0, 0, 0, 0.1, 0.15],
         aoe: true,
       }
+    }
+  },
+  pirate_captain_flan: {
+    name: 'Yuri',
+    element: element.dark,
+    classType: classType.ranger,
+    baseAtk: 898,
+    baseHP: 4879,
+    baseDef: 571,
+    form: [elements.target_burn_detonate, elements.target_bomb_detonate],
+    dot: [dot.burn, dot.bomb],
+    skills: {
+      s1: {
+        rate: 0.7,
+        pow: 0.95,
+        detonate: [dot.burn, dot.bomb],
+        detonation: () => 1,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+        noCrit: true,
+      },
+      s3: {
+        rate: 0.8,
+        pow: 1,
+        enhance: [0.05, 0.05, 0, 0.05, 0.05, 0.1],
+        aoe: true,
+        noCrit: true,
+      },
     }
   },
   kluri: {

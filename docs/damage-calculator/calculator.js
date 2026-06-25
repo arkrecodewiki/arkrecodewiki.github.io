@@ -642,7 +642,7 @@ class Target {
   }
 
   defensivePower(skill, noReduc = false) {
-    const dmgReduc = noReduc ? 0 : inputValues['dmgReduc'] / 100;
+    const dmgReduc = skill.noReduc === true ? 0 : noReduc ? 0 : inputValues['dmgReduc'] / 100;
     const dmgTrans = skill.noTrans === true ? 0 : inputValues.dmgTrans / 100;
     return ((1 - dmgReduc) * (1 - dmgTrans)) / (((this.def / 300) * this.getPenetration(skill)) + 1);
   }

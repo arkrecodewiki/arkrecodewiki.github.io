@@ -90,8 +90,8 @@ const elements = {
     id: 'target-max-hp',
     label: 'Target\'s Max HP',
     type: 'slider',
-    min: 1000,
-    max: 500000,
+    min: 1,
+    max: 50000,
     default: () => {
       const defPreset = document.getElementById('def-preset');
       return defPreset.value ? defPreset.options[defPreset.selectedIndex].dataset.hp : 10000;
