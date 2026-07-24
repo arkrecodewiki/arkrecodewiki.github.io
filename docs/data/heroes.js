@@ -3384,6 +3384,36 @@ const heroes = {
       }
     }
   },
+  solitaria_of_the_snow: {
+    name: 'Mead',
+    element: element.light,
+    classType: classType.mage,
+    baseAtk: 889,
+    baseHP: 4879,
+    baseDef: 673,
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
+    barrier: () => elements.caster_max_hp.value() * 0.25,
+    skills: {
+      s1: {
+        rate: 0.7,
+        pow: 1,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+      },
+      s1_extra: {
+        name: infoLabel('s1_extra_attack'),
+        rate: 0.8,
+        pow: 1.3,
+        aoe: true,
+      },
+      s3: {
+        rate: 1.8,
+        pow: 1,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        single: true,
+      }
+    }
+  },
   ilynav: {
     name: 'Memoria Marsha',
     element: element.fire,
@@ -5616,6 +5646,34 @@ seaside_bellona: {
         rate: 0.9,
         pow: 1,
         enhance: [0.05, 0, 0, 0, 0.1, 0.15],
+        aoe: true,
+      }
+    }
+  },
+  nahkwol: {
+    name: 'Yukie',
+    element: element.fire,
+    classType: classType.ranger,
+    baseAtk: 853,
+    baseHP: 5284,
+    baseDef: 585,
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0, 0.1, 0, 0.15],
+        single: true,
+      },
+      s2: {
+        rate: 1.5,
+        pow: 1,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+      },
+      s3: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
         aoe: true,
       }
     }
