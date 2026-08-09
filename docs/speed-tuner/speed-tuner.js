@@ -100,17 +100,9 @@ numberParams = ['slowerSpeed', 'slowerPush', 'fasterSpeed', 'fasterPush', 'faste
 page = 'speed_tuner';
 
 fasterPushesToggled = () => {
-  window.dataLayer.push({
-    'event': 'toggle_faster_pushes',
-    'faster_pushes': fasterPushesSlowerInput.checked ? 'on' : 'off'
-  });
 };
 
 stigmaPolitisToggled = () => {
-  window.dataLayer.push({
-    'event': 'toggle_stigma_politis',
-    'stigma_politis': stigmaPolitisInput.checked ? 'on' : 'off'
-  });
 };
 
 // style output text and outlines
