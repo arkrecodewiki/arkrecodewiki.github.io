@@ -292,6 +292,15 @@ const artifacts = {
     exclusive: classType.knight,
     applies: (skill, skillId) => skillId === 's1' || skill.s1_benefits,
   },
+  sword_of_autumn_eclipse: {
+    id: 'sword_of_autumn_eclipse',
+    name: 'Shameful Indulgence',
+    image: 'Shameful Indulgence',
+    scale: [0.08, 0.088, 0.096, 0.104, 0.112, 0.12, 0.128, 0.136, 0.144, 0.152, 0.16],
+    type: artifactDmgType.damage,
+    exclusive: classType.warrior,
+    applies: (skill) => getSkillType(skill) === skillTypes.single,
+  },
   a_symbol_of_unity: {
     id: 'a_symbol_of_unity',
     name: 'Submissive Nemesis',

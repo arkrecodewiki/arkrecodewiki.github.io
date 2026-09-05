@@ -3258,6 +3258,44 @@ const heroes = {
       }
     }
   },
+  arunka: {
+    name: 'Mina',
+    element: element.fire,
+    classType: classType.warrior,
+    baseAtk: 971,
+    baseHP: 5567,
+    baseDef: 582,
+    form: [elements.target_has_barrier],
+    dot: [dot.bleed],
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+        noCrit: true,
+      },
+      s1_bis: {
+        name: infoLabel('arunka_expose'),
+        rate: 1.3,
+        pow: 1.3,
+        // enhance_from: 's1', Presumed not to inherit from s1 mola since the pow is so high already
+        single: true,
+        isExtra: true,
+        noCrit: true,
+      },
+      s3: {
+        rate: 0.9,
+        pow: 1,
+        penetrate: () => 0.7,
+        mult: () => elements.target_has_barrier.value() ? 3.4 : 1,
+        multTip: () => ({ target_has_barrier: 240 }),
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        single: true,
+        noCrit: true,
+      },
+    }
+  },
   tempest_surin: {
     name: 'Naksha',
     element: element.light,
