@@ -3619,6 +3619,38 @@ const heroes = {
       }
     }
   },
+  unbound_knight_arowell: {
+    name: 'Mirach',
+    element: element.light,
+    classType: classType.knight,
+    baseAtk: 735,
+    baseHP: 5728,
+    baseDef: 673,
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
+    barrierSkills: ['Passive', 'S3'],
+    barrier: () => elements.caster_max_hp.value() * 0.15,
+    barrier2: () => elements.caster_max_hp.value() * 0.2,
+    skills: {
+      s1: {
+        hpScaling: true,
+        rate: 0.7,
+        pow: 0.95,
+        flat: () => elements.caster_max_hp.value() * 0.05,
+        flatTip: () => ({caster_max_hp: 5}),
+        enhance: [0.05, 0.05, 0, 0.1, 0, 0.15],
+        single: true,
+      },
+      s3: {
+        hpScaling: true,
+        rate: 0.7,
+        pow: 0.95,
+        flat: () => elements.caster_max_hp.value() * 0.15,
+        flatTip: () => ({caster_max_hp: 15}),
+        enhance: [0.05, 0.05, 0, 0.1, 0, 0.15],
+        single: true,
+      }
+    }
+  },
   top_model_luluca: {
     name: 'Mitsuki',
     element: element.dark,
@@ -5052,6 +5084,26 @@ seaside_bellona: {
         pow: 1.05,
         enhance: [0.0, 0.1, 0, 0, 0.15],
         aoe: true,
+      }
+    }
+  },
+  christy: {
+    name: 'Summer Breeze Giselle',
+    element: element.earth,
+    classType: classType.knight,
+    baseAtk: 626,
+    baseHP: 6173,
+    baseDef: 715,
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
+    skills: {
+      s1: {
+        hpScaling: true,
+        rate: 1.1,
+        pow: 1,
+        flat: () => elements.caster_max_hp.value() * 0.05,
+        flatTip: () => ({ caster_max_hp: 5 }),
+        enhance: [0, 0.1, 0, 0.1, 0],
+        single: true
       }
     }
   },
