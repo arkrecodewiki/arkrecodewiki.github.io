@@ -5168,6 +5168,41 @@ seaside_bellona: {
       }
     }
   },
+  elvira: {
+    name: 'Supersonic Silvina',
+    element: element.ice,
+    classType: classType.thief,
+    form: [elements.target_current_hp],
+    baseAtk: 907,
+    baseHP: 5122,
+    baseDef: 532,
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0, 0.1, 0, 0.15],
+        single: true,
+        noCrit: true,
+      },
+      s1_extra: {
+        name: 'Exterminate',
+        rate: 1,
+        pow: 1.3,
+        aoe: true,
+        noCrit: true,
+      },
+      s3: {
+        rate: 0.2,
+        pow: 1,
+        flat: () => elements.target_current_hp.value() * 0.16,
+        flatTip: () => ({ targetCurrentHP: 16 }),
+        penetrate: () => 1,
+        enhance: [0.05, 0.05, 0, 0.05, 0.15],
+        single: true,
+        noCrit: true,
+      }
+    }
+  },
   commander_pavel: {
     name: 'Sweet Dreams Anheeun',
     element: element.light,
