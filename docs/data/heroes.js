@@ -3103,6 +3103,58 @@ const heroes = {
       }
     }
   },
+  blood_moon_haste: {
+    name: 'Little Devil Lottie',
+    element: element.dark,
+    classType: classType.soul_weaver,
+    baseAtk: 471,
+    baseHP: 4637,
+    baseDef: 736,
+    form: [elements.caster_max_hp, elements.caster_hp_increase, elements.caster_has_lets_get_wild],
+    barrier: () => elements.caster_max_hp.value() * 0.3,
+    barrierEnhance: 's2',
+    skills: {
+      s1: {
+        hpScaling: true,
+        rate: 0.3,
+        pow: 1,
+        flat: () => elements.caster_max_hp.value() * 0.03,
+        flatTip: () => ({ caster_max_hp: 3 }),
+        penetrate: () => 1.0,
+        noCrit: true,
+        enhance: [0.05, 0.1, 0.15],
+        single: true,
+      },
+      s1_bis: {
+        name: 'S1 Follow-up',
+        hpScaling: true,
+        rate: 0.1,
+        pow: 1,
+        flat: () => elements.caster_max_hp.value() * 0.1,
+        flatTip: () => ({ caster_max_hp: 10 }),
+        penetrate: () => 1.0,
+        noCrit: true,
+        aoe: true,
+        isExtra: true,
+      },
+      s2: {
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.05, 0.1]
+      },
+      s3: {
+        hpScaling: true,
+        noCrit: true,
+        rate: 0.3,
+        pow: 1,
+        flat: () => elements.caster_max_hp.value() * 0.14,
+        flatTip: () => ({ caster_max_hp: 14 }),
+        mult: () => elements.caster_has_lets_get_wild.value() ? 2 : 1,
+        multTip: () => ({ caster_has_lets_get_wild: 100 }),
+        penetrate: () => 1.0,
+        enhance: [0.05, 0.05, 0, 0.05, 0.05, 0.1],
+        single: true,
+      },
+    }
+  },
   rin: {
     name: 'Lottie',
     element: element.earth,
@@ -5523,6 +5575,34 @@ seaside_bellona: {
         enhance: [0.05, 0, 0.1, 0, 0.15],
         aoe: true,
       }
+    }
+  },
+  sharun: {
+    name: 'Tiffany',
+    element: element.earth,
+    classType: classType.soul_weaver,
+    baseAtk: 490,
+    baseHP: 4920,
+    baseDef: 680,
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
+    barrier: () => elements.caster_max_hp.value() * 0.17,
+    barrierEnhance: 's2',
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        single: true,
+      },
+      s2: {
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+      },
+      s3: {
+        rate: 1,
+        pow: 1,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        aoe: true,
+      },
     }
   },
   helga: {

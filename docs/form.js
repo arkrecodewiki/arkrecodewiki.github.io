@@ -584,6 +584,14 @@ const elements = {
     value: () => document.getElementById('caster-has-neo-phantom-sword')?.checked,
     icon: './assets/buffs/neo-phantom-sword-buff.png'
   },
+  caster_has_lets_get_wild: {
+    ref: 'caster_has_lets_get_wild',
+    id: 'caster-has-lets-get-wild',
+    label: 'Caster has Let\'s Get Wild!',
+    type: 'checkbox',
+    value: () => document.getElementById('caster-has-lets-get-wild').checked,
+    icon: './assets/buffs/lets-get-wild-buff.png'
+  },
   caster_full_focus: {
     ref: 'caster_full_focus',
     id: 'caster-full-focus',
