@@ -648,7 +648,7 @@ const elements = {
   caster_possession: {
     ref: 'caster_possession',
     id: 'caster-possession',
-    label: 'Caster has Possession',
+    label: 'Caster has Retaliate',
     type: 'checkbox',
     value: () => document.getElementById('caster-possession') ? document.getElementById('caster-possession').checked : false,
     icon: './assets/buffs/possession-buff.png'

@@ -90,7 +90,7 @@ const i18n = {
       kane_rock_smash: 'Rock Smash',
       lethe_call_of_the_abyss: 'Stellar Luminance',
       lqc_s3_splash: 'S3 Splash',
-      ml_celine_nimble_sword: 'Nimble Sword',
+      ml_celine_nimble_sword: 'Point-Blank Impact',
       ml_kayron_flash_slash: 'Flash Slash',
       navy_captain_landy_salvo_fire: 'Salvo Fire',
       sez_encroach: 'Shatter Attack',

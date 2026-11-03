@@ -2057,6 +2057,32 @@ const heroes = {
       }
     }
   },
+  spirit_eye_celine: {
+    name: 'Fiery Heart Rubi',
+    element: element.light,
+    classType: classType.thief,
+    form: [elements.caster_possession],
+    baseAtk: 925,
+    baseHP: 4596,
+    baseDef: 532,
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 0.9,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+      },
+      s1_bis: {
+        name: infoLabel('ml_celine_nimble_sword'),
+        rate: 1,
+        pow: 0.9,
+        penetrate: () => 0.5,
+        enhance_from: 's1',
+        single: true,
+      },
+    }
+  },
+
   mirsa: {
     name: 'Financier',
     element: element.light,
@@ -3346,6 +3372,46 @@ const heroes = {
         single: true,
         noCrit: true,
       },
+    }
+  },
+  sol: {
+    name: 'Mirabelle',
+    element: element.fire,
+    classType: classType.warrior,
+    baseAtk: 943,
+    baseHP: 5122,
+    baseDef: 553,
+    form: [elements.target_has_buff],
+    skills: {
+      s1: {
+        rate: 1,
+        pow: 1,
+        mult: () => elements.target_has_buff.value() ? 1 : 1.2,
+        multTip: () => ({ target_has_no_buff: 20 }),
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        single: true,
+      },
+      s2: {
+        rate: 0.91,
+        pow: 1,
+        enhance: [0.05, 0.05, 0.05, 0.05, 0.1],
+        isExtra: true,
+        single: true,
+      },
+      s3: {
+        rate: 1.6,
+        pow: 1,
+        enhance: [0.05, 0.05, 0, 0.1, 0.1],
+        single: true,
+      },
+      s3_splash: {
+        name: infoLabel('sez_explosion'),
+        rate: 0,
+        pow: 0,
+        afterMath: () => ({ atkPercent: 0.4, penetrate: 0.7 }),
+        noCrit: true,
+        noMiss: true,
+      }
     }
   },
   tempest_surin: {
