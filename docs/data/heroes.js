@@ -759,6 +759,45 @@ const heroes = {
       }
     }
   },
+ alencia: {
+    name: 'Carnival Queen Ermes',
+    element: element.earth,
+    classType: classType.warrior,
+    baseAtk: 825,
+    baseHP: 5769,
+    baseDef: 599,
+    form: [elements.caster_max_hp, elements.caster_hp_increase],
+    skills: {
+      s1: {
+        hpScaling: true,
+        rate: 0.5,
+        pow: 1,
+        flat: () => elements.caster_max_hp.value() * 0.08,
+        flatTip: () => ({caster_max_hp: 8}),
+        enhance: [0.05, 0, 0.1, 0, 0.15],
+        single: true,
+      },
+      s2: {
+        hpScaling: true,
+        rate: 0.5,
+        pow: 1,
+        flat: () => elements.caster_max_hp.value() * 0.11,
+        flatTip: () => ({caster_max_hp: 11}),
+        enhance: [0.05, 0, 0.1, 0, 0.15],
+        isExtra: true,
+        single: true,
+      },
+      s3: {
+        hpScaling: true,
+        rate: 0.5,
+        pow: 1,
+        flat: () => elements.caster_max_hp.value() * 0.15,
+        flatTip: () => ({ caster_max_hp: 15 }),
+        enhance: [0.05, 0.05, 0, 0.05, 0.15],
+        aoe: true,
+      }
+    }
+  },
   maya: {
     name: 'Carolyn',
     element: element.fire,
